@@ -308,459 +308,254 @@
         </div>
 
         <div class="reveal">
-          <svg
-            viewBox="0 0 1100 520"
-            xmlns="http://www.w3.org/2000/svg"
-            style="
-              width: 100%;
-              height: auto;
-              border-radius: 18px;
-              background: linear-gradient(135deg, #fffaf3, #f7f8fa);
-              padding: 24px;
-              border: 1px solid #e5e8ec;
-            "
-          >
+          <svg viewBox="0 0 1280 940" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:24px;background:linear-gradient(135deg,#FFF8F0 0%,#F7F8FA 100%);padding:24px;border:1px solid #E5E8EC;">
             <defs>
-              <linearGradient id="rowg" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="100%" stop-color="#FAFBFC" />
-              </linearGradient>
-              <linearGradient id="og4" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#FF7300" />
-                <stop offset="100%" stop-color="#E86500" />
-              </linearGradient>
-              <filter id="ds" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow
-                  dx="0"
-                  dy="3"
-                  stdDeviation="4"
-                  flood-color="#000"
-                  flood-opacity="0.08"
-                />
-              </filter>
+              <linearGradient id="og-arch" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E86500"/></linearGradient>
+              <linearGradient id="frame-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FAFAFA"/></linearGradient>
+              <filter id="card-sh" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#FF7300" flood-opacity="0.10"/></filter>
+              <filter id="hard-sh" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.08"/></filter>
             </defs>
 
-            <!-- Top: Customer Outcomes -->
-            <rect
-              x="40"
-              y="20"
-              width="1020"
-              height="60"
-              rx="12"
-              fill="url(#og4)"
-              filter="url(#ds)"
-            />
-            <text
-              x="550"
-              y="48"
-              text-anchor="middle"
-              fill="#FFF"
-              font-family="Inter"
-              font-weight="700"
-              font-size="16"
-            >
-              Agentic Enterprise Outcomes
-            </text>
-            <text
-              x="550"
-              y="68"
-              text-anchor="middle"
-              fill="rgba(255,255,255,0.9)"
-              font-family="Inter"
-              font-size="12"
-            >
-              Copilots · Automated workflows · Agent-driven operations
-            </text>
+            <!-- ===== CENTER FRAME ===== -->
+            <rect x="370" y="40" width="560" height="800" rx="24" fill="url(#frame-bg)" filter="url(#hard-sh)" opacity="0.96"/>
 
-            <!-- Agent Platform -->
-            <rect
-              x="40"
-              y="100"
-              width="1020"
-              height="70"
-              rx="12"
-              fill="url(#rowg)"
-              stroke="#E5E8EC"
-              filter="url(#ds)"
-            />
-            <rect x="40" y="100" width="6" height="70" rx="3" fill="#FF7300" />
-            <text
-              x="64"
-              y="128"
-              fill="#20272F"
-              font-family="Inter"
-              font-weight="700"
-              font-size="15"
-            >
-              Agent Platform
-            </text>
-            <text
-              x="64"
-              y="148"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="12"
-            >
-              Build, secure, operate and govern agents and tools across the
-              agentic enterprise
-            </text>
+            <!-- ===== CONNECTING LINES (drawn first, sit beneath cards) ===== -->
+            <g stroke="#FF7300" stroke-width="1.6" stroke-dasharray="5 4" fill="none" opacity="0.65">
+              <!-- clients to left gateways -->
+              <path d="M150 112 L200 200"/>
+              <path d="M150 192 L200 200"/>
+              <path d="M150 272 L200 320"/>
+              <path d="M150 352 L200 320"/>
+              <path d="M150 432 L200 440"/>
+              <path d="M150 512 L200 440"/>
+              <!-- left gateways to frame -->
+              <path d="M330 200 L400 200"/>
+              <path d="M330 320 L400 295"/>
+              <path d="M330 440 L400 295"/>
+              <!-- integration platform to right gateways -->
+              <path d="M910 280 L970 320"/>
+              <path d="M910 360 L970 320"/>
+              <path d="M910 380 L970 440"/>
+              <!-- right gateways to right column -->
+              <path d="M1100 300 L1140 192"/>
+              <path d="M1100 320 L1140 272"/>
+              <path d="M1100 340 L1140 352"/>
+              <path d="M1100 440 L1140 432"/>
+              <path d="M1100 460 L1140 572"/>
+            </g>
 
-            <!-- API Platform -->
-            <rect
-              x="40"
-              y="180"
-              width="500"
-              height="100"
-              rx="12"
-              fill="url(#rowg)"
-              stroke="#E5E8EC"
-              filter="url(#ds)"
-            />
-            <rect x="40" y="180" width="6" height="100" rx="3" fill="#FF7300" />
-            <text
-              x="64"
-              y="208"
-              fill="#20272F"
-              font-family="Inter"
-              font-weight="700"
-              font-size="15"
-            >
-              API Platform
-            </text>
-            <text
-              x="64"
-              y="228"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              Expose APIs, MCPs to agents (ingress)
-            </text>
-            <text
-              x="64"
-              y="248"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              AI Gateway: govern LLMs &amp; external APIs (egress)
-            </text>
-            <rect x="64" y="256" width="56" height="16" rx="3" fill="#FFF3E8" />
-            <text
-              x="92"
-              y="268"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              REST
-            </text>
-            <rect
-              x="126"
-              y="256"
-              width="56"
-              height="16"
-              rx="3"
-              fill="#FFF3E8"
-            />
-            <text
-              x="154"
-              y="268"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              GraphQL
-            </text>
-            <rect
-              x="188"
-              y="256"
-              width="56"
-              height="16"
-              rx="3"
-              fill="#FFF3E8"
-            />
-            <text
-              x="216"
-              y="268"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              MCP
-            </text>
+            <!-- ===== LEFT COLUMN: clients ===== -->
+            <g font-family="Inter">
+              <rect x="20" y="80" width="130" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="40" cy="112" r="9" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <path d="M34 112h12 M40 106v12" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="56" y="116" fill="#20272F" font-weight="600" font-size="11">AI Agents</text>
 
-            <!-- Identity Platform -->
-            <rect
-              x="560"
-              y="180"
-              width="500"
-              height="100"
-              rx="12"
-              fill="url(#rowg)"
-              stroke="#E5E8EC"
-              filter="url(#ds)"
-            />
-            <rect
-              x="560"
-              y="180"
-              width="6"
-              height="100"
-              rx="3"
-              fill="#FF7300"
-            />
-            <text
-              x="584"
-              y="208"
-              fill="#20272F"
-              font-family="Inter"
-              font-weight="700"
-              font-size="15"
-            >
-              Identity Platform
-            </text>
-            <text
-              x="584"
-              y="228"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              Identities for humans, devices &amp; agents
-            </text>
-            <text
-              x="584"
-              y="248"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              Agent ID fine-grained identity for AI
-            </text>
-            <rect
-              x="584"
-              y="256"
-              width="62"
-              height="16"
-              rx="3"
-              fill="#FFF3E8"
-            />
-            <text
-              x="615"
-              y="268"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              OAuth2
-            </text>
-            <rect
-              x="652"
-              y="256"
-              width="62"
-              height="16"
-              rx="3"
-              fill="#FFF3E8"
-            />
-            <text
-              x="683"
-              y="268"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              OIDC
-            </text>
-            <rect
-              x="720"
-              y="256"
-              width="80"
-              height="16"
-              rx="3"
-              fill="#FFF3E8"
-            />
-            <text
-              x="760"
-              y="268"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              Zero Trust
-            </text>
+              <rect x="20" y="160" width="130" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <rect x="32" y="184" width="14" height="14" rx="2" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <rect x="50" y="184" width="14" height="14" rx="2" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="32" y="212" fill="#20272F" font-weight="600" font-size="11">Third-Party</text>
+              <text x="32" y="226" fill="#20272F" font-weight="600" font-size="11">Applications</text>
 
-            <!-- Integration Platform -->
-            <rect
-              x="40"
-              y="290"
-              width="500"
-              height="100"
-              rx="12"
-              fill="url(#rowg)"
-              stroke="#E5E8EC"
-              filter="url(#ds)"
-            />
-            <rect x="40" y="290" width="6" height="100" rx="3" fill="#FF7300" />
-            <text
-              x="64"
-              y="318"
-              fill="#20272F"
-              font-family="Inter"
-              font-weight="700"
-              font-size="15"
-            >
-              Integration Platform
-            </text>
-            <text
-              x="64"
-              y="338"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              Hub for agents to interact with existing systems
-            </text>
-            <text
-              x="64"
-              y="358"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              Connectors · workflows · event-driven
-            </text>
-            <rect x="64" y="366" width="80" height="16" rx="3" fill="#FFF3E8" />
-            <text
-              x="104"
-              y="378"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              Ballerina
-            </text>
+              <rect x="20" y="240" width="130" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <path d="M30 270h10 M30 274h6" stroke="#FF7300" stroke-width="1.6"/>
+              <circle cx="48" cy="272" r="6" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="32" y="296" fill="#20272F" font-weight="600" font-size="11">IoT Devices</text>
 
-            <!-- Engineering Platform -->
-            <rect
-              x="560"
-              y="290"
-              width="500"
-              height="100"
-              rx="12"
-              fill="url(#rowg)"
-              stroke="#E5E8EC"
-              filter="url(#ds)"
-            />
-            <rect
-              x="560"
-              y="290"
-              width="6"
-              height="100"
-              rx="3"
-              fill="#FF7300"
-            />
-            <text
-              x="584"
-              y="318"
-              fill="#20272F"
-              font-family="Inter"
-              font-weight="700"
-              font-size="15"
-            >
-              Engineering Platform
-            </text>
-            <text
-              x="584"
-              y="338"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              Rapid SDLC, scalable deployment, observability
-            </text>
-            <text
-              x="584"
-              y="358"
-              fill="#5A6573"
-              font-family="Inter"
-              font-size="11"
-            >
-              CI/CD · Kubernetes · Choreo
-            </text>
-            <rect
-              x="584"
-              y="366"
-              width="58"
-              height="16"
-              rx="3"
-              fill="#FFF3E8"
-            />
-            <text
-              x="613"
-              y="378"
-              text-anchor="middle"
-              fill="#FF7300"
-              font-family="Inter"
-              font-weight="600"
-              font-size="9"
-            >
-              Choreo
-            </text>
+              <rect x="20" y="320" width="130" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <rect x="34" y="332" width="20" height="32" rx="3" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="32" y="376" fill="#20272F" font-weight="600" font-size="11">Mobile Native</text>
 
-            <!-- Bottom: Open source -->
-            <rect
-              x="40"
-              y="410"
-              width="1020"
-              height="80"
-              rx="12"
-              fill="#20272F"
-              filter="url(#ds)"
-            />
-            <text
-              x="550"
-              y="438"
-              text-anchor="middle"
-              fill="#FFF"
-              font-family="Inter"
-              font-weight="700"
-              font-size="15"
-            >
-              Open Source Foundations
-            </text>
-            <text
-              x="550"
-              y="460"
-              text-anchor="middle"
-              fill="rgba(255,255,255,0.7)"
-              font-family="Inter"
-              font-size="12"
-            >
-              Read it · fork it · keep running it. An FDE makes you more
-              capable, not more dependent.
-            </text>
-            <line
-              x1="40"
-              y1="475"
-              x2="1060"
-              y2="475"
-              stroke="#FF7300"
-              stroke-width="2"
-            />
+              <rect x="20" y="400" width="130" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <rect x="34" y="412" width="20" height="32" rx="3" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <circle cx="44" cy="438" r="2" fill="#FF7300"/>
+              <text x="32" y="456" fill="#20272F" font-weight="600" font-size="11">Mobile Web</text>
+
+              <rect x="20" y="480" width="130" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="44" cy="510" r="11" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <path d="M33 510h22 M44 499c4 4 4 18 0 22 M44 499c-4 4-4 18 0 22" stroke="#FF7300" stroke-width="1.2" fill="none"/>
+              <text x="32" y="536" fill="#20272F" font-weight="600" font-size="11">Web Applications</text>
+            </g>
+
+            <!-- ===== LEFT GATEWAYS ===== -->
+            <g font-family="Inter">
+              <rect x="200" y="160" width="130" height="80" rx="14" fill="#FFFFFF" stroke="#FFE4CC" stroke-width="1.5" filter="url(#card-sh)"/>
+              <circle cx="265" cy="184" r="11" fill="#FFF3E8"/>
+              <path d="M260 184h10 M265 179v10" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="265" y="212" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">API Gateway</text>
+              <text x="265" y="228" text-anchor="middle" fill="#E86500" font-weight="700" font-size="12">Agent</text>
+
+              <rect x="200" y="280" width="130" height="80" rx="14" fill="#FFFFFF" stroke="#FFE4CC" stroke-width="1.5" filter="url(#card-sh)"/>
+              <circle cx="265" cy="304" r="11" fill="#FFF3E8"/>
+              <path d="M258 304a7 7 0 0114 0" stroke="#FF7300" stroke-width="1.6" fill="none"/>
+              <text x="265" y="332" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">AI Gateway</text>
+              <text x="265" y="348" text-anchor="middle" fill="#E86500" font-weight="700" font-size="12">MCP</text>
+
+              <rect x="200" y="400" width="130" height="80" rx="14" fill="#FFFFFF" stroke="#FFE4CC" stroke-width="1.5" filter="url(#card-sh)"/>
+              <circle cx="265" cy="424" r="11" fill="#FFF3E8"/>
+              <path d="M260 420l4 4 6-6" stroke="#FF7300" stroke-width="1.8" fill="none"/>
+              <text x="265" y="452" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">API Gateway</text>
+              <text x="265" y="468" text-anchor="middle" fill="#E86500" font-weight="700" font-size="12">Ingress</text>
+            </g>
+
+            <!-- ===== CENTER TOP CARDS ===== -->
+            <g font-family="Inter">
+              <rect x="400" y="80" width="160" height="70" rx="14" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <rect x="468" y="98" width="24" height="20" rx="2" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="480" y="138" text-anchor="middle" fill="#20272F" font-weight="600" font-size="12">API Marketplace</text>
+
+              <rect x="400" y="170" width="160" height="70" rx="14" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="480" cy="194" r="10" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <path d="M480 184v20 M470 194h20" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="480" y="228" text-anchor="middle" fill="#20272F" font-weight="600" font-size="12">MCP Hub</text>
+
+              <rect x="400" y="260" width="160" height="70" rx="14" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="480" cy="284" r="10" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <circle cx="480" cy="284" r="3" fill="#FF7300"/>
+              <text x="480" y="318" text-anchor="middle" fill="#20272F" font-weight="600" font-size="12">Agent Hub</text>
+            </g>
+
+            <!-- ===== ORANGE INTEGRATION PLATFORM ===== -->
+            <g font-family="Inter">
+              <rect x="590" y="80" width="320" height="320" rx="16" fill="url(#og-arch)" filter="url(#hard-sh)"/>
+              <text x="750" y="112" text-anchor="middle" fill="#FFFFFF" font-weight="700" font-size="14">WSO2</text>
+              <text x="750" y="130" text-anchor="middle" fill="#FFFFFF" font-weight="500" font-size="12" opacity="0.92">Integration Platform</text>
+
+              <rect x="610" y="148" width="280" height="36" rx="6" fill="rgba(255,255,255,0.18)"/>
+              <text x="624" y="171" fill="#FFFFFF" font-weight="600" font-size="12">APIs</text>
+              <rect x="848" y="156" width="34" height="20" rx="10" fill="#FFFFFF"/>
+              <text x="865" y="170" text-anchor="middle" fill="#E86500" font-weight="700" font-size="9">+AI</text>
+
+              <rect x="610" y="192" width="280" height="36" rx="6" fill="rgba(255,255,255,0.18)"/>
+              <text x="624" y="215" fill="#FFFFFF" font-weight="600" font-size="12">Integrations</text>
+              <rect x="848" y="200" width="34" height="20" rx="10" fill="#FFFFFF"/>
+              <text x="865" y="214" text-anchor="middle" fill="#E86500" font-weight="700" font-size="9">+AI</text>
+
+              <rect x="610" y="236" width="280" height="36" rx="6" fill="rgba(255,255,255,0.18)"/>
+              <text x="624" y="259" fill="#FFFFFF" font-weight="600" font-size="12">Workflows</text>
+              <rect x="848" y="244" width="34" height="20" rx="10" fill="#FFFFFF"/>
+              <text x="865" y="258" text-anchor="middle" fill="#E86500" font-weight="700" font-size="9">+AI</text>
+
+              <rect x="610" y="280" width="280" height="36" rx="6" fill="rgba(255,255,255,0.18)"/>
+              <text x="624" y="303" fill="#FFFFFF" font-weight="600" font-size="12">Services</text>
+              <rect x="848" y="288" width="34" height="20" rx="10" fill="#FFFFFF"/>
+              <text x="865" y="302" text-anchor="middle" fill="#E86500" font-weight="700" font-size="9">+AI</text>
+
+              <rect x="610" y="324" width="280" height="48" rx="6" fill="#FFFFFF"/>
+              <circle cx="630" cy="348" r="8" fill="none" stroke="#E86500" stroke-width="1.6"/>
+              <path d="M624 348h12 M630 342v12" stroke="#E86500" stroke-width="1.6"/>
+              <text x="750" y="354" text-anchor="middle" fill="#E86500" font-weight="700" font-size="13">AI Agents</text>
+            </g>
+
+            <!-- ===== KBs (Knowledge Bases) ===== -->
+            <g font-family="Inter">
+              <rect x="400" y="430" width="510" height="120" rx="12" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <rect x="420" y="446" width="20" height="16" rx="2" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="448" y="460" fill="#20272F" font-weight="700" font-size="13">KBs (Knowledge Bases)</text>
+              <rect x="430" y="480" width="450" height="56" rx="8" fill="#FBFAF7" stroke="#F2EEE8"/>
+              <text x="655" y="500" text-anchor="middle" fill="#5A6573" font-weight="600" font-size="11">Systems of Record</text>
+              <g fill="none" stroke="#FF7300" stroke-width="1.6">
+                <ellipse cx="555" cy="520" rx="14" ry="5"/>
+                <path d="M541 520v8c0 3 6 5 14 5s14-2 14-5v-8"/>
+              </g>
+              <g fill="none" stroke="#FF7300" stroke-width="1.6">
+                <ellipse cx="610" cy="520" rx="14" ry="5"/>
+                <path d="M596 520v8c0 3 6 5 14 5s14-2 14-5v-8"/>
+              </g>
+              <g fill="none" stroke="#FF7300" stroke-width="1.6">
+                <ellipse cx="665" cy="520" rx="14" ry="5"/>
+                <path d="M651 520v8c0 3 6 5 14 5s14-2 14-5v-8"/>
+              </g>
+              <g fill="none" stroke="#FF7300" stroke-width="1.6">
+                <ellipse cx="720" cy="520" rx="14" ry="5"/>
+                <path d="M706 520v8c0 3 6 5 14 5s14-2 14-5v-8"/>
+              </g>
+            </g>
+
+            <!-- ===== Agent Identity / IAM ===== -->
+            <g font-family="Inter">
+              <rect x="400" y="570" width="510" height="58" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <line x1="655" y1="582" x2="655" y2="616" stroke="#E5E8EC"/>
+              <circle cx="425" cy="599" r="9" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <circle cx="425" cy="596" r="3" fill="#FF7300"/>
+              <path d="M418 605c2-3 12-3 14 0" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="445" y="604" fill="#20272F" font-weight="700" font-size="12">Agent Identity</text>
+              <text x="780" y="604" text-anchor="middle" fill="#20272F" font-weight="700" font-size="13">IAM</text>
+            </g>
+
+            <!-- ===== Observability ===== -->
+            <g font-family="Inter">
+              <rect x="400" y="650" width="510" height="58" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="425" cy="679" r="9" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <path d="M425 670v9l6 4" stroke="#FF7300" stroke-width="1.6" fill="none"/>
+              <text x="445" y="684" fill="#20272F" font-weight="700" font-size="12">Observability</text>
+              <rect x="850" y="668" width="40" height="22" rx="11" fill="url(#og-arch)"/>
+              <text x="870" y="683" text-anchor="middle" fill="#FFFFFF" font-weight="700" font-size="9">+AI</text>
+            </g>
+
+            <!-- ===== Chief Officers Agents ===== -->
+            <g font-family="Inter">
+              <rect x="400" y="730" width="510" height="80" rx="12" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="450" cy="760" r="11" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <circle cx="450" cy="757" r="3" fill="#FF7300"/>
+              <path d="M442 768c3-4 13-4 16 0" stroke="#FF7300" stroke-width="1.6" fill="none"/>
+              <text x="478" y="765" fill="#20272F" font-weight="700" font-size="13">Chief Officers Agents</text>
+              <text x="655" y="790" text-anchor="middle" fill="#5A6573" font-size="10.5">Architecture / Engineering / Quality / Governance / …</text>
+            </g>
+
+            <!-- ===== Agent Manager ===== -->
+            <g>
+              <rect x="490" y="870" width="320" height="46" rx="23" fill="url(#og-arch)" filter="url(#hard-sh)"/>
+              <rect x="510" y="884" width="18" height="18" rx="3" fill="rgba(255,255,255,0.25)"/>
+              <path d="M515 893h8 M515 897h8" stroke="#FFFFFF" stroke-width="1.4"/>
+              <text x="650" y="899" text-anchor="middle" fill="#FFFFFF" font-family="Inter" font-weight="700" font-size="14">Agent Manager</text>
+            </g>
+
+            <!-- arrow from frame down to Agent Manager -->
+            <path d="M650 840 L650 868" stroke="#FF7300" stroke-width="2"/>
+            <polygon points="650,872 645,862 655,862" fill="#FF7300"/>
+
+            <!-- ===== RIGHT GATEWAYS ===== -->
+            <g font-family="Inter">
+              <rect x="970" y="280" width="130" height="80" rx="14" fill="#FFFFFF" stroke="#FFE4CC" stroke-width="1.5" filter="url(#card-sh)"/>
+              <circle cx="1035" cy="304" r="11" fill="#FFF3E8"/>
+              <path d="M1029 309c0-6 12-6 12 0" stroke="#FF7300" stroke-width="1.6" fill="none"/>
+              <text x="1035" y="332" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">AI Gateway</text>
+              <text x="1035" y="348" text-anchor="middle" fill="#E86500" font-weight="700" font-size="12">LLM</text>
+
+              <rect x="970" y="400" width="130" height="80" rx="14" fill="#FFFFFF" stroke="#FFE4CC" stroke-width="1.5" filter="url(#card-sh)"/>
+              <circle cx="1035" cy="424" r="11" fill="#FFF3E8"/>
+              <path d="M1030 422l4-4 4 4 -4 4z" fill="#FF7300"/>
+              <text x="1035" y="452" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">API Gateway</text>
+              <text x="1035" y="468" text-anchor="middle" fill="#E86500" font-weight="700" font-size="12">Egress</text>
+            </g>
+
+            <!-- ===== RIGHT COLUMN: external services ===== -->
+            <g font-family="Inter">
+              <rect x="1140" y="160" width="120" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="1162" cy="184" r="9" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <path d="M1158 187l3-3 3 2 4-4" stroke="#FF7300" stroke-width="1.6" fill="none"/>
+              <text x="1180" y="200" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">Gen-AI APIs</text>
+
+              <rect x="1140" y="240" width="120" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <rect x="1154" y="260" width="14" height="14" rx="2" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="1200" y="282" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">Third-Party APIs</text>
+
+              <rect x="1140" y="320" width="120" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <path d="M1156 348c0-4 4-7 8-7s8 3 8 7" stroke="#FF7300" stroke-width="1.6" fill="none"/>
+              <text x="1200" y="362" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">SaaS SORs</text>
+
+              <rect x="1140" y="400" width="120" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="1158" cy="424" r="6" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <circle cx="1170" cy="424" r="6" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="1200" y="442" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">Partner APIs</text>
+
+              <rect x="1140" y="540" width="120" height="64" rx="10" fill="#FFFFFF" filter="url(#card-sh)"/>
+              <circle cx="1162" cy="562" r="9" fill="none" stroke="#FF7300" stroke-width="1.6"/>
+              <path d="M1156 562h12 M1162 556v12" stroke="#FF7300" stroke-width="1.6"/>
+              <text x="1200" y="586" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">Third-Party</text>
+              <text x="1200" y="600" text-anchor="middle" fill="#20272F" font-weight="600" font-size="11">MCP Servers</text>
+            </g>
           </svg>
         </div>
       </div>
