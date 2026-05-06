@@ -1,0 +1,14 @@
+# Source materials (kept local, not published)
+*.docx
+*.mhtml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs / temp
+*.log
+node_modules/
