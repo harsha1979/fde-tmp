@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Stories | Agentic Outcomes Across 10 Industries — WSO2 FDE</title>
+<meta name="description" content="How WSO2 FDEs use IAM, Integration, API Gateway and Agent Manager on Open Choreo to deliver agentic outcomes across healthcare, finance, education, insurance, government, energy, manufacturing, retail, telecom and transportation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">W2</div>
+      <span>WSO2 <span class="logo-sub">Forward Deployed Engineering</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <nav><ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">What We Do</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="business-stories.html" class="active">Business Stories</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html" class="btn btn-primary" style="padding:10px 20px;">Talk to Us</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Home</a> · <span>Business Stories</span></div>
+    <span class="eyebrow">Industry outcomes</span>
+    <h1>Agentic outcomes across ten industries — built on the WSO2 stack.</h1>
+    <p>Healthcare, finance, education, insurance, government, energy, manufacturing, retail, telecommunications, transportation. Different industries, the same delivery model: an FDE in your team, the WSO2 Agent Fabric on Open Choreo, and a measurable outcome shipped in weeks.</p>
+  </div>
+</section>
+
+<!-- ===== STACK DIAGRAM ===== -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The stack underneath every story</span>
+      <h2>WSO2 Agent Fabric on Open Choreo.</h2>
+      <p>Four platforms — IAM, Integration, API Gateway and Agent Manager — running on Open Choreo's developer platform. Same stack across every industry; the patterns above it change.</p>
+    </div>
+
+    <div class="reveal">
+      <svg viewBox="0 0 1100 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:24px;border:1px solid #E5E8EC;">
+        <defs>
+          <linearGradient id="og-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient>
+          <linearGradient id="navy-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#20272F"/><stop offset="100%" stop-color="#2C3744"/></linearGradient>
+          <linearGradient id="row-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FAFBFC"/></linearGradient>
+          <filter id="ds-st" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/></filter>
+        </defs>
+
+        <!-- Top: Industry outcomes -->
+        <rect x="40" y="20" width="1020" height="70" rx="12" fill="url(#og-st)" filter="url(#ds-st)"/>
+        <text x="550" y="48" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="700" font-size="16">Industry Outcomes</text>
+        <text x="550" y="70" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Inter" font-size="12">Healthcare · Finance · Education · Insurance · Government · Energy · Manufacturing · Retail · Telco · Transport</text>
+
+        <!-- Agent Manager row -->
+        <rect x="40" y="110" width="1020" height="70" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="40" y="110" width="6" height="70" rx="3" fill="#FF7300"/>
+        <text x="64" y="138" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Agent Manager</text>
+        <text x="64" y="158" fill="#5A6573" font-family="Inter" font-size="12">Build, secure and govern agents · tool registry · multi-agent orchestration · evaluation</text>
+        <rect x="850" y="124" width="78" height="22" rx="4" fill="#FFF3E8"/><text x="889" y="139" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="10">MCP</text>
+        <rect x="935" y="124" width="78" height="22" rx="4" fill="#FFF3E8"/><text x="974" y="139" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="10">Tool Use</text>
+        <rect x="850" y="150" width="78" height="22" rx="4" fill="#FFF3E8"/><text x="889" y="165" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="10">Memory</text>
+        <rect x="935" y="150" width="78" height="22" rx="4" fill="#FFF3E8"/><text x="974" y="165" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="10">Guardrails</text>
+
+        <!-- API Gateway -->
+        <rect x="40" y="200" width="500" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="40" y="200" width="6" height="100" rx="3" fill="#FF7300"/>
+        <text x="64" y="228" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">API Gateway + AI Gateway</text>
+        <text x="64" y="248" fill="#5A6573" font-family="Inter" font-size="11">Expose APIs · MCPs to agents (ingress)</text>
+        <text x="64" y="266" fill="#5A6573" font-family="Inter" font-size="11">Govern LLMs · external APIs (egress)</text>
+        <rect x="64" y="276" width="60" height="18" rx="3" fill="#FFF3E8"/><text x="94" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">REST</text>
+        <rect x="130" y="276" width="62" height="18" rx="3" fill="#FFF3E8"/><text x="161" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">GraphQL</text>
+        <rect x="198" y="276" width="60" height="18" rx="3" fill="#FFF3E8"/><text x="228" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">Rate</text>
+        <rect x="264" y="276" width="60" height="18" rx="3" fill="#FFF3E8"/><text x="294" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">Audit</text>
+
+        <!-- IAM -->
+        <rect x="560" y="200" width="500" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="560" y="200" width="6" height="100" rx="3" fill="#FF7300"/>
+        <text x="584" y="228" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Identity & Access (IAM / CIAM)</text>
+        <text x="584" y="248" fill="#5A6573" font-family="Inter" font-size="11">Identities for humans, devices &amp; agents</text>
+        <text x="584" y="266" fill="#5A6573" font-family="Inter" font-size="11">Agent ID — fine-grained access for AI</text>
+        <rect x="584" y="276" width="62" height="18" rx="3" fill="#FFF3E8"/><text x="615" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">OAuth2</text>
+        <rect x="652" y="276" width="62" height="18" rx="3" fill="#FFF3E8"/><text x="683" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">OIDC</text>
+        <rect x="720" y="276" width="62" height="18" rx="3" fill="#FFF3E8"/><text x="751" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">SAML</text>
+        <rect x="788" y="276" width="80" height="18" rx="3" fill="#FFF3E8"/><text x="828" y="289" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">Zero Trust</text>
+
+        <!-- Integration -->
+        <rect x="40" y="320" width="1020" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="40" y="320" width="6" height="100" rx="3" fill="#FF7300"/>
+        <text x="64" y="348" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Integration Platform</text>
+        <text x="64" y="368" fill="#5A6573" font-family="Inter" font-size="11">Connect agents to existing systems · ESB · event-driven · workflow orchestration · pre-built connectors</text>
+        <text x="64" y="388" fill="#5A6573" font-family="Inter" font-size="11">Hub for tool calls — CRM, ERP, EHR, billing, HRIS, fraud, payment, telemetry, and more</text>
+        <rect x="64" y="396" width="80" height="18" rx="3" fill="#FFF3E8"/><text x="104" y="409" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">Ballerina</text>
+        <rect x="150" y="396" width="80" height="18" rx="3" fill="#FFF3E8"/><text x="190" y="409" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">Connectors</text>
+        <rect x="236" y="396" width="80" height="18" rx="3" fill="#FFF3E8"/><text x="276" y="409" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="600" font-size="9">Event Hub</text>
+
+        <!-- Open Choreo Foundation -->
+        <rect x="40" y="440" width="1020" height="120" rx="12" fill="url(#navy-st)" filter="url(#ds-st)"/>
+        <text x="550" y="478" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="800" font-size="20">Open Choreo</text>
+        <text x="550" y="500" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-family="Inter" font-size="12">Open-source internal developer platform — CI/CD · Kubernetes · observability · multi-cloud · environments</text>
+        <line x1="200" y1="520" x2="900" y2="520" stroke="#FF7300" stroke-width="2"/>
+        <text x="550" y="544" text-anchor="middle" fill="#FFB36B" font-family="Inter" font-weight="600" font-size="11" letter-spacing="1.5">FOUNDATION · OPEN SOURCE · CLOUD-NATIVE · YOURS TO RUN</text>
+
+        <!-- Down arrows -->
+        <path d="M 550 92 L 550 110" stroke="#FF7300" stroke-width="2"/>
+        <polygon points="550,114 545,104 555,104" fill="#FF7300"/>
+        <path d="M 550 182 L 550 200" stroke="#FF7300" stroke-width="2"/>
+        <polygon points="550,204 545,194 555,194" fill="#FF7300"/>
+        <path d="M 550 302 L 550 320" stroke="#FF7300" stroke-width="2"/>
+        <polygon points="550,324 545,314 555,314" fill="#FF7300"/>
+        <path d="M 550 422 L 550 440" stroke="#FF7300" stroke-width="2"/>
+        <polygon points="550,444 545,434 555,434" fill="#FF7300"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRY OVERVIEW GRID ===== -->
+<section class="section-soft">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ten industries · one playbook</span>
+      <h2>Pick your sector.</h2>
+      <p>Each industry below has the same shape: traditional pain → agentic approach on the WSO2 stack → outcome the FDE ships in weeks.</p>
+    </div>
+
+    <div class="grid-4 reveal" style="grid-template-columns:repeat(5,1fr);gap:18px;">
+      <a href="#healthcare" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20 M2 12h20"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Healthcare</strong>
+      </a>
+      <a href="#finance" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Finance</strong>
+      </a>
+      <a href="#education" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10L12 5 2 10l10 5 10-5z M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Education</strong>
+      </a>
+      <a href="#insurance" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Insurance</strong>
+      </a>
+      <a href="#government" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="21" x2="21" y2="21"/><path d="M3 10l9-7 9 7 M5 21V10 M19 21V10 M9 21v-6h6v6"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Government</strong>
+      </a>
+      <a href="#energy" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Energy</strong>
+      </a>
+      <a href="#manufacturing" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 20h20V8l-6 4V8l-6 4V4H2v16z"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Manufacturing</strong>
+      </a>
+      <a href="#retail" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z M3 6h18 M16 10a4 4 0 01-8 0"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Retail</strong>
+      </a>
+      <a href="#telecom" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.55a11 11 0 0114 0 M1.42 9a16 16 0 0121.16 0 M8.53 16.11a6 6 0 016.95 0 M12 20h0"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Telecom</strong>
+      </a>
+      <a href="#transport" class="card" style="text-decoration:none;padding:24px;text-align:center;">
+        <div class="icon" style="margin:0 auto 12px;width:48px;height:48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <strong style="color:var(--wso2-navy);font-size:0.95rem;">Transport</strong>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HEALTHCARE ===== -->
+<section id="healthcare">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Healthcare</span>
+        <h2>Clinicians spend hours in screens. Agents give them their time back.</h2>
+        <p><strong>Traditional:</strong> Care teams toggle between EHR, claims, lab and prior-auth systems. Every patient encounter is wrapped in 30–60 minutes of documentation, coding and back-office friction. New AI tools sit on top of more screens.</p>
+        <p><strong>Agentic with WSO2:</strong> Clinical copilots that retrieve from the EHR, draft notes, file prior-auths, and answer benefit questions — invoked in the same flow the clinician already uses. Identity-governed access ensures every PHI lookup is audited at the agent level.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · CIAM for patients</span>
+          <span class="pill accent">Integration · HL7/FHIR/EHR</span>
+          <span class="pill accent">API Gateway · audit + rate</span>
+          <span class="pill accent">Agent Manager · clinical RAG</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> documentation time cut by 50–70%, faster prior-auths, fewer denied claims</li>
+          <li><strong>FDE delivery:</strong> first clinical agent live in 6–10 weeks with HIPAA-aligned guardrails</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-h" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">CLINICAL COPILOT FLOW</text>
+          <rect x="20" y="50" width="120" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="80" y="74" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="12">Clinician</text><text x="80" y="90" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">in EHR</text>
+          <rect x="180" y="50" width="120" height="50" rx="8" fill="url(#og-h)"/><text x="240" y="74" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="12">Clinical Agent</text><text x="240" y="90" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">RAG · tool use</text>
+          <rect x="340" y="50" width="120" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="400" y="74" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="12">EHR · Labs</text><text x="400" y="90" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">FHIR APIs</text>
+          <path d="M 140 75 L 178 75" stroke="#FF7300" stroke-width="2"/><polygon points="184,75 174,71 174,79" fill="#FF7300"/>
+          <path d="M 300 75 L 338 75" stroke="#FF7300" stroke-width="2"/><polygon points="344,75 334,71 334,79" fill="#FF7300"/>
+
+          <text x="20" y="140" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">GUARDED BY</text>
+          <rect x="20" y="155" width="135" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="87" y="178" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Agent ID + IAM</text>
+          <rect x="170" y="155" width="135" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="237" y="178" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">PHI Audit Log</text>
+          <rect x="320" y="155" width="135" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="387" y="178" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Prompt Guardrails</text>
+
+          <text x="20" y="230" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">VALUE</text>
+          <rect x="20" y="245" width="440" height="100" rx="10" fill="#20272F"/>
+          <text x="40" y="275" fill="#FFF" font-family="Inter" font-weight="800" font-size="22">~50% less</text>
+          <text x="40" y="295" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">documentation time per encounter</text>
+          <line x1="200" y1="260" x2="200" y2="335" stroke="rgba(255,255,255,0.15)"/>
+          <text x="220" y="275" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="22">10 wks</text>
+          <text x="220" y="295" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">FDE delivery to first agent</text>
+          <text x="220" y="320" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="10">vs 9–18 months traditional</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINANCE ===== -->
+<section id="finance" class="section-soft">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal" style="order:2;">
+        <span class="eyebrow">Banking & Financial Services</span>
+        <h2>Compliance, fraud and customer service — running as agents with full audit.</h2>
+        <p><strong>Traditional:</strong> Branch staff and call centres run KYC, AML and onboarding through a thicket of swivel-chair processes. Fraud signals arrive faster than analysts can triage. Every chatbot raises a compliance review.</p>
+        <p><strong>Agentic with WSO2:</strong> Customer-facing CIAM-secured copilots, fraud triage agents that pull from transactions / device / identity in parallel, and KYC agents that gather, classify and route documents. Every agent decision is audited at the API gateway.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · CIAM + step-up auth</span>
+          <span class="pill accent">Integration · core banking</span>
+          <span class="pill accent">API Gateway · audit + rate</span>
+          <span class="pill accent">Agent Manager · fraud + KYC</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> KYC onboarding from days to minutes, fraud alerts triaged 10× faster, regulator-ready audit trail</li>
+          <li><strong>FDE delivery:</strong> first compliant agent in production in 8–12 weeks</li>
+        </ul>
+      </div>
+      <div class="reveal" style="order:1;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">FRAUD TRIAGE — PARALLEL TOOLS</text>
+
+          <rect x="180" y="50" width="120" height="50" rx="8" fill="url(#og-f)"/><text x="240" y="74" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="12">Fraud Agent</text><text x="240" y="90" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">scoring · routing</text>
+
+          <rect x="20" y="140" width="120" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="80" y="165" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Tx History</text>
+          <rect x="170" y="140" width="120" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="230" y="165" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Device Signal</text>
+          <rect x="320" y="140" width="120" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="380" y="165" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Identity Graph</text>
+
+          <path d="M 220 100 L 80 140" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 240 100 L 230 140" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 260 100 L 380 140" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+
+          <text x="20" y="215" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">DECISION + AUDIT</text>
+          <rect x="20" y="230" width="200" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="120" y="253" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Block · Step-up · Allow</text>
+          <rect x="240" y="230" width="220" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="350" y="253" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Logged at Gateway</text>
+
+          <rect x="20" y="285" width="440" height="60" rx="10" fill="#20272F"/>
+          <text x="40" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">10×</text>
+          <text x="40" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">faster fraud triage</text>
+          <text x="220" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">Days → mins</text>
+          <text x="220" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">KYC onboarding</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Education</span>
+        <h2>Personalised tutoring at scale — without losing the institution's voice.</h2>
+        <p><strong>Traditional:</strong> A handful of advisors and tutors per thousand students. Students wait days for answers on registration, financial aid or course content. Generic AI tools don't know your curriculum or your policies.</p>
+        <p><strong>Agentic with WSO2:</strong> Curriculum-aware tutoring agents grounded in your course material, advising agents wired into the SIS for registration and aid status, and faculty copilots for grading and content authoring — all behind student SSO.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · student SSO</span>
+          <span class="pill accent">Integration · SIS / LMS</span>
+          <span class="pill accent">API Gateway · per-tenant rate</span>
+          <span class="pill accent">Agent Manager · tutoring RAG</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> 24/7 student support, advisor caseload focused on high-touch cases, faculty hours back on teaching</li>
+          <li><strong>FDE delivery:</strong> first agent across one faculty in 6–8 weeks, replicable to others</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-e" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">CAPACITY MULTIPLIER</text>
+
+          <rect x="20" y="55" width="200" height="120" rx="10" fill="#FBFAF7" stroke="#E5E8EC"/>
+          <text x="40" y="80" fill="#5A6573" font-family="Inter" font-weight="600" font-size="11">TRADITIONAL</text>
+          <text x="40" y="115" fill="#20272F" font-family="Inter" font-weight="800" font-size="32">1 : 800</text>
+          <text x="40" y="135" fill="#5A6573" font-family="Inter" font-size="11">advisor : students</text>
+          <text x="40" y="158" fill="#9BA4B0" font-family="Inter" font-size="10">queue grows during peak weeks</text>
+
+          <rect x="240" y="55" width="220" height="120" rx="10" fill="url(#og-e)"/>
+          <text x="260" y="80" fill="rgba(255,255,255,0.85)" font-family="Inter" font-weight="600" font-size="11">WITH AGENTS</text>
+          <text x="260" y="115" fill="#FFF" font-family="Inter" font-weight="800" font-size="32">24/7</text>
+          <text x="260" y="135" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="11">tutoring + advising</text>
+          <text x="260" y="158" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="10">advisors focus on edge cases</text>
+
+          <text x="20" y="210" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">AGENT TYPES</text>
+          <rect x="20" y="225" width="135" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="87" y="248" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Tutoring (RAG)</text>
+          <rect x="170" y="225" width="135" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="237" y="248" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Advising</text>
+          <rect x="320" y="225" width="135" height="38" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="387" y="248" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Faculty Copilot</text>
+
+          <rect x="20" y="285" width="440" height="60" rx="10" fill="#20272F"/>
+          <text x="40" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">8 wks</text>
+          <text x="40" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">first faculty live</text>
+          <text x="220" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">Replicable</text>
+          <text x="220" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">across departments</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSURANCE ===== -->
+<section id="insurance" class="section-soft">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal" style="order:2;">
+        <span class="eyebrow">Insurance</span>
+        <h2>Claims that close themselves — with humans where they matter.</h2>
+        <p><strong>Traditional:</strong> Claims arrive in PDFs, photos and forms. Adjusters spend most of their time gathering data; underwriters drown in document intake. Customers wait weeks. Fraud reviews are sample-based.</p>
+        <p><strong>Agentic with WSO2:</strong> Intake agents that classify and extract claim documents, assessment agents that pull policy + history + telematics in parallel, and underwriting copilots that draft decisions for adjuster review. Humans stay in the loop on every payout.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · adjuster + customer</span>
+          <span class="pill accent">Integration · policy / claims systems</span>
+          <span class="pill accent">API Gateway · third-party data</span>
+          <span class="pill accent">Agent Manager · doc + assess</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> straight-through processing for simple claims, adjuster time on complex cases, fraud screening on 100% of claims</li>
+          <li><strong>FDE delivery:</strong> first claim type automated end-to-end in 10–12 weeks</li>
+        </ul>
+      </div>
+      <div class="reveal" style="order:1;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-i" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">CLAIMS PIPELINE</text>
+
+          <rect x="20" y="55" width="100" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="70" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Claim filed</text><text x="70" y="93" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">PDF · photos</text>
+          <rect x="140" y="55" width="100" height="50" rx="8" fill="url(#og-i)"/><text x="190" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">Intake Agent</text><text x="190" y="93" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">extract · classify</text>
+          <rect x="260" y="55" width="100" height="50" rx="8" fill="url(#og-i)"/><text x="310" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">Assess Agent</text><text x="310" y="93" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">policy · history</text>
+          <rect x="380" y="55" width="80" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="420" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Adjuster</text><text x="420" y="93" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">review</text>
+
+          <path d="M 120 80 L 138 80" stroke="#FF7300" stroke-width="2"/><polygon points="144,80 134,76 134,84" fill="#FF7300"/>
+          <path d="M 240 80 L 258 80" stroke="#FF7300" stroke-width="2"/><polygon points="264,80 254,76 254,84" fill="#FF7300"/>
+          <path d="M 360 80 L 378 80" stroke="#FF7300" stroke-width="2"/><polygon points="384,80 374,76 374,84" fill="#FF7300"/>
+
+          <text x="20" y="150" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">FRAUD SCREENING — 100% COVERAGE</text>
+          <rect x="20" y="165" width="440" height="40" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/>
+          <text x="240" y="190" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="12">Fraud Agent runs on every claim · flags exceptions</text>
+
+          <rect x="20" y="225" width="440" height="120" rx="10" fill="#20272F"/>
+          <text x="40" y="252" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">CYCLE TIME</text>
+          <text x="40" y="285" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="14" text-decoration="line-through">2 weeks</text>
+          <text x="40" y="315" fill="#FF7300" font-family="Inter" font-weight="800" font-size="28">2 days</text>
+
+          <text x="240" y="252" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">FRAUD COVERAGE</text>
+          <text x="240" y="285" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="14" text-decoration="line-through">~5% sampled</text>
+          <text x="240" y="315" fill="#FF7300" font-family="Inter" font-weight="800" font-size="28">100%</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GOVERNMENT ===== -->
+<section id="government">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Government & Public Agencies</span>
+        <h2>Citizen services that don't require knowing the org chart.</h2>
+        <p><strong>Traditional:</strong> Citizens bounce between portals to renew licences, apply for benefits or check case status. Frontline staff spend most of their time looking things up across departmental systems. Procurement and FOIA workloads pile up.</p>
+        <p><strong>Agentic with WSO2:</strong> Citizen-facing agents that traverse multiple agencies' APIs through a unified gateway, case-management copilots for caseworkers, and document agents for FOIA and procurement. Identity-governed access with full residency and audit controls.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · gov-grade SSO + MFA</span>
+          <span class="pill accent">Integration · cross-agency APIs</span>
+          <span class="pill accent">API Gateway · sovereignty + audit</span>
+          <span class="pill accent">Agent Manager · case + doc</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> citizen wait times down, caseworker capacity up, transparent audit for every agent action</li>
+          <li><strong>FDE delivery:</strong> first citizen-facing service in 10–14 weeks, on sovereign infrastructure if required</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">ONE INTERFACE · MANY AGENCIES</text>
+
+          <circle cx="240" cy="155" r="58" fill="url(#og-g)"/>
+          <text x="240" y="150" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="700" font-size="14">Citizen Agent</text>
+          <text x="240" y="170" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">via WSO2 Gateway</text>
+
+          <rect x="20" y="60" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="70" y="84" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">DMV</text>
+          <rect x="360" y="60" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="410" y="84" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Health</text>
+          <rect x="20" y="210" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="70" y="234" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Tax</text>
+          <rect x="360" y="210" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="410" y="234" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Benefits</text>
+
+          <path d="M 120 80 L 188 130" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 360 80 L 292 130" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 120 230 L 188 180" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 360 230 L 292 180" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+
+          <rect x="20" y="285" width="440" height="60" rx="10" fill="#20272F"/>
+          <text x="40" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">Sovereign</text>
+          <text x="40" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">deploy on national cloud</text>
+          <text x="240" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">Audited</text>
+          <text x="240" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">every agent action logged</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENERGY ===== -->
+<section id="energy" class="section-soft">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal" style="order:2;">
+        <span class="eyebrow">Energy & Utilities</span>
+        <h2>From asset alarms to autonomous response.</h2>
+        <p><strong>Traditional:</strong> Asset failures generate floods of alarms across SCADA, DMS and CMMS. Engineers chase root cause across systems. Customer outages are reported by customers, not the grid.</p>
+        <p><strong>Agentic with WSO2:</strong> Operations agents that correlate signals across asset, weather and customer telemetry, dispatch agents that route the right crew with the right parts, and customer agents that handle outage reports and ETAs — wired into your existing OT/IT systems.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · workforce + customer</span>
+          <span class="pill accent">Integration · SCADA / CMMS / DMS</span>
+          <span class="pill accent">API Gateway · IoT telemetry</span>
+          <span class="pill accent">Agent Manager · ops + dispatch</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> faster MTTR, fewer truck rolls, customer-facing transparency on outages</li>
+          <li><strong>FDE delivery:</strong> first ops copilot in 8–12 weeks, integrated with existing SCADA/CMMS</li>
+        </ul>
+      </div>
+      <div class="reveal" style="order:1;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-en" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">ALARM → ACTION</text>
+
+          <rect x="20" y="55" width="120" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="80" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">SCADA Alarm</text>
+          <rect x="170" y="55" width="120" height="40" rx="6" fill="url(#og-en)"/><text x="230" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">Ops Agent</text>
+          <rect x="320" y="55" width="140" height="40" rx="6" fill="url(#og-en)"/><text x="390" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">Dispatch Agent</text>
+          <path d="M 140 75 L 168 75" stroke="#FF7300" stroke-width="2"/><polygon points="174,75 164,71 164,79" fill="#FF7300"/>
+          <path d="M 290 75 L 318 75" stroke="#FF7300" stroke-width="2"/><polygon points="324,75 314,71 314,79" fill="#FF7300"/>
+
+          <text x="20" y="135" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">SIGNALS CORRELATED</text>
+          <rect x="20" y="150" width="105" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="72" y="171" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Asset</text>
+          <rect x="135" y="150" width="105" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="187" y="171" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Weather</text>
+          <rect x="250" y="150" width="105" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="302" y="171" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Customer</text>
+          <rect x="365" y="150" width="95" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="412" y="171" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">CMMS</text>
+
+          <rect x="20" y="210" width="440" height="135" rx="10" fill="#20272F"/>
+          <text x="40" y="240" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">MTTR</text>
+          <text x="40" y="278" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">−40%</text>
+          <text x="40" y="298" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">faster restoration</text>
+          <text x="240" y="240" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">TRUCK ROLLS</text>
+          <text x="240" y="278" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">−25%</text>
+          <text x="240" y="298" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">right crew · right parts</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MANUFACTURING ===== -->
+<section id="manufacturing">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Manufacturing</span>
+        <h2>Plant-floor copilots that close the gap between ERP, MES and the line.</h2>
+        <p><strong>Traditional:</strong> Quality, maintenance and supply data live in different systems. Operators read paper SOPs. Engineers debug downtime by walking the floor and pulling reports.</p>
+        <p><strong>Agentic with WSO2:</strong> Maintenance copilots that diagnose downtime from MES + sensor data, supply agents that re-plan when shipments slip, and quality agents that flag drift from inspection imagery — all reading from your ERP, MES, PLM and sensor stack through one integration layer.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · operator + engineer</span>
+          <span class="pill accent">Integration · ERP / MES / PLM</span>
+          <span class="pill accent">API Gateway · sensor telemetry</span>
+          <span class="pill accent">Agent Manager · maint + supply</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> downtime reduced, supply replanning in hours not days, quality issues caught upstream</li>
+          <li><strong>FDE delivery:</strong> first plant copilot live on one production line in 8–10 weeks</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-m" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">PLANT-FLOOR COPILOT</text>
+
+          <circle cx="240" cy="155" r="55" fill="url(#og-m)"/>
+          <text x="240" y="152" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="700" font-size="13">Maintenance</text>
+          <text x="240" y="170" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="700" font-size="13">Copilot</text>
+
+          <rect x="20" y="55" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="70" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">ERP</text>
+          <rect x="360" y="55" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="410" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">MES</text>
+          <rect x="20" y="220" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="70" y="244" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">PLM</text>
+          <rect x="360" y="220" width="100" height="40" rx="6" fill="#FFF" stroke="#E5E8EC"/><text x="410" y="244" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Sensors</text>
+
+          <path d="M 120 75 L 195 130" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 360 75 L 285 130" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 120 240 L 195 180" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 360 240 L 285 180" stroke="#FF7300" stroke-width="2" stroke-dasharray="3 3"/>
+
+          <rect x="20" y="285" width="440" height="60" rx="10" fill="#20272F"/>
+          <text x="40" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">−30%</text>
+          <text x="40" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">unplanned downtime</text>
+          <text x="220" y="312" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="20">10 wks</text>
+          <text x="220" y="330" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">first line live</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RETAIL ===== -->
+<section id="retail" class="section-soft">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal" style="order:2;">
+        <span class="eyebrow">Retail & E-commerce</span>
+        <h2>Personalisation that knows your inventory, your loyalty, and your store.</h2>
+        <p><strong>Traditional:</strong> Recommendation engines that don't know what's actually in stock at the customer's nearest store. Customer service teams handling repeat order/return questions. Merchandisers manually re-pricing.</p>
+        <p><strong>Agentic with WSO2:</strong> Shopping agents that read inventory + loyalty + price in real-time, customer-service agents that handle order status and returns end-to-end, and merchandising copilots that simulate price/promo decisions — all behind CIAM-secured customer identity.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · CIAM + loyalty</span>
+          <span class="pill accent">Integration · OMS / WMS / POS</span>
+          <span class="pill accent">API Gateway · partner / marketplace</span>
+          <span class="pill accent">Agent Manager · shop + service</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> higher conversion, returns deflected by self-service agents, merchandiser hours back on strategy</li>
+          <li><strong>FDE delivery:</strong> first agent live in 6–8 weeks across web + app + store associate tooling</li>
+        </ul>
+      </div>
+      <div class="reveal" style="order:1;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-r" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">UNIFIED SHOPPING AGENT</text>
+
+          <rect x="20" y="55" width="100" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="70" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Customer</text><text x="70" y="93" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">web · app · store</text>
+          <rect x="180" y="55" width="120" height="50" rx="8" fill="url(#og-r)"/><text x="240" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">Shopping Agent</text><text x="240" y="93" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">CIAM-secured</text>
+          <path d="M 120 80 L 178 80" stroke="#FF7300" stroke-width="2"/><polygon points="184,80 174,76 174,84" fill="#FF7300"/>
+
+          <text x="20" y="145" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">REAL-TIME TOOL CALLS</text>
+          <rect x="20" y="160" width="100" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="70" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Inventory</text>
+          <rect x="130" y="160" width="100" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="180" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Loyalty</text>
+          <rect x="240" y="160" width="100" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="290" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Pricing</text>
+          <rect x="350" y="160" width="110" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="405" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Store Avail.</text>
+
+          <rect x="20" y="220" width="440" height="125" rx="10" fill="#20272F"/>
+          <text x="40" y="252" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">CONVERSION</text>
+          <text x="40" y="290" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">+18%</text>
+          <text x="40" y="312" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">on agent-led journeys</text>
+          <text x="240" y="252" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">DEFLECTION</text>
+          <text x="240" y="290" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">60%</text>
+          <text x="240" y="312" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">of returns/order self-service</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TELECOM ===== -->
+<section id="telecom">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">Telecommunications</span>
+        <h2>Customer churn falls when the answer is one agent away.</h2>
+        <p><strong>Traditional:</strong> Customers hold for billing or coverage questions. Network engineers triage thousands of alarms daily. Field crews carry stale work orders. Each new BSS/OSS query is an integration project.</p>
+        <p><strong>Agentic with WSO2:</strong> CIAM-secured customer-care agents that resolve billing, plan and coverage end-to-end, NOC copilots that correlate alarms across vendors, and field agents that route work orders dynamically — on top of your existing BSS/OSS through the integration layer.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · CIAM + identity verification</span>
+          <span class="pill accent">Integration · BSS / OSS / billing</span>
+          <span class="pill accent">API Gateway · partner APIs</span>
+          <span class="pill accent">Agent Manager · care + NOC</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> hold times collapse, NOC noise reduced, churn-prone customers proactively engaged</li>
+          <li><strong>FDE delivery:</strong> first care agent in 6–10 weeks, on existing BSS without rip-and-replace</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-t" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">CARE FLOW — END TO END</text>
+
+          <rect x="20" y="55" width="100" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="70" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Customer</text><text x="70" y="93" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">app · IVR · web</text>
+          <rect x="180" y="55" width="120" height="50" rx="8" fill="url(#og-t)"/><text x="240" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">Care Agent</text>
+          <rect x="360" y="55" width="100" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="410" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Resolved</text>
+          <path d="M 120 80 L 178 80" stroke="#FF7300" stroke-width="2"/><polygon points="184,80 174,76 174,84" fill="#FF7300"/>
+          <path d="M 300 80 L 358 80" stroke="#FF7300" stroke-width="2"/><polygon points="364,80 354,76 354,84" fill="#FF7300"/>
+
+          <text x="20" y="140" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">BSS/OSS TOOLS</text>
+          <rect x="20" y="155" width="105" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="72" y="176" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Billing</text>
+          <rect x="135" y="155" width="105" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="187" y="176" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">CRM</text>
+          <rect x="250" y="155" width="105" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="302" y="176" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Coverage</text>
+          <rect x="365" y="155" width="95" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="412" y="176" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Plans</text>
+
+          <rect x="20" y="210" width="440" height="135" rx="10" fill="#20272F"/>
+          <text x="40" y="240" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">HOLD TIMES</text>
+          <text x="40" y="280" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">−70%</text>
+          <text x="40" y="300" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">resolved in agent</text>
+          <text x="240" y="240" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">CHURN SIGNAL</text>
+          <text x="240" y="280" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">Proactive</text>
+          <text x="240" y="300" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">at-risk identified earlier</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSPORT ===== -->
+<section id="transport" class="section-soft">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal" style="order:2;">
+        <span class="eyebrow">Transportation & Logistics</span>
+        <h2>Logistics that re-plan themselves at the speed of the world.</h2>
+        <p><strong>Traditional:</strong> A weather event, port delay or fuel spike triggers manual re-planning across a chain of dispatchers, brokers and customer-service teams. Customers chase ETAs.</p>
+        <p><strong>Agentic with WSO2:</strong> Dispatch agents that re-plan routes when conditions change, customer-experience agents that proactively notify shippers, and pricing agents that recalculate quotes against live capacity — all on top of your existing TMS/WMS/fleet stack.</p>
+        <div class="pill-row">
+          <span class="pill accent">IAM · driver + customer + partner</span>
+          <span class="pill accent">Integration · TMS / WMS / fleet</span>
+          <span class="pill accent">API Gateway · partners + marketplace</span>
+          <span class="pill accent">Agent Manager · dispatch + CX</span>
+        </div>
+        <ul class="check-list">
+          <li><strong>Outcome:</strong> on-time-in-full up, customer "where is it?" calls down, dispatcher capacity multiplied</li>
+          <li><strong>FDE delivery:</strong> first re-planning agent live in one lane in 8–10 weeks</li>
+        </ul>
+      </div>
+      <div class="reveal" style="order:1;">
+        <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:16px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-tr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">DYNAMIC RE-PLANNING</text>
+
+          <rect x="20" y="55" width="120" height="50" rx="8" fill="#FFF" stroke="#E5E8EC"/><text x="80" y="78" text-anchor="middle" fill="#20272F" font-family="Inter" font-weight="600" font-size="11">Disruption</text><text x="80" y="93" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">weather · port · fuel</text>
+          <rect x="180" y="55" width="120" height="50" rx="8" fill="url(#og-tr)"/><text x="240" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">Dispatch Agent</text><text x="240" y="93" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">re-plan · re-route</text>
+          <rect x="340" y="55" width="120" height="50" rx="8" fill="url(#og-tr)"/><text x="400" y="78" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="600" font-size="11">CX Agent</text><text x="400" y="93" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="Inter" font-size="10">notify · ETA</text>
+          <path d="M 140 80 L 178 80" stroke="#FF7300" stroke-width="2"/><polygon points="184,80 174,76 174,84" fill="#FF7300"/>
+          <path d="M 300 80 L 338 80" stroke="#FF7300" stroke-width="2"/><polygon points="344,80 334,76 334,84" fill="#FF7300"/>
+
+          <text x="20" y="145" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">SYSTEM REACH</text>
+          <rect x="20" y="160" width="100" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="70" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">TMS</text>
+          <rect x="130" y="160" width="100" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="180" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">WMS</text>
+          <rect x="240" y="160" width="100" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="290" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Telematics</text>
+          <rect x="350" y="160" width="110" height="34" rx="6" fill="#FFF3E8" stroke="rgba(255,115,0,0.2)"/><text x="405" y="181" text-anchor="middle" fill="#E86500" font-family="Inter" font-weight="600" font-size="11">Marketplace</text>
+
+          <rect x="20" y="220" width="440" height="125" rx="10" fill="#20272F"/>
+          <text x="40" y="252" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">OTIF</text>
+          <text x="40" y="290" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">+12%</text>
+          <text x="40" y="312" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">on-time-in-full lift</text>
+          <text x="240" y="252" fill="rgba(255,255,255,0.6)" font-family="Inter" font-size="11" letter-spacing="1">"WHERE IS IT?"</text>
+          <text x="240" y="290" fill="#FFB36B" font-family="Inter" font-weight="800" font-size="32">−50%</text>
+          <text x="240" y="312" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="11">customer status calls</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRADITIONAL VS AGENTIC ===== -->
+<section class="section-dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">Why agentic wins</span>
+      <h2>The same business problems — moved on a different curve.</h2>
+      <p>Across all ten industries, the value of an FDE-led agentic build comes from the same shift: from human-shaped work to agent-shaped work, with the WSO2 Agent Fabric as the connective tissue.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card reveal">
+        <span class="eyebrow" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);">Traditional approach</span>
+        <h3 style="margin-top:14px;">Human-shaped work</h3>
+        <ul class="check-list" style="margin-top:14px;">
+          <li>Months-long SOWs scoped to features, not outcomes</li>
+          <li>Custom integrations rebuilt for every project</li>
+          <li>AI bolted on top of existing screens — more clicks, not fewer</li>
+          <li>Compliance reviewed as an afterthought, blocking go-live</li>
+          <li>Vendor lock and rebuild risk at every renewal</li>
+        </ul>
+      </div>
+      <div class="card reveal" style="border-color:#FF7300;">
+        <span class="eyebrow">Agentic with WSO2 + FDE</span>
+        <h3 style="margin-top:14px;">Agent-shaped work</h3>
+        <ul class="check-list" style="margin-top:14px;">
+          <li>Outcome-led OKRs, embedded engineer, weeks-not-months delivery</li>
+          <li>One Agent Fabric — IAM, Integration, API Gateway, Agent Manager — reused per industry</li>
+          <li>Agents do the work; humans handle exceptions and judgement</li>
+          <li>Identity, audit, guardrails wired in at the platform layer from day one</li>
+          <li>Open source on Open Choreo — yours to run forever</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FDE DELIVERY SPEED ===== -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">FDE delivery speed</span>
+      <h2>Why we ship in weeks where others ship in quarters.</h2>
+      <p>Three reasons we collapse the timeline — and they hold across every industry above.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card pillar reveal">
+        <span class="num">1</span>
+        <h3>Stack already integrated</h3>
+        <p>IAM, Integration, API Gateway and Agent Manager are designed to work together on Open Choreo. We don't burn weeks wiring foundation pieces — that work is already done.</p>
+      </div>
+      <div class="card pillar reveal">
+        <span class="num">2</span>
+        <h3>Industry patterns reused</h3>
+        <p>Each industry has a reference architecture and reusable accelerators from prior FDE engagements. We arrive with a pattern, not a blank screen.</p>
+      </div>
+      <div class="card pillar reveal">
+        <span class="num">3</span>
+        <h3>Embedded delivery</h3>
+        <p>An FDE in your standups, writing code with your engineers, removes the vendor-customer back-and-forth that adds months to traditional SOWs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Which industry story is yours?</h2>
+        <p>Tell us the outcome you want — we'll come back with the agentic shape of the solution and a delivery plan in weeks.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Start a conversation →</a>
+        <a href="approach.html" class="btn btn-secondary">See our methodology</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:white;margin-bottom:18px;">
+          <div class="logo-mark">W2</div>
+          <span>WSO2 <span class="logo-sub" style="color:rgba(255,255,255,0.6);">Forward Deployed Engineering</span></span>
+        </div>
+        <p style="color:rgba(255,255,255,0.6);max-width:380px;">Senior engineers, embedded in your team, delivering your agentic enterprise outcomes.</p>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <ul><li><a href="services.html">What We Do</a></li><li><a href="approach.html">Our Approach</a></li><li><a href="business-stories.html">Business Stories</a></li></ul>
+      </div>
+      <div>
+        <h4>Team</h4>
+        <ul><li><a href="careers.html">Career Path</a></li><li><a href="careers.html#roles">Open Roles</a></li></ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul><li><a href="contact.html">Talk to Us</a></li><li><a href="https://wso2.com" target="_blank" rel="noopener">wso2.com ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 WSO2 LLC. Forward Deployed Engineering.</span>
+      <span>Outcome-led · Embedded · Open source.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
