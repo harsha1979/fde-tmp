@@ -413,16 +413,26 @@
 
       /* ── Challenge category cards ───────────────────────── */
       .card-list {
-        list-style: none; padding: 0; margin: 10px 0 0;
-        display: flex; flex-direction: column; gap: 8px;
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
       }
       .card-list li {
-        font-size: 0.875rem; color: rgba(229,232,236,0.75);
-        padding-left: 16px; position: relative; line-height: 1.45;
+        font-size: 0.875rem;
+        color: rgba(229, 232, 236, 0.75);
+        padding-left: 16px;
+        position: relative;
+        line-height: 1.45;
       }
       .card-list li::before {
-        content: "→"; position: absolute; left: 0;
-        color: var(--wso2-orange); font-weight: 700;
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--wso2-orange);
+        font-weight: 700;
       }
     </style>
   </head>
@@ -1204,91 +1214,174 @@
     <section class="section-dark">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">Where FDEs engage</span>
-          <h2>Six challenge areas. One team that resolves them.</h2>
-          <p>These are the recurring patterns FDEs are brought in to fix — across modernisation, integration, identity, and platform engineering.</p>
+          <h2>FDE resolves them.</h2>
+          <p>
+            These are the recurring patterns FDEs are brought in to fix across
+            modernisation, integration, identity, and platform engineering.
+          </p>
         </div>
 
         <div class="grid-3 reveal">
-
           <div class="card pillar">
             <span class="num">1</span>
-            <div class="icon" style="margin-bottom:16px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="5" rx="2"/><rect x="2" y="9" width="20" height="5" rx="2"/><rect x="2" y="16" width="20" height="5" rx="2"/><circle cx="6" cy="4.5" r="1" fill="currentColor"/><circle cx="6" cy="11.5" r="1" fill="currentColor"/><circle cx="6" cy="18.5" r="1" fill="currentColor"/></svg>
+            <div class="icon" style="margin-bottom: 16px">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="5" rx="2" />
+                <rect x="2" y="9" width="20" height="5" rx="2" />
+                <rect x="2" y="16" width="20" height="5" rx="2" />
+                <circle cx="6" cy="4.5" r="1" fill="currentColor" />
+                <circle cx="6" cy="11.5" r="1" fill="currentColor" />
+                <circle cx="6" cy="18.5" r="1" fill="currentColor" />
+              </svg>
             </div>
             <h3>Legacy Modernisation &amp; Replatforming</h3>
             <ul class="card-list">
-              <li>Modernising ESB, SOAP, VM-based, and legacy middleware systems</li>
-              <li>Migrating to cloud-native and Kubernetes-based architectures</li>
+              <li>
+                Modernising ESB, SOAP, VM-based, and legacy middleware systems
+              </li>
+              <li>
+                Migrating to cloud-native and Kubernetes-based architectures
+              </li>
               <li>Incremental migration with minimal disruption</li>
             </ul>
           </div>
 
           <div class="card pillar">
             <span class="num">2</span>
-            <div class="icon" style="margin-bottom:16px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            <div class="icon" style="margin-bottom: 16px">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path
+                  d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"
+                />
+              </svg>
             </div>
             <h3>API Management &amp; Developer Platform Engineering</h3>
             <ul class="card-list">
               <li>Centralised API management and governance</li>
               <li>Self-service API platforms for developers</li>
-              <li>Improving developer productivity, onboarding, and API operations</li>
+              <li>
+                Improving developer productivity, onboarding, and API operations
+              </li>
             </ul>
           </div>
 
           <div class="card pillar">
             <span class="num">3</span>
-            <div class="icon" style="margin-bottom:16px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M20 17h-6M17 14v6"/><path d="M10 7h4M7 10v4"/></svg>
+            <div class="icon" style="margin-bottom: 16px">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M20 17h-6M17 14v6"
+                />
+                <path d="M10 7h4M7 10v4" />
+              </svg>
             </div>
             <h3>Integration Transformation &amp; Automation</h3>
             <ul class="card-list">
               <li>Scalable enterprise integrations and B2B connectivity</li>
-              <li>Standardising integration patterns and reusable accelerators</li>
+              <li>
+                Standardising integration patterns and reusable accelerators
+              </li>
               <li>Event-driven and real-time integration architectures</li>
             </ul>
           </div>
 
           <div class="card pillar">
             <span class="num">4</span>
-            <div class="icon" style="margin-bottom:16px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <div class="icon" style="margin-bottom: 16px">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
             </div>
             <h3>Identity, Security &amp; Compliance Modernisation</h3>
             <ul class="card-list">
               <li>Unified IAM and identity federation</li>
               <li>Centralised access control and secure API exposure</li>
-              <li>Compliance-driven identity and security architecture improvements</li>
+              <li>
+                Compliance-driven identity and security architecture
+                improvements
+              </li>
             </ul>
           </div>
 
           <div class="card pillar">
             <span class="num">5</span>
-            <div class="icon" style="margin-bottom:16px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/><path d="M13 14l2 2-2 2M9 14l-2 2 2 2"/></svg>
+            <div class="icon" style="margin-bottom: 16px">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" />
+                <path d="M13 14l2 2-2 2M9 14l-2 2 2 2" />
+              </svg>
             </div>
             <h3>Cloud, Hybrid &amp; Multi-Cloud Architecture</h3>
             <ul class="card-list">
               <li>Hybrid cloud and multi-cloud deployments</li>
               <li>Kubernetes adoption and platform engineering</li>
-              <li>High availability, resiliency, failover, and global scalability</li>
+              <li>
+                High availability, resiliency, failover, and global scalability
+              </li>
             </ul>
           </div>
 
           <div class="card pillar">
             <span class="num">6</span>
-            <div class="icon" style="margin-bottom:16px;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            <div class="icon" style="margin-bottom: 16px">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+              </svg>
             </div>
             <h3>Cost Optimisation &amp; Operational Efficiency</h3>
             <ul class="card-list">
               <li>Reducing proprietary platform and middleware costs</li>
               <li>Lowering operational overhead and governance complexity</li>
-              <li>Consolidating fragmented platforms into unified architectures</li>
+              <li>
+                Consolidating fragmented platforms into unified architectures
+              </li>
             </ul>
           </div>
-
         </div>
       </div>
     </section>
