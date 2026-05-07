@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industry Playbooks | One scenario, one FDE, one win — WSO2 FDE</title>
+<meta name="description" content="Ten industry playbooks. Each shows the simple scenario an FDE solves first on the WSO2 stack — narrow, viable, weeks to ship. Then expands to enterprise cost cutting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .playbook-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  @media (max-width: 880px) { .playbook-grid { grid-template-columns:1fr; } }
+  .playbook {
+    background:white;
+    border:1px solid var(--wso2-border);
+    border-radius:var(--radius-lg);
+    padding:32px 28px;
+    transition: all var(--transition);
+    display:flex; flex-direction:column;
+  }
+  .playbook:hover { border-color: var(--wso2-orange); box-shadow: var(--shadow-md); transform:translateY(-3px); }
+  .playbook-head { display:flex; align-items:center; gap:14px; margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid var(--wso2-border); }
+  .playbook-head .ico {
+    width:46px; height:46px; border-radius:12px;
+    background: var(--wso2-orange-soft);
+    color: var(--wso2-orange);
+    display:grid; place-items:center;
+  }
+  .playbook-head h3 { font-size:1.18rem; margin:0; }
+  .playbook-label {
+    font-size:0.72rem; font-weight:700; letter-spacing:0.08em;
+    text-transform:uppercase; color: var(--wso2-orange-deep);
+    margin-bottom:6px;
+  }
+  .playbook .scenario { color: var(--wso2-text-muted); font-size:0.97rem; margin-bottom:18px; }
+  .playbook .solve { color: var(--wso2-text); font-size:0.97rem; margin-bottom:18px; }
+  .playbook .solve strong { color: var(--wso2-navy); }
+  .playbook .meta {
+    margin-top:auto;
+    padding-top:16px;
+    border-top:1px dashed var(--wso2-border);
+    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    font-size:0.85rem;
+  }
+  .playbook .meta .ship { color: var(--wso2-orange-deep); font-weight:700; }
+  .playbook .meta .expand { color: var(--wso2-text-muted); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">W2</div>
+      <span>WSO2 <span class="logo-sub">Forward Deployed Engineering</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <nav><ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">What We Do</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="industry-playbooks.html" class="active">Industry Playbooks</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html" class="btn btn-primary" style="padding:10px 20px;">Talk to Us</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Home</a> · <span>Industry Playbooks</span></div>
+    <span class="eyebrow">Industry plays</span>
+    <h1>Ten industries. Ten simple scenarios an FDE solves first.</h1>
+    <p>Each playbook below is a narrow, viable scenario — the kind of problem an FDE picks up on day one and ships in weeks on the WSO2 stack. Same foundation expands to function-wide and enterprise-wide cost cutting.</p>
+  </div>
+</section>
+
+<!-- ===== HOW A PLAYBOOK RUNS ===== -->
+<section style="padding-top:50px;padding-bottom:50px;">
+  <div class="container">
+    <div class="two-col">
+      <div class="reveal">
+        <span class="eyebrow">How a playbook runs</span>
+        <h2>One scenario. One FDE. One agent in production.</h2>
+        <p>Every playbook starts narrow on purpose. The FDE picks the smallest scenario that creates real, measurable value — ships it on the WSO2 Agent Fabric, behind your existing identity and gateway, integrated to the existing system of record.</p>
+        <p><strong>That single agent earns its keep within months.</strong> Then the same platform, the same patterns, the same FDE add the next agent — until the whole business problem is solved and the cost base is materially smaller.</p>
+        <ul class="check-list">
+          <li><strong>Weeks, not quarters,</strong> to first agent in production</li>
+          <li><strong>One scenario at a time,</strong> proven before expanding</li>
+          <li><strong>Same stack reused</strong> — no rebuild tax as scope grows</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:18px;border:1px solid #E5E8EC;">
+          <defs><linearGradient id="og-stair" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">EXPANSION STAIRCASE</text>
+          <rect x="20" y="220" width="140" height="80" rx="10" fill="#FFFFFF" stroke="#E5E8EC"/>
+          <text x="36" y="244" fill="#FF7300" font-family="Inter" font-weight="700" font-size="11">STEP 1</text>
+          <text x="36" y="266" fill="#20272F" font-family="Inter" font-weight="700" font-size="14">One agent</text>
+          <text x="36" y="284" fill="#5A6573" font-family="Inter" font-size="11">4–8 weeks</text>
+          <rect x="170" y="140" width="140" height="80" rx="10" fill="#FFFFFF" stroke="#E5E8EC"/>
+          <text x="186" y="164" fill="#FF7300" font-family="Inter" font-weight="700" font-size="11">STEP 2</text>
+          <text x="186" y="186" fill="#20272F" font-family="Inter" font-weight="700" font-size="14">Function-wide</text>
+          <text x="186" y="204" fill="#5A6573" font-family="Inter" font-size="11">3–6 months</text>
+          <rect x="320" y="60" width="140" height="80" rx="10" fill="url(#og-stair)"/>
+          <text x="336" y="84" fill="rgba(255,255,255,0.9)" font-family="Inter" font-weight="700" font-size="11">STEP 3</text>
+          <text x="336" y="106" fill="#FFFFFF" font-family="Inter" font-weight="700" font-size="14">Enterprise</text>
+          <text x="336" y="124" fill="rgba(255,255,255,0.9)" font-family="Inter" font-size="11">9–12 months</text>
+          <path d="M 90 220 L 90 175 L 240 175 L 240 220" fill="none" stroke="#FF7300" stroke-width="2" stroke-dasharray="4 3"/>
+          <path d="M 240 140 L 240 95 L 390 95 L 390 140" fill="none" stroke="#FF7300" stroke-width="2" stroke-dasharray="4 3"/>
+          <polygon points="240,142 235,132 245,132" fill="#FF7300"/>
+          <polygon points="390,142 385,132 395,132" fill="#FF7300"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STACK DIAGRAM ===== -->
+<section class="section-soft">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The stack underneath every playbook</span>
+      <h2>WSO2 Agent Fabric on Open Choreo.</h2>
+      <p>Same foundation across all ten plays — IAM, Integration, API Gateway and Agent Manager on Open Choreo. The first agent uses the same stack the enterprise rollout will run on.</p>
+    </div>
+    <div class="reveal">
+      <svg viewBox="0 0 1100 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:24px;border:1px solid #E5E8EC;">
+        <defs>
+          <linearGradient id="og-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient>
+          <linearGradient id="navy-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#20272F"/><stop offset="100%" stop-color="#2C3744"/></linearGradient>
+          <linearGradient id="row-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FAFBFC"/></linearGradient>
+          <filter id="ds-st" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/></filter>
+        </defs>
+        <rect x="40" y="20" width="1020" height="70" rx="12" fill="url(#og-st)" filter="url(#ds-st)"/>
+        <text x="550" y="48" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="700" font-size="16">Industry Outcomes</text>
+        <text x="550" y="70" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Inter" font-size="12">Healthcare · Finance · Education · Insurance · Government · Energy · Manufacturing · Retail · Telco · Transport</text>
+        <rect x="40" y="110" width="1020" height="70" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="40" y="110" width="6" height="70" rx="3" fill="#FF7300"/>
+        <text x="64" y="138" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Agent Manager</text>
+        <text x="64" y="158" fill="#5A6573" font-family="Inter" font-size="12">Build, secure and govern agents · tool registry · multi-agent orchestration · evaluation</text>
+        <rect x="40" y="200" width="500" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="40" y="200" width="6" height="100" rx="3" fill="#FF7300"/>
+        <text x="64" y="228" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">API Gateway + AI Gateway</text>
+        <text x="64" y="248" fill="#5A6573" font-family="Inter" font-size="11">Expose APIs · MCPs to agents (ingress)</text>
+        <text x="64" y="266" fill="#5A6573" font-family="Inter" font-size="11">Govern LLMs · external APIs (egress)</text>
+        <rect x="560" y="200" width="500" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="560" y="200" width="6" height="100" rx="3" fill="#FF7300"/>
+        <text x="584" y="228" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Identity & Access (IAM / CIAM)</text>
+        <text x="584" y="248" fill="#5A6573" font-family="Inter" font-size="11">Identities for humans, devices &amp; agents</text>
+        <text x="584" y="266" fill="#5A6573" font-family="Inter" font-size="11">Agent ID — fine-grained access for AI</text>
+        <rect x="40" y="320" width="1020" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
+        <rect x="40" y="320" width="6" height="100" rx="3" fill="#FF7300"/>
+        <text x="64" y="348" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Integration Platform</text>
+        <text x="64" y="368" fill="#5A6573" font-family="Inter" font-size="11">Connectors to your existing systems · ESB · event-driven · workflow orchestration</text>
+        <rect x="40" y="440" width="1020" height="120" rx="12" fill="url(#navy-st)" filter="url(#ds-st)"/>
+        <text x="550" y="478" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="800" font-size="20">Open Choreo</text>
+        <text x="550" y="500" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-family="Inter" font-size="12">Open-source internal developer platform — CI/CD · Kubernetes · observability · multi-cloud</text>
+        <line x1="200" y1="520" x2="900" y2="520" stroke="#FF7300" stroke-width="2"/>
+        <text x="550" y="544" text-anchor="middle" fill="#FFB36B" font-family="Inter" font-weight="600" font-size="11" letter-spacing="1.5">FOUNDATION · OPEN SOURCE · YOURS TO RUN</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLAYBOOK CARDS ===== -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ten playbooks</span>
+      <h2>Pick the play closest to your business.</h2>
+      <p>Each card is one scenario, one first agent, shipped by an FDE in weeks.</p>
+    </div>
+
+    <div class="playbook-grid reveal">
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20 M2 12h20"/></svg></div>
+          <h3>Healthcare</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">Prior authorisations consume hundreds of admin hours per clinic each month — and a single denial blocks a patient and a provider for days.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One prior-auth agent for one specialty.</strong> Drafts the request from EHR data, files via the payer API, tracks status, escalates exceptions to a human — behind the API Gateway with PHI audit on every call.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · EHR/payer</span><span class="pill accent">Agent Identity</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to revenue-cycle automation</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <h3>Banking & Financial Services</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">KYC document intake is a swivel-chair grind for back-office teams. Days of human classification per customer; rework on every missing field.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One KYC document agent for one channel.</strong> Classifies, extracts and validates incoming documents — every decision logged and audit-ready at the API Gateway, secured by CIAM.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway · audit</span><span class="pill accent">Integration · KYC + core</span><span class="pill accent">CIAM</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to AML, disputes, customer ops</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10L12 5 2 10l10 5 10-5z M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <h3>Education</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">Advisors and admin teams answer the same questions thousands of times each term — registration, financial aid, deadlines — while students wait days.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One registration & financial-aid FAQ agent.</strong> Grounded in your policy documents, wired to the SIS for live status, secured by student SSO and audited via the API Gateway.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · SIS</span><span class="pill accent">Student SSO</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 4–6 weeks</span><span class="expand">↗ Expand to tutoring, faculty, alumni</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Insurance</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">A high volume of simple claims (e.g., motor windshield) ties up adjusters who should be working complex cases. PDFs and photos get re-keyed by hand.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One claim-intake agent for one claim type.</strong> Extracts data from photos and forms, applies policy rules, drafts a payment recommendation for adjuster sign-off — humans stay in the loop on every payout.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · policy/claims</span><span class="pill accent">IAM · adjuster</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 8–10 weeks</span><span class="expand">↗ Expand to all claim types + fraud</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="21" x2="21" y2="21"/><path d="M3 10l9-7 9 7 M5 21V10 M19 21V10 M9 21v-6h6v6"/></svg></div>
+          <h3>Government & Public Agencies</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">Citizens chase status across agencies; staff spend most of their day looking things up. Each new digital service is a long IT project.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One licence/permit renewal agent for one agency.</strong> Citizen SSO, identity-verified, fully audited at the gateway, deployed on sovereign infrastructure if required.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway · sovereignty</span><span class="pill accent">Integration · agency systems</span><span class="pill accent">CIAM + MFA</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 8–10 weeks</span><span class="expand">↗ Expand to cross-agency citizen front door</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Energy & Utilities</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">Customers find out about outages from their neighbours; agents read scripts because the data lives across SCADA, GIS and CMMS.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One customer-facing outage status & ETA agent.</strong> Pulls from your existing OMS through the API Gateway — accurate, audited, identity-aware.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · OMS/GIS</span><span class="pill accent">CIAM</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to dispatch and asset health</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 20h20V8l-6 4V8l-6 4V4H2v16z"/></svg></div>
+          <h3>Manufacturing</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">Operators read paper SOPs; engineers debug downtime by walking the floor and pulling reports. Knowledge sits in PDFs and senior heads.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One maintenance Q&amp;A agent for one production line.</strong> Grounded in equipment manuals and 12 months of work-order history, callable from the operator's HMI.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · MES + CMMS</span><span class="pill accent">Operator IAM</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to supply, quality, multi-plant</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z M3 6h18 M16 10a4 4 0 01-8 0"/></svg></div>
+          <h3>Retail & E-commerce</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">A huge share of contact-centre volume is "where's my order?" and "I want to return this." Agents and customers both wait.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One order-status & returns agent.</strong> CIAM-secured, resolves end-to-end, hits your OMS through the API Gateway. Web first, then app and store.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · OMS</span><span class="pill accent">CIAM</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 4–6 weeks</span><span class="expand">↗ Expand to shopping & merchandising</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.55a11 11 0 0114 0 M1.42 9a16 16 0 0121.16 0 M8.53 16.11a6 6 0 016.95 0 M12 20h0"/></svg></div>
+          <h3>Telecommunications</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">Customers wait on hold for billing and plan questions. Each new query channel becomes a multi-month BSS integration project.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One billing & plan FAQ agent.</strong> CIAM with identity verification, wired to billing through the API Gateway, with hand-off to humans on edge cases.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · BSS billing</span><span class="pill accent">CIAM + ID verify</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to plan changes, NOC triage</span></div>
+      </div>
+
+      <div class="playbook">
+        <div class="playbook-head">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Transportation & Logistics</h3>
+        </div>
+        <div class="playbook-label">The scenario</div>
+        <p class="scenario">Customers chase ETAs; CSRs call dispatchers; dispatchers re-plan manually. Every disruption costs hours of human re-coordination.</p>
+        <div class="playbook-label">FDE plays</div>
+        <p class="solve"><strong>One proactive ETA &amp; status agent for shippers.</strong> Pulls from your TMS and telematics through the API Gateway — partner-facing identity, audited delivery.</p>
+        <div class="pill-row" style="margin:0 0 12px;">
+          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway · partners</span><span class="pill accent">Integration · TMS/telematics</span><span class="pill accent">Partner IAM</span>
+        </div>
+        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to dispatch, pricing, fleet ops</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== UNIVERSAL EXPANSION PATH ===== -->
+<section class="section-dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">The universal pattern</span>
+      <h2>One agent today. The whole business problem in twelve months.</h2>
+      <p>Every playbook above runs on the same staircase. The first agent earns its keep. The same WSO2 stack and the same FDE then expand to function-wide cost cutting, and from there to enterprise-wide transformation.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card pillar reveal">
+        <span class="num">1</span>
+        <h3>Step 1 · One viable agent</h3>
+        <p><strong>4–10 weeks.</strong> One narrow scenario, one team, real production. The FDE ships, your team watches it work, the metric moves.</p>
+      </div>
+      <div class="card pillar reveal">
+        <span class="num">2</span>
+        <h3>Step 2 · Function-wide</h3>
+        <p><strong>3–6 months.</strong> Adjacent agents on the same Agent Fabric — same systems, same gateway, same identity. Cost cuts compound across the function.</p>
+      </div>
+      <div class="card pillar reveal">
+        <span class="num">3</span>
+        <h3>Step 3 · Enterprise transformation</h3>
+        <p><strong>9–12 months.</strong> Multi-agent orchestration across the business · consolidated middleware that pays for itself. The whole cost curve moves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COST-CUTTING MATH ===== -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The cost-cutting math</span>
+      <h2>Why narrow first wins on every dimension.</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="card reveal">
+        <span class="eyebrow" style="background:rgba(115,125,140,0.12);color:#5A6573;">Boil-the-ocean programme</span>
+        <h3 style="margin-top:14px;">12–24 month transformation</h3>
+        <ul class="check-list" style="margin-top:14px;">
+          <li>Fixed-scope SOW · features, not outcomes</li>
+          <li>Big upfront integration build before any agent ships</li>
+          <li>Value realised at the very end (if at all)</li>
+          <li>High risk if scope or models shift mid-flight</li>
+          <li>Vendor-built · rebuild tax at every renewal</li>
+        </ul>
+      </div>
+      <div class="card reveal" style="border-color:#FF7300;">
+        <span class="eyebrow">Narrow first with FDE</span>
+        <h3 style="margin-top:14px;">Compounding monthly returns</h3>
+        <ul class="check-list" style="margin-top:14px;">
+          <li>One agent live in weeks · earning value while step 2 is being scoped</li>
+          <li>Same Agent Fabric reused — every next agent is cheaper to ship</li>
+          <li>Each step funds the next from real savings</li>
+          <li>Scope re-shaped as models and priorities change</li>
+          <li>Open source on Open Choreo · yours to run forever</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal mt-48">
+      <svg viewBox="0 0 1100 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:24px;border:1px solid #E5E8EC;">
+        <defs><linearGradient id="og-cost" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
+        <text x="40" y="40" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">CUMULATIVE COST SAVED — INDICATIVE</text>
+        <path d="M 80 220 L 480 220 L 520 215 L 600 200 L 720 160 L 900 110 L 1040 100" fill="none" stroke="#5A6573" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <text x="1040" y="92" text-anchor="end" fill="#5A6573" font-family="Inter" font-weight="600" font-size="12">Boil-the-ocean programme</text>
+        <path d="M 80 220 L 200 200 L 240 175 L 360 165 L 400 130 L 560 120 L 600 90 L 800 80 L 840 50 L 1040 45" fill="none" stroke="url(#og-cost)" stroke-width="3"/>
+        <text x="1040" y="38" text-anchor="end" fill="#E86500" font-family="Inter" font-weight="700" font-size="12">Narrow first with FDE</text>
+        <circle cx="240" cy="175" r="6" fill="#FF7300"/>
+        <text x="240" y="195" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">step 1</text>
+        <circle cx="600" cy="90" r="6" fill="#FF7300"/>
+        <text x="600" y="80" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">step 2</text>
+        <circle cx="840" cy="50" r="7" fill="#FF7300"/>
+        <text x="860" y="50" fill="#E86500" font-family="Inter" font-weight="700" font-size="10">step 3</text>
+        <line x1="80" y1="220" x2="1060" y2="220" stroke="#E5E8EC" stroke-width="1.5"/>
+        <line x1="80" y1="220" x2="80" y2="40" stroke="#E5E8EC" stroke-width="1.5"/>
+        <text x="80" y="245" fill="#9BA4B0" font-family="Inter" font-size="11">today</text>
+        <text x="560" y="245" text-anchor="middle" fill="#9BA4B0" font-family="Inter" font-size="11">+6 months</text>
+        <text x="1040" y="245" text-anchor="end" fill="#9BA4B0" font-family="Inter" font-size="11">+12 months</text>
+        <text x="65" y="48" text-anchor="end" fill="#9BA4B0" font-family="Inter" font-size="11">$ saved</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Tell us your scenario. We'll come back with the playbook.</h2>
+        <p>One viable agent on the WSO2 stack — shipped by an FDE in weeks. From there, we expand together until the cost line moves.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Start a conversation →</a>
+        <a href="approach.html" class="btn btn-secondary">See our methodology</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:white;margin-bottom:18px;">
+          <div class="logo-mark">W2</div>
+          <span>WSO2 <span class="logo-sub" style="color:rgba(255,255,255,0.6);">Forward Deployed Engineering</span></span>
+        </div>
+        <p style="color:rgba(255,255,255,0.6);max-width:380px;">Senior engineers, embedded in your team, delivering your agentic enterprise outcomes.</p>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <ul><li><a href="services.html">What We Do</a></li><li><a href="approach.html">Our Approach</a></li><li><a href="industry-playbooks.html">Industry Playbooks</a></li></ul>
+      </div>
+      <div>
+        <h4>Team</h4>
+        <ul><li><a href="careers.html">Career Path</a></li><li><a href="careers.html#roles">Open Roles</a></li></ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul><li><a href="contact.html">Talk to Us</a></li><li><a href="https://wso2.com" target="_blank" rel="noopener">wso2.com ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 WSO2 LLC. Forward Deployed Engineering.</span>
+      <span>Outcome-led · Embedded · Open source.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

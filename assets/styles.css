@@ -296,7 +296,7 @@ p {
   background: var(--wso2-orange-soft);
   color: var(--wso2-orange-deep);
   border-radius: 100px;
-  font-size: 0.82rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -685,7 +685,9 @@ section {
 .path-step:nth-child(even) .desc:first-child {
   visibility: hidden;
 }
-.path-step:nth-child(odd) .desc:first-child { text-align: right; }
+.path-step:nth-child(odd) .desc:first-child {
+  text-align: right;
+}
 .path-step h4 {
   color: var(--wso2-orange-deep);
   margin-bottom: 6px;
