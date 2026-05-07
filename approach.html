@@ -14,6 +14,83 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+    /* ── Engagement Lifecycle ───────────────────────────── */
+    .lc-diagram {
+      background: var(--wso2-navy); border-radius: 18px;
+      overflow: hidden; margin-bottom: 24px;
+    }
+    .lc-diagram-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .lc-brand { display: flex; align-items: center; gap: 12px; }
+    .lc-brand-mark {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--wso2-orange); color: white;
+      font-weight: 800; font-size: 11px;
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+    .lc-brand-title { color: white; font-weight: 700; font-size: 13px; }
+    .lc-brand-sub   { color: rgba(255,255,255,0.45); font-size: 11px; }
+    .lc-brand-meta  { color: rgba(255,255,255,0.35); font-size: 11px; flex-shrink: 0; }
+
+    .lc-cols {
+      display: flex; align-items: stretch; gap: 0;
+      padding: 20px; overflow-x: auto;
+    }
+    .lc-col     { flex: 1; min-width: 180px; display: flex; flex-direction: column; gap: 10px; }
+    .lc-col-sm  { flex: 0.8; min-width: 160px; }
+
+    .lc-phase-bar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 12px; border-radius: 8px;
+      color: white; font-weight: 700; font-size: 10px;
+      text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;
+    }
+    .lc-stage {
+      background: white; border-radius: 10px; padding: 14px;
+      flex: 1; display: flex; flex-direction: column; gap: 5px;
+    }
+    .lc-stage-n {
+      width: 22px; height: 22px; border-radius: 50%;
+      font-weight: 700; font-size: 11px;
+      display: grid; place-items: center; flex-shrink: 0; margin-bottom: 2px;
+    }
+    .lc-stage-title { font-size: 12px; font-weight: 700; color: #20272F; line-height: 1.35; }
+    .lc-stage-desc  { font-size: 11px; color: #5A6573; line-height: 1.5; margin: 0; flex: 1; }
+    .lc-chips       { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; padding-top: 8px; }
+    .lc-chip        { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 12px; }
+    .lc-arrow-sep {
+      display: flex; align-items: center; justify-content: center;
+      width: 28px; flex-shrink: 0; margin-top: 36px;
+      color: rgba(255,255,255,0.35); font-size: 1.1rem;
+    }
+    .lc-legend {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+      padding: 12px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+    }
+    .lc-legend-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.38); text-transform: uppercase;
+    }
+    .lc-legend-sep { flex-basis: 100%; height: 0; display: none; }
+    @media (max-width: 700px) { .lc-legend-sep { display: block; } }
+
+    /* Phase summary cards */
+    .lc-phases-summary {
+      display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; margin-top: 0;
+    }
+    @media (max-width: 900px) { .lc-phases-summary { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px) { .lc-phases-summary { grid-template-columns: 1fr; } }
+    .lc-phase-card  { border-radius: 12px; padding: 18px 16px; }
+    .lc-phase-num   { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+    .lc-phase-name  { font-weight: 700; font-size: 14px; margin-bottom: 4px; line-height: 1.3; }
+    .lc-phase-stages{ font-size: 12px; color: #5A6573; }
+    </style>
   </head>
   <body>
     <header class="nav">
@@ -291,6 +368,207 @@
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== ENGAGEMENT LIFECYCLE ===== -->
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Engagement Lifecycle</span>
+          <h2>Ten stages. Five phases. Every step has a clear owner.</h2>
+          <p>Every FDE engagement follows a defined 10-stage process. Each stage has clear owners, specific inputs and outputs, and a gate before the next phase begins. Nothing advances without the right people signing off.</p>
+        </div>
+
+        <div class="lc-diagram reveal">
+          <!-- header -->
+          <div class="lc-diagram-header">
+            <div class="lc-brand">
+              <div class="lc-brand-mark">W2</div>
+              <div>
+                <div class="lc-brand-title">Forward Deployed Engineer Engagement Lifecycle</div>
+                <div class="lc-brand-sub">From customer objective through delivery and formal sign-off</div>
+              </div>
+            </div>
+            <div class="lc-brand-meta">Forward Deployed Engineering · 2026</div>
+          </div>
+
+          <!-- phase columns -->
+          <div class="lc-cols">
+
+            <!-- Phase 1 — Discovery -->
+            <div class="lc-col">
+              <div class="lc-phase-bar" style="background:#3B82F6;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                Discovery &amp; Qualification
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#EFF6FF;color:#3B82F6;">1</div>
+                <div class="lc-stage-title">Customer Objective</div>
+                <p class="lc-stage-desc">Customer identifies a business goal or challenge that needs to be solved.</p>
+                <div class="lc-chips"><span class="lc-chip" style="background:#DBEAFE;color:#1D4ED8;">● Customer</span></div>
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#EFF6FF;color:#3B82F6;">2</div>
+                <div class="lc-stage-title">Initial Discovery &amp; Qualification</div>
+                <p class="lc-stage-desc">AM and SE run discovery sessions. Qualify whether the objective is achievable with the WSO2 product stack.</p>
+                <div class="lc-chips">
+                  <span class="lc-chip" style="background:#FFF7ED;color:#C2410C;">● AM</span>
+                  <span class="lc-chip" style="background:#F0FDF4;color:#15803D;">● SE</span>
+                </div>
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#EFF6FF;color:#3B82F6;">3</div>
+                <div class="lc-stage-title">Define OKRs</div>
+                <p class="lc-stage-desc">SE defines Objectives &amp; Key Results with the customer. FDE Leadership joins for complex scenarios.</p>
+                <div class="lc-chips">
+                  <span class="lc-chip" style="background:#F0FDF4;color:#15803D;">● SE</span>
+                  <span class="lc-chip" style="background:#F5F3FF;color:#6D28D9;">● FDE Leadership</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lc-arrow-sep">→</div>
+
+            <!-- Phase 2 — Proposal -->
+            <div class="lc-col">
+              <div class="lc-phase-bar" style="background:#F97316;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6M12 9v6"/></svg>
+                Proposal &amp; Approval
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#FFF7ED;color:#EA580C;">4</div>
+                <div class="lc-stage-title">Prepare Business Proposal</div>
+                <p class="lc-stage-desc">SE prepares the engagement proposal: scope, OKRs, tier, timeline, and commercial structure.</p>
+                <div class="lc-chips"><span class="lc-chip" style="background:#F0FDF4;color:#15803D;">● SE</span></div>
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#FFF7ED;color:#EA580C;">5</div>
+                <div class="lc-stage-title">Validate Business Proposal</div>
+                <p class="lc-stage-desc">FDE Leadership validates the proposal for technical accuracy, FDE scope and delivery feasibility.</p>
+                <div class="lc-chips"><span class="lc-chip" style="background:#F5F3FF;color:#6D28D9;">● FDE Leadership</span></div>
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#FFF7ED;color:#EA580C;">6</div>
+                <div class="lc-stage-title">Share Proposal &amp; Negotiate</div>
+                <p class="lc-stage-desc">AM presents the validated proposal to the customer and leads commercial negotiations to agreement.</p>
+                <div class="lc-chips">
+                  <span class="lc-chip" style="background:#FFF7ED;color:#C2410C;">● AM</span>
+                  <span class="lc-chip" style="background:#DBEAFE;color:#1D4ED8;">● Customer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lc-arrow-sep">→</div>
+
+            <!-- Phase 3 — Contract -->
+            <div class="lc-col lc-col-sm">
+              <div class="lc-phase-bar" style="background:#EF4444;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                Contract
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#FEF2F2;color:#DC2626;">7</div>
+                <div class="lc-stage-title">Sign Contract</div>
+                <p class="lc-stage-desc">Customer and Legal review terms and execute the agreement. FDE scope, OKRs and milestones are locked in the contract.</p>
+                <div class="lc-chips">
+                  <span class="lc-chip" style="background:#DBEAFE;color:#1D4ED8;">● Customer</span>
+                  <span class="lc-chip" style="background:#FEF3C7;color:#92400E;">● Legal</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lc-arrow-sep">→</div>
+
+            <!-- Phase 4 — Delivery -->
+            <div class="lc-col lc-col-sm">
+              <div class="lc-phase-bar" style="background:#22C55E;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Delivery
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#F0FDF4;color:#16A34A;">8</div>
+                <div class="lc-stage-title">FDE Delivery</div>
+                <p class="lc-stage-desc">FDE embeds with the customer team. Full ownership of design, architecture, and implementation until all OKRs are met in production.</p>
+                <div class="lc-chips">
+                  <span class="lc-chip" style="background:#ECFDF5;color:#065F46;">● FDE</span>
+                  <span class="lc-chip" style="background:#DBEAFE;color:#1D4ED8;">● Customer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lc-arrow-sep">→</div>
+
+            <!-- Phase 5 — Handover -->
+            <div class="lc-col">
+              <div class="lc-phase-bar" style="background:#8B5CF6;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Handover &amp; Acceptance
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#F5F3FF;color:#7C3AED;">9</div>
+                <div class="lc-stage-title">Operational Handover</div>
+                <p class="lc-stage-desc">FDE delivers runbooks, architecture docs, and co-build sessions. Customer team takes full ownership of the production platform.</p>
+                <div class="lc-chips"><span class="lc-chip" style="background:#ECFDF5;color:#065F46;">● FDE</span></div>
+              </div>
+              <div class="lc-stage">
+                <div class="lc-stage-n" style="background:#F5F3FF;color:#7C3AED;">10</div>
+                <div class="lc-stage-title">Sign-Off &amp; Acceptance</div>
+                <p class="lc-stage-desc">Customer formally accepts delivery against the agreed OKRs. Engagement closes. Steady State Advisory begins if agreed.</p>
+                <div class="lc-chips"><span class="lc-chip" style="background:#DBEAFE;color:#1D4ED8;">● Customer</span></div>
+              </div>
+            </div>
+
+          </div><!-- /lc-cols -->
+
+          <!-- legend -->
+          <div class="lc-legend">
+            <span class="lc-legend-label">Personas</span>
+            <span class="lc-chip" style="background:rgba(59,130,246,0.18);color:#93C5FD;">● Customer</span>
+            <span class="lc-chip" style="background:rgba(249,115,22,0.18);color:#FCA974;">● Account Manager</span>
+            <span class="lc-chip" style="background:rgba(34,197,94,0.18);color:#6EE7A0;">● Sales Engineer</span>
+            <span class="lc-chip" style="background:rgba(139,92,246,0.18);color:#C4B5FD;">● FDE Leadership</span>
+            <span class="lc-chip" style="background:rgba(16,185,129,0.18);color:#6EE7B7;">● FDE</span>
+            <span class="lc-chip" style="background:rgba(245,158,11,0.18);color:#FCD34D;">● Legal</span>
+            <span class="lc-legend-sep"></span>
+            <span class="lc-legend-label">Phases</span>
+            <span class="lc-chip" style="background:rgba(59,130,246,0.15);color:#93C5FD;">Discovery</span>
+            <span class="lc-chip" style="background:rgba(249,115,22,0.15);color:#FCA974;">Proposal</span>
+            <span class="lc-chip" style="background:rgba(239,68,68,0.15);color:#FCA5A5;">Contract</span>
+            <span class="lc-chip" style="background:rgba(34,197,94,0.15);color:#6EE7A0;">Delivery</span>
+            <span class="lc-chip" style="background:rgba(139,92,246,0.15);color:#C4B5FD;">Handover</span>
+          </div>
+        </div><!-- /lc-diagram -->
+
+        <!-- phase summary cards -->
+        <div class="lc-phases-summary reveal">
+          <div class="lc-phase-card" style="border-top:3px solid #3B82F6;background:#EFF6FF;">
+            <span class="lc-phase-num" style="color:#3B82F6;">Phase 1</span>
+            <div class="lc-phase-name" style="color:#1D4ED8;">Discovery &amp; Qualification</div>
+            <div class="lc-phase-stages">Stages 1–3 · Objective &amp; OKRs defined</div>
+          </div>
+          <div class="lc-phase-card" style="border-top:3px solid #F97316;background:#FFF7ED;">
+            <span class="lc-phase-num" style="color:#EA580C;">Phase 2</span>
+            <div class="lc-phase-name" style="color:#C2410C;">Proposal &amp; Approval</div>
+            <div class="lc-phase-stages">Stages 4–6 · Proposal built &amp; agreed</div>
+          </div>
+          <div class="lc-phase-card" style="border-top:3px solid #EF4444;background:#FEF2F2;">
+            <span class="lc-phase-num" style="color:#DC2626;">Phase 3</span>
+            <div class="lc-phase-name" style="color:#B91C1C;">Contract</div>
+            <div class="lc-phase-stages">Stage 7 · OKRs &amp; scope locked</div>
+          </div>
+          <div class="lc-phase-card" style="border-top:3px solid #22C55E;background:#F0FDF4;">
+            <span class="lc-phase-num" style="color:#16A34A;">Phase 4</span>
+            <div class="lc-phase-name" style="color:#15803D;">Delivery</div>
+            <div class="lc-phase-stages">Stage 8 · Production delivery</div>
+          </div>
+          <div class="lc-phase-card" style="border-top:3px solid #8B5CF6;background:#F5F3FF;">
+            <span class="lc-phase-num" style="color:#7C3AED;">Phase 5</span>
+            <div class="lc-phase-name" style="color:#6D28D9;">Handover &amp; Acceptance</div>
+            <div class="lc-phase-stages">Stages 9–10 · Transfer &amp; sign-off</div>
+          </div>
+        </div>
+
       </div>
     </section>
 
