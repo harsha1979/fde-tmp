@@ -411,40 +411,18 @@
         font-weight: 700;
       }
 
-      /* ── Customer Challenges grid ───────────────────────── */
-      .challenges-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+      /* ── Challenge category cards ───────────────────────── */
+      .card-list {
+        list-style: none; padding: 0; margin: 10px 0 0;
+        display: flex; flex-direction: column; gap: 8px;
       }
-      @media (max-width: 1024px) { .challenges-grid { grid-template-columns: repeat(3, 1fr); } }
-      @media (max-width: 760px)  { .challenges-grid { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 480px)  { .challenges-grid { grid-template-columns: 1fr; } }
-      .challenge-card {
-        background: var(--wso2-navy-soft);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: var(--radius-lg);
-        padding: 24px 20px 24px 56px;
-        position: relative;
-        transition: all var(--transition);
+      .card-list li {
+        font-size: 0.875rem; color: rgba(229,232,236,0.75);
+        padding-left: 16px; position: relative; line-height: 1.45;
       }
-      .challenge-card:hover {
-        border-color: rgba(255,115,0,0.45);
-        box-shadow: 0 8px 24px rgba(255,115,0,0.12);
-        transform: translateY(-3px);
-      }
-      .challenge-card .qm {
-        position: absolute; left: 16px; top: 20px;
-        width: 30px; height: 30px; border-radius: 8px;
-        background: linear-gradient(135deg, var(--wso2-orange), var(--wso2-orange-deep));
-        color: white; font-weight: 800; font-size: 1.1rem;
-        display: grid; place-items: center;
-        box-shadow: 0 4px 10px rgba(255,115,0,0.3);
-        line-height: 1;
-      }
-      .challenge-card p {
-        margin: 0; font-size: 0.875rem;
-        color: rgba(229,232,236,0.82); line-height: 1.55;
+      .card-list li::before {
+        content: "→"; position: absolute; left: 0;
+        color: var(--wso2-orange); font-weight: 700;
       }
     </style>
   </head>
@@ -1226,52 +1204,91 @@
     <section class="section-dark">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">What customers tell us</span>
-          <h2>The challenges that bring engineering leaders to FDE.</h2>
-          <p>Across every industry and technology stack, the same problems surface. FDEs have heard them all — and shipped production solutions for most of them.</p>
+          <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">Where FDEs engage</span>
+          <h2>Six challenge areas. One team that resolves them.</h2>
+          <p>These are the recurring patterns FDEs are brought in to fix — across modernisation, integration, identity, and platform engineering.</p>
         </div>
 
-        <div class="challenges-grid reveal">
-          <div class="challenge-card"><span class="qm">"</span><p>We want to modernize our legacy ESB without disrupting existing services.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our APIs are scattered across teams — we need a unified API management strategy.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We're spending too much on proprietary integration platforms.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need to migrate thousands of on-prem integrations to Kubernetes.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our authentication systems are fragmented across products and regions.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to move from VM-based deployments to a cloud-native architecture.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need to support multi-cloud without vendor lock-in.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our B2B integrations are brittle and hard to scale.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to consolidate IAM, API management, and integration into one platform.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our current platform can't handle real-time event-driven workloads.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need to expose legacy systems securely as modern APIs.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our developers spend weeks wiring integrations instead of shipping features.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to reduce API latency and improve reliability globally.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need a zero-downtime migration strategy from our current middleware stack.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to implement a secure internal developer platform for APIs.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Compliance requirements are forcing us to rethink our identity architecture.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our integration costs are growing faster than our infrastructure.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need better observability across APIs, gateways, and integrations.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to standardize integration patterns across business units.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our teams are duplicating integrations because there's no central governance.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need hybrid deployments across cloud and on-prem environments.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to adopt an event-driven architecture without rebuilding everything.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our current gateway solution is becoming a bottleneck.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need enterprise-grade identity federation across multiple applications.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to enable self-service API development for internal teams.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We're struggling to scale integrations after acquisitions and mergers.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to replace expensive custom middleware with open-source alternatives.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need a platform that works equally well for developers and platform teams.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to improve developer onboarding for APIs and integrations.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need to operationalize AI services securely through APIs.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to centralize access control across all digital channels.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our current integration stack is slowing down cloud adoption.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need to migrate off legacy SOAP services incrementally.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to build reusable integration accelerators instead of one-off flows.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need better resiliency and failover across regional deployments.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want platform engineering teams to manage integrations as infrastructure.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need secure API exposure for partners and external ecosystems.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We want to reduce operational overhead for API gateways and identity systems.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>Our digital transformation is blocked by integration complexity.</p></div>
-          <div class="challenge-card"><span class="qm">"</span><p>We need an architecture that can scale globally without rewriting applications.</p></div>
+        <div class="grid-3 reveal">
+
+          <div class="card pillar">
+            <span class="num">1</span>
+            <div class="icon" style="margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="5" rx="2"/><rect x="2" y="9" width="20" height="5" rx="2"/><rect x="2" y="16" width="20" height="5" rx="2"/><circle cx="6" cy="4.5" r="1" fill="currentColor"/><circle cx="6" cy="11.5" r="1" fill="currentColor"/><circle cx="6" cy="18.5" r="1" fill="currentColor"/></svg>
+            </div>
+            <h3>Legacy Modernisation &amp; Replatforming</h3>
+            <ul class="card-list">
+              <li>Modernising ESB, SOAP, VM-based, and legacy middleware systems</li>
+              <li>Migrating to cloud-native and Kubernetes-based architectures</li>
+              <li>Incremental migration with minimal disruption</li>
+            </ul>
+          </div>
+
+          <div class="card pillar">
+            <span class="num">2</span>
+            <div class="icon" style="margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            </div>
+            <h3>API Management &amp; Developer Platform Engineering</h3>
+            <ul class="card-list">
+              <li>Centralised API management and governance</li>
+              <li>Self-service API platforms for developers</li>
+              <li>Improving developer productivity, onboarding, and API operations</li>
+            </ul>
+          </div>
+
+          <div class="card pillar">
+            <span class="num">3</span>
+            <div class="icon" style="margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M20 17h-6M17 14v6"/><path d="M10 7h4M7 10v4"/></svg>
+            </div>
+            <h3>Integration Transformation &amp; Automation</h3>
+            <ul class="card-list">
+              <li>Scalable enterprise integrations and B2B connectivity</li>
+              <li>Standardising integration patterns and reusable accelerators</li>
+              <li>Event-driven and real-time integration architectures</li>
+            </ul>
+          </div>
+
+          <div class="card pillar">
+            <span class="num">4</span>
+            <div class="icon" style="margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Identity, Security &amp; Compliance Modernisation</h3>
+            <ul class="card-list">
+              <li>Unified IAM and identity federation</li>
+              <li>Centralised access control and secure API exposure</li>
+              <li>Compliance-driven identity and security architecture improvements</li>
+            </ul>
+          </div>
+
+          <div class="card pillar">
+            <span class="num">5</span>
+            <div class="icon" style="margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/><path d="M13 14l2 2-2 2M9 14l-2 2 2 2"/></svg>
+            </div>
+            <h3>Cloud, Hybrid &amp; Multi-Cloud Architecture</h3>
+            <ul class="card-list">
+              <li>Hybrid cloud and multi-cloud deployments</li>
+              <li>Kubernetes adoption and platform engineering</li>
+              <li>High availability, resiliency, failover, and global scalability</li>
+            </ul>
+          </div>
+
+          <div class="card pillar">
+            <span class="num">6</span>
+            <div class="icon" style="margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h3>Cost Optimisation &amp; Operational Efficiency</h3>
+            <ul class="card-list">
+              <li>Reducing proprietary platform and middleware costs</li>
+              <li>Lowering operational overhead and governance complexity</li>
+              <li>Consolidating fragmented platforms into unified architectures</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
