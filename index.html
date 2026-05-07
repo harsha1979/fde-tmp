@@ -411,35 +411,41 @@
         font-weight: 700;
       }
 
-      /* ── Customer Challenges Ticker ─────────────────────── */
-      .ticker-wrap {
-        overflow: hidden; padding: 6px 0;
-        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-        mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      /* ── Customer Challenges grid ───────────────────────── */
+      .challenges-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
       }
-      .ticker-row { overflow: hidden; margin-bottom: 12px; }
-      .ticker-inner {
-        display: flex; width: max-content; gap: 12px;
-        animation: ticker-left 60s linear infinite;
+      @media (max-width: 1024px) { .challenges-grid { grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 760px)  { .challenges-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 480px)  { .challenges-grid { grid-template-columns: 1fr; } }
+      .challenge-card {
+        background: var(--wso2-navy-soft);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius-lg);
+        padding: 24px 20px 24px 56px;
+        position: relative;
+        transition: all var(--transition);
       }
-      .ticker-inner.rev { animation: ticker-right 60s linear infinite; }
-      .ticker-inner:hover { animation-play-state: paused; }
-      @keyframes ticker-left  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      @keyframes ticker-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-      .pain-card {
-        background: rgba(255,255,255,0.07);
-        border: 1px solid rgba(255,255,255,0.11);
-        border-radius: 12px; padding: 14px 20px;
-        white-space: nowrap; flex-shrink: 0;
-        font-size: 0.875rem; color: rgba(255,255,255,0.78);
-        transition: background 0.2s, border-color 0.2s, color 0.2s;
-        cursor: default;
+      .challenge-card:hover {
+        border-color: rgba(255,115,0,0.45);
+        box-shadow: 0 8px 24px rgba(255,115,0,0.12);
+        transform: translateY(-3px);
       }
-      .pain-card:hover {
-        background: rgba(255,115,0,0.14);
-        border-color: rgba(255,115,0,0.4); color: white;
+      .challenge-card .qm {
+        position: absolute; left: 16px; top: 20px;
+        width: 30px; height: 30px; border-radius: 8px;
+        background: linear-gradient(135deg, var(--wso2-orange), var(--wso2-orange-deep));
+        color: white; font-weight: 800; font-size: 1.1rem;
+        display: grid; place-items: center;
+        box-shadow: 0 4px 10px rgba(255,115,0,0.3);
+        line-height: 1;
       }
-      .pain-card .q { color: #FF7300; font-size: 1.1rem; line-height: 1; font-weight: 700; }
+      .challenge-card p {
+        margin: 0; font-size: 0.875rem;
+        color: rgba(229,232,236,0.82); line-height: 1.55;
+      }
     </style>
   </head>
   <body>
@@ -1216,109 +1222,56 @@
       </div>
     </section>
 
-    <!-- ===== CUSTOMER CHALLENGES TICKER ===== -->
-    <section class="section-dark" style="padding-bottom:64px;">
+    <!-- ===== CUSTOMER CHALLENGES ===== -->
+    <section class="section-dark">
       <div class="container">
-        <div class="section-head reveal" style="margin-bottom:48px;">
+        <div class="section-head reveal">
           <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">What customers tell us</span>
           <h2>The challenges that bring engineering leaders to FDE.</h2>
-          <p style="max-width:640px;">Across every industry and technology stack, the same problems surface. FDEs have heard them all — and shipped production solutions for most of them.</p>
-        </div>
-      </div>
-
-      <!-- Row 1 — scrolls left -->
-      <div class="ticker-wrap">
-        <div class="ticker-row">
-          <div class="ticker-inner">
-            <div class="pain-card"><span class="q">"</span> We want to modernize our legacy ESB without disrupting existing services.</div>
-            <div class="pain-card"><span class="q">"</span> Our APIs are scattered across teams — we need a unified API management strategy.</div>
-            <div class="pain-card"><span class="q">"</span> We're spending too much on proprietary integration platforms.</div>
-            <div class="pain-card"><span class="q">"</span> We need to migrate thousands of on-prem integrations to Kubernetes.</div>
-            <div class="pain-card"><span class="q">"</span> Our authentication systems are fragmented across products and regions.</div>
-            <div class="pain-card"><span class="q">"</span> We want to move from VM-based deployments to a cloud-native architecture.</div>
-            <div class="pain-card"><span class="q">"</span> We need to support multi-cloud without vendor lock-in.</div>
-            <div class="pain-card"><span class="q">"</span> Our B2B integrations are brittle and hard to scale.</div>
-            <div class="pain-card"><span class="q">"</span> We want to consolidate IAM, API management, and integration into one platform.</div>
-            <div class="pain-card"><span class="q">"</span> Our current platform can't handle real-time event-driven workloads.</div>
-            <div class="pain-card"><span class="q">"</span> We need to expose legacy systems securely as modern APIs.</div>
-            <div class="pain-card"><span class="q">"</span> Our developers spend weeks wiring integrations instead of shipping features.</div>
-            <div class="pain-card"><span class="q">"</span> We want to reduce API latency and improve reliability globally.</div>
-            <div class="pain-card"><span class="q">"</span> We need a zero-downtime migration strategy from our current middleware stack.</div>
-            <div class="pain-card"><span class="q">"</span> We want to implement a secure internal developer platform for APIs.</div>
-            <div class="pain-card"><span class="q">"</span> Compliance requirements are forcing us to rethink our identity architecture.</div>
-            <div class="pain-card"><span class="q">"</span> Our integration costs are growing faster than our infrastructure.</div>
-            <div class="pain-card"><span class="q">"</span> We need better observability across APIs, gateways, and integrations.</div>
-            <div class="pain-card"><span class="q">"</span> We want to standardize integration patterns across business units.</div>
-            <div class="pain-card"><span class="q">"</span> Our teams are duplicating integrations because there's no central governance.</div>
-            <!-- duplicate for seamless loop -->
-            <div class="pain-card"><span class="q">"</span> We want to modernize our legacy ESB without disrupting existing services.</div>
-            <div class="pain-card"><span class="q">"</span> Our APIs are scattered across teams — we need a unified API management strategy.</div>
-            <div class="pain-card"><span class="q">"</span> We're spending too much on proprietary integration platforms.</div>
-            <div class="pain-card"><span class="q">"</span> We need to migrate thousands of on-prem integrations to Kubernetes.</div>
-            <div class="pain-card"><span class="q">"</span> Our authentication systems are fragmented across products and regions.</div>
-            <div class="pain-card"><span class="q">"</span> We want to move from VM-based deployments to a cloud-native architecture.</div>
-            <div class="pain-card"><span class="q">"</span> We need to support multi-cloud without vendor lock-in.</div>
-            <div class="pain-card"><span class="q">"</span> Our B2B integrations are brittle and hard to scale.</div>
-            <div class="pain-card"><span class="q">"</span> We want to consolidate IAM, API management, and integration into one platform.</div>
-            <div class="pain-card"><span class="q">"</span> Our current platform can't handle real-time event-driven workloads.</div>
-            <div class="pain-card"><span class="q">"</span> We need to expose legacy systems securely as modern APIs.</div>
-            <div class="pain-card"><span class="q">"</span> Our developers spend weeks wiring integrations instead of shipping features.</div>
-            <div class="pain-card"><span class="q">"</span> We want to reduce API latency and improve reliability globally.</div>
-            <div class="pain-card"><span class="q">"</span> We need a zero-downtime migration strategy from our current middleware stack.</div>
-            <div class="pain-card"><span class="q">"</span> We want to implement a secure internal developer platform for APIs.</div>
-            <div class="pain-card"><span class="q">"</span> Compliance requirements are forcing us to rethink our identity architecture.</div>
-            <div class="pain-card"><span class="q">"</span> Our integration costs are growing faster than our infrastructure.</div>
-            <div class="pain-card"><span class="q">"</span> We need better observability across APIs, gateways, and integrations.</div>
-            <div class="pain-card"><span class="q">"</span> We want to standardize integration patterns across business units.</div>
-            <div class="pain-card"><span class="q">"</span> Our teams are duplicating integrations because there's no central governance.</div>
-          </div>
+          <p>Across every industry and technology stack, the same problems surface. FDEs have heard them all — and shipped production solutions for most of them.</p>
         </div>
 
-        <!-- Row 2 — scrolls right -->
-        <div class="ticker-row">
-          <div class="ticker-inner rev">
-            <div class="pain-card"><span class="q">"</span> We need hybrid deployments across cloud and on-prem environments.</div>
-            <div class="pain-card"><span class="q">"</span> We want to adopt an event-driven architecture without rebuilding everything.</div>
-            <div class="pain-card"><span class="q">"</span> Our current gateway solution is becoming a bottleneck.</div>
-            <div class="pain-card"><span class="q">"</span> We need enterprise-grade identity federation across multiple applications.</div>
-            <div class="pain-card"><span class="q">"</span> We want to enable self-service API development for internal teams.</div>
-            <div class="pain-card"><span class="q">"</span> We're struggling to scale integrations after acquisitions and mergers.</div>
-            <div class="pain-card"><span class="q">"</span> We want to replace expensive custom middleware with open-source alternatives.</div>
-            <div class="pain-card"><span class="q">"</span> We need a platform that works equally well for developers and platform teams.</div>
-            <div class="pain-card"><span class="q">"</span> We want to improve developer onboarding for APIs and integrations.</div>
-            <div class="pain-card"><span class="q">"</span> We need to operationalize AI services securely through APIs.</div>
-            <div class="pain-card"><span class="q">"</span> We want to centralize access control across all digital channels.</div>
-            <div class="pain-card"><span class="q">"</span> Our current integration stack is slowing down cloud adoption.</div>
-            <div class="pain-card"><span class="q">"</span> We need to migrate off legacy SOAP services incrementally.</div>
-            <div class="pain-card"><span class="q">"</span> We want to build reusable integration accelerators instead of one-off flows.</div>
-            <div class="pain-card"><span class="q">"</span> We need better resiliency and failover across regional deployments.</div>
-            <div class="pain-card"><span class="q">"</span> We want platform engineering teams to manage integrations as infrastructure.</div>
-            <div class="pain-card"><span class="q">"</span> We need secure API exposure for partners and external ecosystems.</div>
-            <div class="pain-card"><span class="q">"</span> We want to reduce operational overhead for API gateways and identity systems.</div>
-            <div class="pain-card"><span class="q">"</span> Our digital transformation is blocked by integration complexity.</div>
-            <div class="pain-card"><span class="q">"</span> We need an architecture that can scale globally without rewriting applications.</div>
-            <!-- duplicate for seamless loop -->
-            <div class="pain-card"><span class="q">"</span> We need hybrid deployments across cloud and on-prem environments.</div>
-            <div class="pain-card"><span class="q">"</span> We want to adopt an event-driven architecture without rebuilding everything.</div>
-            <div class="pain-card"><span class="q">"</span> Our current gateway solution is becoming a bottleneck.</div>
-            <div class="pain-card"><span class="q">"</span> We need enterprise-grade identity federation across multiple applications.</div>
-            <div class="pain-card"><span class="q">"</span> We want to enable self-service API development for internal teams.</div>
-            <div class="pain-card"><span class="q">"</span> We're struggling to scale integrations after acquisitions and mergers.</div>
-            <div class="pain-card"><span class="q">"</span> We want to replace expensive custom middleware with open-source alternatives.</div>
-            <div class="pain-card"><span class="q">"</span> We need a platform that works equally well for developers and platform teams.</div>
-            <div class="pain-card"><span class="q">"</span> We want to improve developer onboarding for APIs and integrations.</div>
-            <div class="pain-card"><span class="q">"</span> We need to operationalize AI services securely through APIs.</div>
-            <div class="pain-card"><span class="q">"</span> We want to centralize access control across all digital channels.</div>
-            <div class="pain-card"><span class="q">"</span> Our current integration stack is slowing down cloud adoption.</div>
-            <div class="pain-card"><span class="q">"</span> We need to migrate off legacy SOAP services incrementally.</div>
-            <div class="pain-card"><span class="q">"</span> We want to build reusable integration accelerators instead of one-off flows.</div>
-            <div class="pain-card"><span class="q">"</span> We need better resiliency and failover across regional deployments.</div>
-            <div class="pain-card"><span class="q">"</span> We want platform engineering teams to manage integrations as infrastructure.</div>
-            <div class="pain-card"><span class="q">"</span> We need secure API exposure for partners and external ecosystems.</div>
-            <div class="pain-card"><span class="q">"</span> We want to reduce operational overhead for API gateways and identity systems.</div>
-            <div class="pain-card"><span class="q">"</span> Our digital transformation is blocked by integration complexity.</div>
-            <div class="pain-card"><span class="q">"</span> We need an architecture that can scale globally without rewriting applications.</div>
-          </div>
+        <div class="challenges-grid reveal">
+          <div class="challenge-card"><span class="qm">"</span><p>We want to modernize our legacy ESB without disrupting existing services.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our APIs are scattered across teams — we need a unified API management strategy.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We're spending too much on proprietary integration platforms.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need to migrate thousands of on-prem integrations to Kubernetes.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our authentication systems are fragmented across products and regions.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to move from VM-based deployments to a cloud-native architecture.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need to support multi-cloud without vendor lock-in.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our B2B integrations are brittle and hard to scale.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to consolidate IAM, API management, and integration into one platform.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our current platform can't handle real-time event-driven workloads.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need to expose legacy systems securely as modern APIs.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our developers spend weeks wiring integrations instead of shipping features.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to reduce API latency and improve reliability globally.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need a zero-downtime migration strategy from our current middleware stack.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to implement a secure internal developer platform for APIs.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Compliance requirements are forcing us to rethink our identity architecture.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our integration costs are growing faster than our infrastructure.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need better observability across APIs, gateways, and integrations.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to standardize integration patterns across business units.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our teams are duplicating integrations because there's no central governance.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need hybrid deployments across cloud and on-prem environments.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to adopt an event-driven architecture without rebuilding everything.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our current gateway solution is becoming a bottleneck.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need enterprise-grade identity federation across multiple applications.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to enable self-service API development for internal teams.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We're struggling to scale integrations after acquisitions and mergers.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to replace expensive custom middleware with open-source alternatives.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need a platform that works equally well for developers and platform teams.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to improve developer onboarding for APIs and integrations.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need to operationalize AI services securely through APIs.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to centralize access control across all digital channels.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our current integration stack is slowing down cloud adoption.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need to migrate off legacy SOAP services incrementally.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to build reusable integration accelerators instead of one-off flows.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need better resiliency and failover across regional deployments.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want platform engineering teams to manage integrations as infrastructure.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need secure API exposure for partners and external ecosystems.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We want to reduce operational overhead for API gateways and identity systems.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>Our digital transformation is blocked by integration complexity.</p></div>
+          <div class="challenge-card"><span class="qm">"</span><p>We need an architecture that can scale globally without rewriting applications.</p></div>
         </div>
       </div>
     </section>
