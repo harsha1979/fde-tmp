@@ -308,31 +308,138 @@
       }
 
       /* ── Engineering Engagements ────────────────────────── */
-      .eng-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
-      @media (max-width: 900px) { .eng-grid { grid-template-columns: 1fr; } }
-      .eng-card { border: 1px solid var(--wso2-border); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
-      .eng-card-top { background: var(--wso2-navy); padding: 28px; }
+      .eng-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 900px) {
+        .eng-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .eng-card {
+        border: 1px solid var(--wso2-border);
+        border-radius: 18px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .eng-card-top {
+        background: var(--wso2-navy);
+        padding: 28px;
+      }
       .eng-badge {
-        display: inline-flex; align-items: center; gap: 6px;
-        background: rgba(255,115,0,0.18); color: #FF7300;
-        border-radius: 20px; padding: 4px 12px;
-        font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
-        text-transform: uppercase; margin-bottom: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 115, 0, 0.18);
+        color: #ff7300;
+        border-radius: 20px;
+        padding: 4px 12px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
       }
-      .eng-card-title { color: white; font-size: 1.1rem; font-weight: 700; margin: 0 0 8px; line-height: 1.35; }
-      .eng-card-desc  { color: rgba(255,255,255,0.62); font-size: 0.88rem; margin: 0; line-height: 1.6; }
-      .eng-body { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; }
-      @media (max-width: 600px) { .eng-body { grid-template-columns: 1fr; } }
+      .eng-card-title {
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 8px;
+        line-height: 1.35;
+      }
+      .eng-card-desc {
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.88rem;
+        margin: 0;
+        line-height: 1.6;
+      }
+      .eng-body {
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        flex: 1;
+      }
+      @media (max-width: 600px) {
+        .eng-body {
+          grid-template-columns: 1fr;
+        }
+      }
       .eng-col-label {
-        font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-        letter-spacing: 0.08em; margin-bottom: 10px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
       }
-      .eng-col-label.resp { color: var(--wso2-orange-deep); }
-      .eng-col-label.out  { color: #16A34A; }
-      .eng-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
-      .eng-list li { font-size: 0.865rem; color: var(--wso2-text); padding-left: 18px; position: relative; line-height: 1.45; }
-      .eng-list.resp li::before { content: "→"; position: absolute; left: 0; color: var(--wso2-orange); font-weight: 700; }
-      .eng-list.out  li::before { content: "✓"; position: absolute; left: 0; color: #16A34A; font-weight: 700; }
+      .eng-col-label.resp {
+        color: var(--wso2-orange-deep);
+      }
+      .eng-col-label.out {
+        color: #16a34a;
+      }
+      .eng-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .eng-list li {
+        font-size: 0.865rem;
+        color: var(--wso2-text);
+        padding-left: 18px;
+        position: relative;
+        line-height: 1.45;
+      }
+      .eng-list.resp li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--wso2-orange);
+        font-weight: 700;
+      }
+      .eng-list.out li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #16a34a;
+        font-weight: 700;
+      }
+
+      /* ── Customer Challenges Ticker ─────────────────────── */
+      .ticker-wrap {
+        overflow: hidden; padding: 6px 0;
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      }
+      .ticker-row { overflow: hidden; margin-bottom: 12px; }
+      .ticker-inner {
+        display: flex; width: max-content; gap: 12px;
+        animation: ticker-left 60s linear infinite;
+      }
+      .ticker-inner.rev { animation: ticker-right 60s linear infinite; }
+      .ticker-inner:hover { animation-play-state: paused; }
+      @keyframes ticker-left  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      @keyframes ticker-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+      .pain-card {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.11);
+        border-radius: 12px; padding: 14px 20px;
+        white-space: nowrap; flex-shrink: 0;
+        font-size: 0.875rem; color: rgba(255,255,255,0.78);
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+        cursor: default;
+      }
+      .pain-card:hover {
+        background: rgba(255,115,0,0.14);
+        border-color: rgba(255,115,0,0.4); color: white;
+      }
+      .pain-card .q { color: #FF7300; font-size: 1.1rem; line-height: 1; font-weight: 700; }
     </style>
   </head>
   <body>
@@ -1109,158 +1216,109 @@
       </div>
     </section>
 
-    <!-- ===== ENGINEERING ENGAGEMENTS ===== -->
-    <section class="section-soft">
+    <!-- ===== CUSTOMER CHALLENGES TICKER ===== -->
+    <section class="section-dark" style="padding-bottom:64px;">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Engineering engagements</span>
-          <h2>Deep technical execution from inside your team.</h2>
-          <p>FDEs don't just advise — they own the hardest parts of the work. These are the two high-impact patterns where an embedded senior engineer makes the most difference.</p>
+        <div class="section-head reveal" style="margin-bottom:48px;">
+          <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">What customers tell us</span>
+          <h2>The challenges that bring engineering leaders to FDE.</h2>
+          <p style="max-width:640px;">Across every industry and technology stack, the same problems surface. FDEs have heard them all — and shipped production solutions for most of them.</p>
+        </div>
+      </div>
+
+      <!-- Row 1 — scrolls left -->
+      <div class="ticker-wrap">
+        <div class="ticker-row">
+          <div class="ticker-inner">
+            <div class="pain-card"><span class="q">"</span> We want to modernize our legacy ESB without disrupting existing services.</div>
+            <div class="pain-card"><span class="q">"</span> Our APIs are scattered across teams — we need a unified API management strategy.</div>
+            <div class="pain-card"><span class="q">"</span> We're spending too much on proprietary integration platforms.</div>
+            <div class="pain-card"><span class="q">"</span> We need to migrate thousands of on-prem integrations to Kubernetes.</div>
+            <div class="pain-card"><span class="q">"</span> Our authentication systems are fragmented across products and regions.</div>
+            <div class="pain-card"><span class="q">"</span> We want to move from VM-based deployments to a cloud-native architecture.</div>
+            <div class="pain-card"><span class="q">"</span> We need to support multi-cloud without vendor lock-in.</div>
+            <div class="pain-card"><span class="q">"</span> Our B2B integrations are brittle and hard to scale.</div>
+            <div class="pain-card"><span class="q">"</span> We want to consolidate IAM, API management, and integration into one platform.</div>
+            <div class="pain-card"><span class="q">"</span> Our current platform can't handle real-time event-driven workloads.</div>
+            <div class="pain-card"><span class="q">"</span> We need to expose legacy systems securely as modern APIs.</div>
+            <div class="pain-card"><span class="q">"</span> Our developers spend weeks wiring integrations instead of shipping features.</div>
+            <div class="pain-card"><span class="q">"</span> We want to reduce API latency and improve reliability globally.</div>
+            <div class="pain-card"><span class="q">"</span> We need a zero-downtime migration strategy from our current middleware stack.</div>
+            <div class="pain-card"><span class="q">"</span> We want to implement a secure internal developer platform for APIs.</div>
+            <div class="pain-card"><span class="q">"</span> Compliance requirements are forcing us to rethink our identity architecture.</div>
+            <div class="pain-card"><span class="q">"</span> Our integration costs are growing faster than our infrastructure.</div>
+            <div class="pain-card"><span class="q">"</span> We need better observability across APIs, gateways, and integrations.</div>
+            <div class="pain-card"><span class="q">"</span> We want to standardize integration patterns across business units.</div>
+            <div class="pain-card"><span class="q">"</span> Our teams are duplicating integrations because there's no central governance.</div>
+            <!-- duplicate for seamless loop -->
+            <div class="pain-card"><span class="q">"</span> We want to modernize our legacy ESB without disrupting existing services.</div>
+            <div class="pain-card"><span class="q">"</span> Our APIs are scattered across teams — we need a unified API management strategy.</div>
+            <div class="pain-card"><span class="q">"</span> We're spending too much on proprietary integration platforms.</div>
+            <div class="pain-card"><span class="q">"</span> We need to migrate thousands of on-prem integrations to Kubernetes.</div>
+            <div class="pain-card"><span class="q">"</span> Our authentication systems are fragmented across products and regions.</div>
+            <div class="pain-card"><span class="q">"</span> We want to move from VM-based deployments to a cloud-native architecture.</div>
+            <div class="pain-card"><span class="q">"</span> We need to support multi-cloud without vendor lock-in.</div>
+            <div class="pain-card"><span class="q">"</span> Our B2B integrations are brittle and hard to scale.</div>
+            <div class="pain-card"><span class="q">"</span> We want to consolidate IAM, API management, and integration into one platform.</div>
+            <div class="pain-card"><span class="q">"</span> Our current platform can't handle real-time event-driven workloads.</div>
+            <div class="pain-card"><span class="q">"</span> We need to expose legacy systems securely as modern APIs.</div>
+            <div class="pain-card"><span class="q">"</span> Our developers spend weeks wiring integrations instead of shipping features.</div>
+            <div class="pain-card"><span class="q">"</span> We want to reduce API latency and improve reliability globally.</div>
+            <div class="pain-card"><span class="q">"</span> We need a zero-downtime migration strategy from our current middleware stack.</div>
+            <div class="pain-card"><span class="q">"</span> We want to implement a secure internal developer platform for APIs.</div>
+            <div class="pain-card"><span class="q">"</span> Compliance requirements are forcing us to rethink our identity architecture.</div>
+            <div class="pain-card"><span class="q">"</span> Our integration costs are growing faster than our infrastructure.</div>
+            <div class="pain-card"><span class="q">"</span> We need better observability across APIs, gateways, and integrations.</div>
+            <div class="pain-card"><span class="q">"</span> We want to standardize integration patterns across business units.</div>
+            <div class="pain-card"><span class="q">"</span> Our teams are duplicating integrations because there's no central governance.</div>
+          </div>
         </div>
 
-        <div class="eng-grid reveal">
-
-          <!-- ── Product Displacement ─────────────────────── -->
-          <div class="eng-card">
-            <div class="eng-card-top">
-              <svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:12px;margin-bottom:20px;">
-                <defs>
-                  <linearGradient id="wso2-og-e" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E86500"/></linearGradient>
-                  <filter id="sh-e"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.18"/></filter>
-                </defs>
-                <!-- Competitor box -->
-                <rect x="16" y="24" width="152" height="112" rx="12" fill="#1C2432" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="5 3"/>
-                <text x="92" y="52" text-anchor="middle" fill="#EF4444" font-family="Inter" font-weight="700" font-size="9" letter-spacing="1">COMPETITOR PLATFORM</text>
-                <rect x="28" y="60" width="128" height="18" rx="4" fill="rgba(239,68,68,0.1)"/>
-                <text x="92" y="73" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="9">API Management</text>
-                <rect x="28" y="83" width="128" height="18" rx="4" fill="rgba(239,68,68,0.1)"/>
-                <text x="92" y="96" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="9">Identity &amp; Auth</text>
-                <rect x="28" y="106" width="128" height="18" rx="4" fill="rgba(239,68,68,0.1)"/>
-                <text x="92" y="119" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Inter" font-size="9">Integration</text>
-                <!-- X mark -->
-                <line x1="148" y1="28" x2="164" y2="44" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="164" y1="28" x2="148" y2="44" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
-                <!-- Arrow with FDE label -->
-                <path d="M 176 80 L 296 80" stroke="#FF7300" stroke-width="2" stroke-dasharray="none"/>
-                <polygon points="296,75 308,80 296,85" fill="#FF7300"/>
-                <rect x="200" y="62" width="76" height="20" rx="10" fill="rgba(255,115,0,0.15)"/>
-                <text x="238" y="76" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="700" font-size="9">FDE Migration</text>
-                <!-- WSO2 box -->
-                <rect x="316" y="24" width="152" height="112" rx="12" fill="url(#wso2-og-e)" filter="url(#sh-e)"/>
-                <text x="392" y="52" text-anchor="middle" fill="white" font-family="Inter" font-weight="800" font-size="9" letter-spacing="1">WSO2 STACK</text>
-                <rect x="328" y="60" width="128" height="18" rx="4" fill="rgba(255,255,255,0.15)"/>
-                <text x="392" y="73" text-anchor="middle" fill="white" font-family="Inter" font-size="9">API Platform + AI Gateway</text>
-                <rect x="328" y="83" width="128" height="18" rx="4" fill="rgba(255,255,255,0.15)"/>
-                <text x="392" y="96" text-anchor="middle" fill="white" font-family="Inter" font-size="9">IAM / CIAM</text>
-                <rect x="328" y="106" width="128" height="18" rx="4" fill="rgba(255,255,255,0.15)"/>
-                <text x="392" y="119" text-anchor="middle" fill="white" font-family="Inter" font-size="9">Integration Platform</text>
-                <!-- Checkmark -->
-                <circle cx="455" cy="36" r="9" fill="rgba(255,255,255,0.2)"/>
-                <path d="M451 36l3 3 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              </svg>
-              <div class="eng-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
-                Product Displacement
-              </div>
-              <h3 class="eng-card-title">Replacing a competitor platform with the WSO2 stack through deep technical execution</h3>
-              <p class="eng-card-desc">Customer-side engineering engagement to migrate APIs, auth flows, integrations, and deployments — with full ownership of production outcomes.</p>
-            </div>
-            <div class="eng-body">
-              <div>
-                <div class="eng-col-label resp">Engineering Responsibilities</div>
-                <ul class="eng-list resp">
-                  <li>Analyse existing architecture, APIs, auth flows, integrations, and deployment models</li>
-                  <li>Compare competitor capabilities with WSO2 technical fit</li>
-                  <li>Design migration architecture and integration patterns</li>
-                  <li>Build POCs, migration utilities, automation scripts, and reference implementations</li>
-                  <li>Solve production blockers with customer engineering teams</li>
-                  <li>Optimise performance, scalability, security, and reliability</li>
-                  <li>Work directly with WSO2 product and R&amp;D for fixes, roadmap alignment, and enhancements</li>
-                </ul>
-              </div>
-              <div>
-                <div class="eng-col-label out">Engineering Outcomes</div>
-                <ul class="eng-list out">
-                  <li>Successful migration from competitor platform</li>
-                  <li>Reduced migration risk and downtime</li>
-                  <li>Faster production adoption</li>
-                  <li>Reusable migration patterns and deployment blueprints</li>
-                </ul>
-              </div>
-            </div>
+        <!-- Row 2 — scrolls right -->
+        <div class="ticker-row">
+          <div class="ticker-inner rev">
+            <div class="pain-card"><span class="q">"</span> We need hybrid deployments across cloud and on-prem environments.</div>
+            <div class="pain-card"><span class="q">"</span> We want to adopt an event-driven architecture without rebuilding everything.</div>
+            <div class="pain-card"><span class="q">"</span> Our current gateway solution is becoming a bottleneck.</div>
+            <div class="pain-card"><span class="q">"</span> We need enterprise-grade identity federation across multiple applications.</div>
+            <div class="pain-card"><span class="q">"</span> We want to enable self-service API development for internal teams.</div>
+            <div class="pain-card"><span class="q">"</span> We're struggling to scale integrations after acquisitions and mergers.</div>
+            <div class="pain-card"><span class="q">"</span> We want to replace expensive custom middleware with open-source alternatives.</div>
+            <div class="pain-card"><span class="q">"</span> We need a platform that works equally well for developers and platform teams.</div>
+            <div class="pain-card"><span class="q">"</span> We want to improve developer onboarding for APIs and integrations.</div>
+            <div class="pain-card"><span class="q">"</span> We need to operationalize AI services securely through APIs.</div>
+            <div class="pain-card"><span class="q">"</span> We want to centralize access control across all digital channels.</div>
+            <div class="pain-card"><span class="q">"</span> Our current integration stack is slowing down cloud adoption.</div>
+            <div class="pain-card"><span class="q">"</span> We need to migrate off legacy SOAP services incrementally.</div>
+            <div class="pain-card"><span class="q">"</span> We want to build reusable integration accelerators instead of one-off flows.</div>
+            <div class="pain-card"><span class="q">"</span> We need better resiliency and failover across regional deployments.</div>
+            <div class="pain-card"><span class="q">"</span> We want platform engineering teams to manage integrations as infrastructure.</div>
+            <div class="pain-card"><span class="q">"</span> We need secure API exposure for partners and external ecosystems.</div>
+            <div class="pain-card"><span class="q">"</span> We want to reduce operational overhead for API gateways and identity systems.</div>
+            <div class="pain-card"><span class="q">"</span> Our digital transformation is blocked by integration complexity.</div>
+            <div class="pain-card"><span class="q">"</span> We need an architecture that can scale globally without rewriting applications.</div>
+            <!-- duplicate for seamless loop -->
+            <div class="pain-card"><span class="q">"</span> We need hybrid deployments across cloud and on-prem environments.</div>
+            <div class="pain-card"><span class="q">"</span> We want to adopt an event-driven architecture without rebuilding everything.</div>
+            <div class="pain-card"><span class="q">"</span> Our current gateway solution is becoming a bottleneck.</div>
+            <div class="pain-card"><span class="q">"</span> We need enterprise-grade identity federation across multiple applications.</div>
+            <div class="pain-card"><span class="q">"</span> We want to enable self-service API development for internal teams.</div>
+            <div class="pain-card"><span class="q">"</span> We're struggling to scale integrations after acquisitions and mergers.</div>
+            <div class="pain-card"><span class="q">"</span> We want to replace expensive custom middleware with open-source alternatives.</div>
+            <div class="pain-card"><span class="q">"</span> We need a platform that works equally well for developers and platform teams.</div>
+            <div class="pain-card"><span class="q">"</span> We want to improve developer onboarding for APIs and integrations.</div>
+            <div class="pain-card"><span class="q">"</span> We need to operationalize AI services securely through APIs.</div>
+            <div class="pain-card"><span class="q">"</span> We want to centralize access control across all digital channels.</div>
+            <div class="pain-card"><span class="q">"</span> Our current integration stack is slowing down cloud adoption.</div>
+            <div class="pain-card"><span class="q">"</span> We need to migrate off legacy SOAP services incrementally.</div>
+            <div class="pain-card"><span class="q">"</span> We want to build reusable integration accelerators instead of one-off flows.</div>
+            <div class="pain-card"><span class="q">"</span> We need better resiliency and failover across regional deployments.</div>
+            <div class="pain-card"><span class="q">"</span> We want platform engineering teams to manage integrations as infrastructure.</div>
+            <div class="pain-card"><span class="q">"</span> We need secure API exposure for partners and external ecosystems.</div>
+            <div class="pain-card"><span class="q">"</span> We want to reduce operational overhead for API gateways and identity systems.</div>
+            <div class="pain-card"><span class="q">"</span> Our digital transformation is blocked by integration complexity.</div>
+            <div class="pain-card"><span class="q">"</span> We need an architecture that can scale globally without rewriting applications.</div>
           </div>
-
-          <!-- ── Replatforming ───────────────────────────── -->
-          <div class="eng-card">
-            <div class="eng-card-top">
-              <svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:12px;margin-bottom:20px;">
-                <defs>
-                  <linearGradient id="wso2-og-r" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E86500"/></linearGradient>
-                  <filter id="sh-r"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.18"/></filter>
-                </defs>
-                <!-- Legacy monolith -->
-                <rect x="16" y="24" width="152" height="112" rx="12" fill="#1C2432" stroke="#64748B" stroke-width="1.5"/>
-                <text x="92" y="48" text-anchor="middle" fill="#94A3B8" font-family="Inter" font-weight="700" font-size="9" letter-spacing="1">LEGACY MONOLITH</text>
-                <rect x="36" y="56" width="112" height="10" rx="2" fill="#334155"/>
-                <rect x="36" y="70" width="112" height="10" rx="2" fill="#334155"/>
-                <rect x="36" y="84" width="112" height="10" rx="2" fill="#334155"/>
-                <rect x="36" y="98" width="112" height="10" rx="2" fill="#334155"/>
-                <text x="92" y="124" text-anchor="middle" fill="#475569" font-family="Inter" font-size="9">On-prem · Tightly coupled</text>
-                <!-- Arrow with FDE label -->
-                <path d="M 176 80 L 296 80" stroke="#FF7300" stroke-width="2"/>
-                <polygon points="296,75 308,80 296,85" fill="#FF7300"/>
-                <rect x="196" y="62" width="90" height="20" rx="10" fill="rgba(255,115,0,0.15)"/>
-                <text x="241" y="76" text-anchor="middle" fill="#FF7300" font-family="Inter" font-weight="700" font-size="9">FDE Replatform</text>
-                <!-- Cloud-native target -->
-                <rect x="316" y="24" width="152" height="112" rx="12" fill="url(#wso2-og-r)" filter="url(#sh-r)"/>
-                <text x="392" y="46" text-anchor="middle" fill="white" font-family="Inter" font-weight="800" font-size="9" letter-spacing="1">CLOUD-NATIVE</text>
-                <!-- 3 micro-service boxes -->
-                <rect x="328" y="54" width="56" height="32" rx="6" fill="rgba(255,255,255,0.18)"/>
-                <text x="356" y="68" text-anchor="middle" fill="white" font-family="Inter" font-weight="600" font-size="8">API</text>
-                <text x="356" y="79" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="7">Gateway</text>
-                <rect x="392" y="54" width="56" height="32" rx="6" fill="rgba(255,255,255,0.18)"/>
-                <text x="420" y="68" text-anchor="middle" fill="white" font-family="Inter" font-weight="600" font-size="8">IAM</text>
-                <text x="420" y="79" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="7">CIAM</text>
-                <rect x="328" y="92" width="56" height="32" rx="6" fill="rgba(255,255,255,0.18)"/>
-                <text x="356" y="106" text-anchor="middle" fill="white" font-family="Inter" font-weight="600" font-size="8">Integr.</text>
-                <text x="356" y="117" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="7">Platform</text>
-                <rect x="392" y="92" width="56" height="32" rx="6" fill="rgba(255,255,255,0.18)"/>
-                <text x="420" y="106" text-anchor="middle" fill="white" font-family="Inter" font-weight="600" font-size="8">Agent</text>
-                <text x="420" y="117" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="7">Platform</text>
-                <text x="392" y="148" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter" font-size="8">Kubernetes · Open Choreo · Multi-cloud</text>
-              </svg>
-              <div class="eng-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-                Replatforming
-              </div>
-              <h3 class="eng-card-title">Modernising legacy systems and moving workloads to scalable, cloud-native architectures</h3>
-              <p class="eng-card-desc">Using WSO2 technologies to build integration layers, CI/CD pipelines, Kubernetes deployments, and AI-ready platform foundations.</p>
-            </div>
-            <div class="eng-body">
-              <div>
-                <div class="eng-col-label resp">Engineering Responsibilities</div>
-                <ul class="eng-list resp">
-                  <li>Assess legacy architecture, dependencies, operational bottlenecks, and technical debt</li>
-                  <li>Design target-state platform architecture</li>
-                  <li>Build integration layers, CI/CD pipelines, Kubernetes deployments, security models, and automation</li>
-                  <li>Modernise APIs, identity flows, integrations, and observability</li>
-                  <li>Support hybrid, cloud, multi-region, and AI-ready deployments</li>
-                  <li>Guide customer engineering teams through implementation and production rollout</li>
-                  <li>Troubleshoot performance, scaling, networking, and deployment issues in real environments</li>
-                </ul>
-              </div>
-              <div>
-                <div class="eng-col-label out">Engineering Outcomes</div>
-                <ul class="eng-list out">
-                  <li>Modern cloud-ready platform architecture</li>
-                  <li>Better scalability, resilience, and operational efficiency</li>
-                  <li>Faster delivery cycles and automation maturity</li>
-                  <li>Stable enterprise production deployment with reduced operational overhead</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
