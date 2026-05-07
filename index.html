@@ -444,57 +444,147 @@
         grid-template-columns: 1fr 1fr;
         gap: 0;
       }
-      @media (max-width: 860px) { .qsp-banner { grid-template-columns: 1fr; } }
-      .qsp-left  { padding: 48px 44px; }
-      .qsp-right { padding: 48px 44px; border-left: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: center; gap: 16px; }
-      @media (max-width: 860px) { .qsp-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); } }
+      @media (max-width: 860px) {
+        .qsp-banner {
+          grid-template-columns: 1fr;
+        }
+      }
+      .qsp-left {
+        padding: 48px 44px;
+      }
+      .qsp-right {
+        padding: 48px 44px;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+      }
+      @media (max-width: 860px) {
+        .qsp-right {
+          border-left: none;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+      }
       .qsp-tag {
-        display: inline-flex; align-items: center; gap: 6px;
-        background: rgba(255,115,0,0.18); color: #FF7300;
-        border-radius: 20px; padding: 4px 14px;
-        font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em;
-        text-transform: uppercase; margin-bottom: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 115, 0, 0.18);
+        color: #ff7300;
+        border-radius: 20px;
+        padding: 4px 14px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
       }
-      .qsp-left h2 { color: white; font-size: 1.75rem; margin: 0 0 16px; line-height: 1.25; }
-      .qsp-left p  { color: rgba(255,255,255,0.68); font-size: 0.97rem; line-height: 1.7; margin: 0 0 24px; }
+      .qsp-left h2 {
+        color: white;
+        font-size: 1.75rem;
+        margin: 0 0 16px;
+        line-height: 1.25;
+      }
+      .qsp-left p {
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 0.97rem;
+        line-height: 1.7;
+        margin: 0 0 24px;
+      }
       .qsp-note {
-        background: rgba(255,115,0,0.12); border: 1px solid rgba(255,115,0,0.25);
-        border-radius: 10px; padding: 14px 18px;
-        color: #FFB36B; font-size: 0.875rem; line-height: 1.55;
+        background: rgba(255, 115, 0, 0.12);
+        border: 1px solid rgba(255, 115, 0, 0.25);
+        border-radius: 10px;
+        padding: 14px 18px;
+        color: #ffb36b;
+        font-size: 0.875rem;
+        line-height: 1.55;
       }
-      .qsp-note strong { color: #FF7300; }
+      .qsp-note strong {
+        color: #ff7300;
+      }
       .qsp-phase {
-        background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 12px; padding: 16px 18px;
-        display: flex; align-items: flex-start; gap: 14px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
       }
-      .qsp-phase:hover { background: rgba(255,115,0,0.1); border-color: rgba(255,115,0,0.3); }
+      .qsp-phase:hover {
+        background: rgba(255, 115, 0, 0.1);
+        border-color: rgba(255, 115, 0, 0.3);
+      }
       .qsp-phase-num {
-        width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
-        background: linear-gradient(135deg, var(--wso2-orange), var(--wso2-orange-deep));
-        color: white; font-weight: 800; font-size: 0.85rem;
-        display: grid; place-items: center;
-        box-shadow: 0 3px 8px rgba(255,115,0,0.3);
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        flex-shrink: 0;
+        background: linear-gradient(
+          135deg,
+          var(--wso2-orange),
+          var(--wso2-orange-deep)
+        );
+        color: white;
+        font-weight: 800;
+        font-size: 0.85rem;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 3px 8px rgba(255, 115, 0, 0.3);
       }
-      .qsp-phase-title { color: white; font-weight: 700; font-size: 0.9rem; margin: 0 0 3px; }
-      .qsp-phase-desc  { color: rgba(255,255,255,0.58); font-size: 0.82rem; line-height: 1.45; margin: 0; }
+      .qsp-phase-title {
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin: 0 0 3px;
+      }
+      .qsp-phase-desc {
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 0.82rem;
+        line-height: 1.45;
+        margin: 0;
+      }
       .qsp-arrow {
-        text-align: center; color: rgba(255,115,0,0.5);
-        font-size: 1.2rem; line-height: 1; margin: -4px 0;
+        text-align: center;
+        color: rgba(255, 115, 0, 0.5);
+        font-size: 1.2rem;
+        line-height: 1;
+        margin: -4px 0;
       }
       .qsp-outcome {
-        background: linear-gradient(135deg, rgba(255,115,0,0.15), rgba(232,101,0,0.1));
-        border: 1px solid rgba(255,115,0,0.3);
-        border-radius: 12px; padding: 16px 18px;
-        display: flex; align-items: center; gap: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 115, 0, 0.15),
+          rgba(232, 101, 0, 0.1)
+        );
+        border: 1px solid rgba(255, 115, 0, 0.3);
+        border-radius: 12px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
       }
       .qsp-outcome-icon {
-        width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
-        background: var(--wso2-orange); color: white;
-        display: grid; place-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        flex-shrink: 0;
+        background: var(--wso2-orange);
+        color: white;
+        display: grid;
+        place-items: center;
       }
-      .qsp-outcome-text strong { color: #FF7300; display: block; font-size: 0.9rem; }
-      .qsp-outcome-text span   { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
+      .qsp-outcome-text strong {
+        color: #ff7300;
+        display: block;
+        font-size: 0.9rem;
+      }
+      .qsp-outcome-text span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.8rem;
+      }
     </style>
   </head>
   <body>
@@ -1457,7 +1547,7 @@
 
           <!-- phase columns -->
           <div class="lc-cols">
-            <!-- Phase 1 — Discovery -->
+            <!-- Phase 1 Discovery -->
             <div class="lc-col">
               <div class="lc-phase-bar" style="background: #3b82f6">
                 <svg
@@ -1549,7 +1639,7 @@
 
             <div class="lc-arrow-sep">→</div>
 
-            <!-- Phase 2 — Proposal -->
+            <!-- Phase 2 Proposal -->
             <div class="lc-col">
               <div class="lc-phase-bar" style="background: #f97316">
                 <svg
@@ -1634,7 +1724,7 @@
 
             <div class="lc-arrow-sep">→</div>
 
-            <!-- Phase 3 — Contract -->
+            <!-- Phase 3 Contract -->
             <div class="lc-col lc-col-sm">
               <div class="lc-phase-bar" style="background: #ef4444">
                 <svg
@@ -1681,7 +1771,7 @@
 
             <div class="lc-arrow-sep">→</div>
 
-            <!-- Phase 4 — Delivery -->
+            <!-- Phase 4 Delivery -->
             <div class="lc-col lc-col-sm">
               <div class="lc-phase-bar" style="background: #22c55e">
                 <svg
@@ -1726,7 +1816,7 @@
 
             <div class="lc-arrow-sep">→</div>
 
-            <!-- Phase 5 — Handover -->
+            <!-- Phase 5 Handover -->
             <div class="lc-col">
               <div class="lc-phase-bar" style="background: #8b5cf6">
                 <svg
@@ -1918,7 +2008,7 @@
           <p>
             An FDE engagement starts with a conversation, not a contract. The
             first step is a discovery session where we understand your objective
-            — everything else follows from there.
+            everything else follows from there.
           </p>
         </div>
 
@@ -1937,8 +2027,8 @@
             <h3 class="heb-title">OKR Definition</h3>
             <p class="heb-desc">
               Together we define the Objectives and Key Results that will anchor
-              the engagement — measurable, production-tied, and agreed before
-              the proposal is written.
+              the engagement measurable, production-tied, and agreed before the
+              proposal is written.
             </p>
           </div>
           <div class="heb-arrow">→</div>
@@ -1947,7 +2037,7 @@
             <h3 class="heb-title">Proposal &amp; Agreement</h3>
             <p class="heb-desc">
               We produce a structured proposal covering technical approach,
-              milestone plan, acceptance criteria, and pricing — reviewed and
+              milestone plan, acceptance criteria, and pricing reviewed and
               agreed before contract.
             </p>
           </div>
@@ -1967,7 +2057,7 @@
             <h3>Ready to explore an FDE engagement?</h3>
             <p>
               Speak with your WSO2 account team to start the discovery
-              conversation — no commitment required.
+              conversation no commitment required.
             </p>
           </div>
           <a
@@ -1981,61 +2071,20 @@
 
     <!-- ===== QSP ===== -->
     <section class="section-soft">
-      <div class="container">
-        <div class="qsp-banner reveal">
-
-          <!-- Left — description -->
-          <div class="qsp-left">
-            <div class="qsp-tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              Quick Start Program
-            </div>
-            <h2>How FDE Matches with Quick Start Programs</h2>
-            <p>A Quick Start Program (QSP) is a fast, outcome-driven engagement where Forward Deployed Engineers help customers quickly adopt, validate, and operationalize the WSO2 platform in a real environment — without committing to a full production rollout upfront.</p>
-            <p>The FDE takes technical ownership from day one: setting up the environment, building the proof-of-concept flows, and validating the platform against your actual architecture and data.</p>
-            <div class="qsp-note">
-              <strong>Important:</strong> A QSP is not a production-ready delivery. It is a <strong>proof of concept</strong> — designed to validate that the WSO2 platform fits your use case and that the FDE's approach will work in your environment before scaling.
-            </div>
-          </div>
-
-          <!-- Right — phases -->
-          <div class="qsp-right">
-            <div class="qsp-phase">
-              <div class="qsp-phase-num">1</div>
-              <div>
-                <p class="qsp-phase-title">Discovery &amp; Environment Setup</p>
-                <p class="qsp-phase-desc">FDE reviews existing architecture, maps the target scenario, and stands up the WSO2 platform in a sandbox or staging environment.</p>
-              </div>
-            </div>
-            <div class="qsp-arrow">↓</div>
-            <div class="qsp-phase">
-              <div class="qsp-phase-num">2</div>
-              <div>
-                <p class="qsp-phase-title">POC Build &amp; Integration</p>
-                <p class="qsp-phase-desc">FDE builds the core flows — API, integration, identity, or agent — wired to real systems. Rapid iterations, daily visibility.</p>
-              </div>
-            </div>
-            <div class="qsp-arrow">↓</div>
-            <div class="qsp-phase">
-              <div class="qsp-phase-num">3</div>
-              <div>
-                <p class="qsp-phase-title">Validation &amp; Handover</p>
-                <p class="qsp-phase-desc">The POC is demonstrated against agreed success criteria. Architecture docs and runbooks handed to your team for the next phase.</p>
-              </div>
-            </div>
-            <div class="qsp-arrow">↓</div>
-            <div class="qsp-outcome">
-              <div class="qsp-outcome-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div class="qsp-outcome-text">
-                <strong>Path to Full Production</strong>
-                <span>Validated POC becomes the foundation for a full FDE engagement — same stack, same engineer, no rebuild.</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
+      <div class="container" style="max-width:760px">
+        <p class="eyebrow reveal">Quick Start Program</p>
+        <h2 class="reveal">How FDE Matches with Quick Start Programs</h2>
+        <p class="reveal">
+          A Quick Start Program (QSP) is a fast, outcome-driven engagement
+          where Forward Deployed Engineers help customers quickly adopt,
+          validate, and operationalize the WSO2 platform in a real environment
+          without committing to a full production rollout upfront.
+        </p>
+        <p class="reveal">
+          The FDE takes technical ownership from day one: setting up the
+          environment, building the proof-of-concept flows, and validating the
+          platform against your actual architecture and data.
+        </p>
       </div>
     </section>
 
