@@ -218,40 +218,90 @@
 
       /* ── How an Engagement Begins ─────────────────────────── */
       .heb-steps {
-        display: flex; align-items: stretch;
+        display: flex;
+        align-items: stretch;
         border: 1px solid var(--wso2-border);
-        border-radius: 16px; overflow: hidden;
+        border-radius: 16px;
+        overflow: hidden;
         margin-bottom: 20px;
       }
       .heb-step {
-        flex: 1; padding: 32px 28px;
-        display: flex; flex-direction: column; gap: 12px;
+        flex: 1;
+        padding: 32px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         border-right: 1px solid var(--wso2-border);
       }
-      .heb-step:last-child { border-right: none; }
-      .heb-num {
-        width: 44px; height: 44px; border-radius: 12px;
-        color: white; font-weight: 800; font-size: 18px;
-        display: grid; place-items: center; flex-shrink: 0;
+      .heb-step:last-child {
+        border-right: none;
       }
-      .heb-title { font-size: 1rem; font-weight: 700; margin: 0; color: var(--wso2-navy); }
-      .heb-desc  { font-size: 0.9rem; color: var(--wso2-text-muted); margin: 0; line-height: 1.6; flex: 1; }
+      .heb-num {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        color: white;
+        font-weight: 800;
+        font-size: 18px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+      .heb-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+        color: var(--wso2-navy);
+      }
+      .heb-desc {
+        font-size: 0.9rem;
+        color: var(--wso2-text-muted);
+        margin: 0;
+        line-height: 1.6;
+        flex: 1;
+      }
       .heb-arrow {
-        display: flex; align-items: center; padding: 0 2px;
-        color: #CBD0D8; font-size: 1.1rem; flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 2px;
+        color: #cbd0d8;
+        font-size: 1.1rem;
+        flex-shrink: 0;
       }
       .heb-cta {
-        display: flex; align-items: center; justify-content: space-between; gap: 24px;
-        background: #F7F8FA; border: 1px solid var(--wso2-border);
-        border-radius: 16px; padding: 28px 32px; flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        background: #f7f8fa;
+        border: 1px solid var(--wso2-border);
+        border-radius: 16px;
+        padding: 28px 32px;
+        flex-wrap: wrap;
       }
-      .heb-cta h3 { margin: 0 0 6px; font-size: 1.1rem; }
-      .heb-cta p  { margin: 0; color: var(--wso2-text-muted); font-size: 0.9rem; }
+      .heb-cta h3 {
+        margin: 0 0 6px;
+        font-size: 1.1rem;
+      }
+      .heb-cta p {
+        margin: 0;
+        color: var(--wso2-text-muted);
+        font-size: 0.9rem;
+      }
       @media (max-width: 780px) {
-        .heb-steps { flex-direction: column; }
-        .heb-arrow { display: none; }
-        .heb-step  { border-right: none; border-bottom: 1px solid var(--wso2-border); }
-        .heb-step:last-child { border-bottom: none; }
+        .heb-steps {
+          flex-direction: column;
+        }
+        .heb-arrow {
+          display: none;
+        }
+        .heb-step {
+          border-right: none;
+          border-bottom: 1px solid var(--wso2-border);
+        }
+        .heb-step:last-child {
+          border-bottom: none;
+        }
       }
     </style>
   </head>
@@ -530,51 +580,6 @@
               independently.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== HOW AN ENGAGEMENT BEGINS ===== -->
-    <section class="section-soft">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Getting started</span>
-          <h2>How an Engagement Begins</h2>
-          <p>An FDE engagement starts with a conversation, not a contract. The first step is a discovery session where we understand your objective — everything else follows from there.</p>
-        </div>
-
-        <div class="heb-steps reveal">
-          <div class="heb-step">
-            <div class="heb-num" style="background:#3B82F6;">1</div>
-            <h3 class="heb-title">Discovery Session</h3>
-            <p class="heb-desc">We run structured discovery sessions to understand your business objective, technology landscape, and what success looks like.</p>
-          </div>
-          <div class="heb-arrow">→</div>
-          <div class="heb-step">
-            <div class="heb-num" style="background:#D97706;">2</div>
-            <h3 class="heb-title">OKR Definition</h3>
-            <p class="heb-desc">Together we define the Objectives and Key Results that will anchor the engagement — measurable, production-tied, and agreed before the proposal is written.</p>
-          </div>
-          <div class="heb-arrow">→</div>
-          <div class="heb-step">
-            <div class="heb-num" style="background:#DC2626;">3</div>
-            <h3 class="heb-title">Proposal &amp; Agreement</h3>
-            <p class="heb-desc">We produce a structured proposal covering technical approach, milestone plan, acceptance criteria, and pricing — reviewed and agreed before contract.</p>
-          </div>
-          <div class="heb-arrow">→</div>
-          <div class="heb-step">
-            <div class="heb-num" style="background:#16A34A;">4</div>
-            <h3 class="heb-title">FDE Delivery Begins</h3>
-            <p class="heb-desc">Your dedicated FDE joins your team. Delivery runs until all OKRs are met in production and you sign off on the outcomes.</p>
-          </div>
-        </div>
-
-        <div class="heb-cta reveal">
-          <div>
-            <h3>Ready to explore an FDE engagement?</h3>
-            <p>Speak with your WSO2 account team to start the discovery conversation — no commitment required.</p>
-          </div>
-          <a href="contact.html" class="btn btn-primary">Contact WSO2 FDE →</a>
         </div>
       </div>
     </section>
