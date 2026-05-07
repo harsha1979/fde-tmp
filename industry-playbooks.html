@@ -1,466 +1,1330 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Industry Playbooks | One scenario, one FDE, one win — WSO2 FDE</title>
-<meta name="description" content="Ten industry playbooks. Each shows the simple scenario an FDE solves first on the WSO2 stack — narrow, viable, weeks to ship. Then expands to enterprise cost cutting.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
-<style>
-  .playbook-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-  @media (max-width: 880px) { .playbook-grid { grid-template-columns:1fr; } }
-  .playbook {
-    background:white;
-    border:1px solid var(--wso2-border);
-    border-radius:var(--radius-lg);
-    padding:32px 28px;
-    transition: all var(--transition);
-    display:flex; flex-direction:column;
-  }
-  .playbook:hover { border-color: var(--wso2-orange); box-shadow: var(--shadow-md); transform:translateY(-3px); }
-  .playbook-head { display:flex; align-items:center; gap:14px; margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid var(--wso2-border); }
-  .playbook-head .ico {
-    width:46px; height:46px; border-radius:12px;
-    background: var(--wso2-orange-soft);
-    color: var(--wso2-orange);
-    display:grid; place-items:center;
-  }
-  .playbook-head h3 { font-size:1.18rem; margin:0; }
-  .playbook-label {
-    font-size:0.72rem; font-weight:700; letter-spacing:0.08em;
-    text-transform:uppercase; color: var(--wso2-orange-deep);
-    margin-bottom:6px;
-  }
-  .playbook .scenario { color: var(--wso2-text-muted); font-size:0.97rem; margin-bottom:18px; }
-  .playbook .solve { color: var(--wso2-text); font-size:0.97rem; margin-bottom:18px; }
-  .playbook .solve strong { color: var(--wso2-navy); }
-  .playbook .meta {
-    margin-top:auto;
-    padding-top:16px;
-    border-top:1px dashed var(--wso2-border);
-    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-    font-size:0.85rem;
-  }
-  .playbook .meta .ship { color: var(--wso2-orange-deep); font-weight:700; }
-  .playbook .meta .expand { color: var(--wso2-text-muted); }
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Industry Playbooks | AI outcomes, weeks to deploy WSO2 FDE</title>
+    <meta
+      name="description"
+      content="Forty AI use cases across ten industries. See the business value each delivers  and why an FDE ships them in weeks, not quarters."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <style>
+      /* ── Industry page overrides ─────────────────────────────── */
+      .ind-hero-stat {
+        display: flex;
+        gap: 40px;
+        margin-top: 36px;
+        flex-wrap: wrap;
+      }
+      .ind-hero-stat .stat {
+        display: flex;
+        flex-direction: column;
+      }
+      .ind-hero-stat .stat strong {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--wso2-orange);
+        line-height: 1;
+      }
+      .ind-hero-stat .stat span {
+        font-size: 0.82rem;
+        color: var(--wso2-text-muted);
+        margin-top: 4px;
+      }
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">W2</div>
-      <span>WSO2 <span class="logo-sub">Forward Deployed Engineering</span></span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-    <nav><ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">What We Do</a></li>
-      <li><a href="approach.html">Our Approach</a></li>
-      <li><a href="industry-playbooks.html" class="active">Industry Playbooks</a></li>
-      <li><a href="careers.html">Careers</a></li>
-      <li><a href="contact.html" class="btn btn-primary" style="padding:10px 20px;">Talk to Us</a></li>
-    </ul></nav>
-  </div>
-</header>
+      /* ── Industry section ────────────────────────────────────── */
+      .ind-section {
+        padding: 72px 0;
+        border-bottom: 1px solid var(--wso2-border);
+      }
+      .ind-section:last-of-type {
+        border-bottom: none;
+      }
+      .ind-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+      .ind-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+      }
+      .ind-header-text h2 {
+        font-size: 1.75rem;
+        margin: 0 0 6px;
+      }
+      .ind-header-text p {
+        color: var(--wso2-text-muted);
+        margin: 0;
+        font-size: 1rem;
+      }
 
-<section class="page-hero">
-  <div class="container">
-    <div class="crumbs"><a href="index.html">Home</a> · <span>Industry Playbooks</span></div>
-    <span class="eyebrow">Industry plays</span>
-    <h1>Ten industries. Ten simple scenarios an FDE solves first.</h1>
-    <p>Each playbook below is a narrow, viable scenario — the kind of problem an FDE picks up on day one and ships in weeks on the WSO2 stack. Same foundation expands to function-wide and enterprise-wide cost cutting.</p>
-  </div>
-</section>
+      /* ── Use-case cards ──────────────────────────────────────── */
+      .uc-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 760px) {
+        .uc-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .uc-card {
+        border: 1px solid var(--wso2-border);
+        border-radius: var(--radius-lg);
+        padding: 28px 24px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: all var(--transition);
+      }
+      .uc-card:hover {
+        border-color: var(--wso2-orange);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+      .uc-card-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .uc-name {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--wso2-navy);
+        line-height: 1.3;
+      }
+      .uc-badge {
+        flex-shrink: 0;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #fff;
+        background: var(--wso2-orange);
+        border-radius: 20px;
+        padding: 3px 10px;
+        white-space: nowrap;
+      }
+      .uc-value {
+        font-size: 0.96rem;
+        color: var(--wso2-text);
+        line-height: 1.6;
+      }
+      .uc-value strong {
+        color: var(--wso2-navy);
+      }
+      .uc-speed {
+        margin-top: auto;
+        padding-top: 12px;
+        border-top: 1px dashed var(--wso2-border);
+        font-size: 0.83rem;
+        color: var(--wso2-orange-deep);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-<!-- ===== HOW A PLAYBOOK RUNS ===== -->
-<section style="padding-top:50px;padding-bottom:50px;">
-  <div class="container">
-    <div class="two-col">
-      <div class="reveal">
-        <span class="eyebrow">How a playbook runs</span>
-        <h2>One scenario. One FDE. One agent in production.</h2>
-        <p>Every playbook starts narrow on purpose. The FDE picks the smallest scenario that creates real, measurable value — ships it on the WSO2 Agent Fabric, behind your existing identity and gateway, integrated to the existing system of record.</p>
-        <p><strong>That single agent earns its keep within months.</strong> Then the same platform, the same patterns, the same FDE add the next agent — until the whole business problem is solved and the cost base is materially smaller.</p>
-        <ul class="check-list">
-          <li><strong>Weeks, not quarters,</strong> to first agent in production</li>
-          <li><strong>One scenario at a time,</strong> proven before expanding</li>
-          <li><strong>Same stack reused</strong> — no rebuild tax as scope grows</li>
-        </ul>
-      </div>
-      <div class="reveal">
-        <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:18px;border:1px solid #E5E8EC;">
-          <defs><linearGradient id="og-stair" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
-          <text x="20" y="35" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">EXPANSION STAIRCASE</text>
-          <rect x="20" y="220" width="140" height="80" rx="10" fill="#FFFFFF" stroke="#E5E8EC"/>
-          <text x="36" y="244" fill="#FF7300" font-family="Inter" font-weight="700" font-size="11">STEP 1</text>
-          <text x="36" y="266" fill="#20272F" font-family="Inter" font-weight="700" font-size="14">One agent</text>
-          <text x="36" y="284" fill="#5A6573" font-family="Inter" font-size="11">4–8 weeks</text>
-          <rect x="170" y="140" width="140" height="80" rx="10" fill="#FFFFFF" stroke="#E5E8EC"/>
-          <text x="186" y="164" fill="#FF7300" font-family="Inter" font-weight="700" font-size="11">STEP 2</text>
-          <text x="186" y="186" fill="#20272F" font-family="Inter" font-weight="700" font-size="14">Function-wide</text>
-          <text x="186" y="204" fill="#5A6573" font-family="Inter" font-size="11">3–6 months</text>
-          <rect x="320" y="60" width="140" height="80" rx="10" fill="url(#og-stair)"/>
-          <text x="336" y="84" fill="rgba(255,255,255,0.9)" font-family="Inter" font-weight="700" font-size="11">STEP 3</text>
-          <text x="336" y="106" fill="#FFFFFF" font-family="Inter" font-weight="700" font-size="14">Enterprise</text>
-          <text x="336" y="124" fill="rgba(255,255,255,0.9)" font-family="Inter" font-size="11">9–12 months</text>
-          <path d="M 90 220 L 90 175 L 240 175 L 240 220" fill="none" stroke="#FF7300" stroke-width="2" stroke-dasharray="4 3"/>
-          <path d="M 240 140 L 240 95 L 390 95 L 390 140" fill="none" stroke="#FF7300" stroke-width="2" stroke-dasharray="4 3"/>
-          <polygon points="240,142 235,132 245,132" fill="#FF7300"/>
-          <polygon points="390,142 385,132 395,132" fill="#FF7300"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
+      /* ── Speed strip ─────────────────────────────────────────── */
+      .speed-strip {
+        background: var(--wso2-navy);
+        padding: 56px 0;
+        text-align: center;
+      }
+      .speed-strip h2 {
+        color: #fff;
+        font-size: 2rem;
+        margin: 0 0 12px;
+      }
+      .speed-strip p {
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 640px;
+        margin: 0 auto 36px;
+      }
+      .speed-pills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+      .speed-pill {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 24px;
+        padding: 8px 20px;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      .speed-pill strong {
+        color: #ff7300;
+      }
 
-<!-- ===== STACK DIAGRAM ===== -->
-<section class="section-soft">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">The stack underneath every playbook</span>
-      <h2>WSO2 Agent Fabric on Open Choreo.</h2>
-      <p>Same foundation across all ten plays — IAM, Integration, API Gateway and Agent Manager on Open Choreo. The first agent uses the same stack the enterprise rollout will run on.</p>
-    </div>
-    <div class="reveal">
-      <svg viewBox="0 0 1100 600" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:24px;border:1px solid #E5E8EC;">
-        <defs>
-          <linearGradient id="og-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF7300"/><stop offset="100%" stop-color="#E86500"/></linearGradient>
-          <linearGradient id="navy-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#20272F"/><stop offset="100%" stop-color="#2C3744"/></linearGradient>
-          <linearGradient id="row-st" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FAFBFC"/></linearGradient>
-          <filter id="ds-st" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/></filter>
-        </defs>
-        <rect x="40" y="20" width="1020" height="70" rx="12" fill="url(#og-st)" filter="url(#ds-st)"/>
-        <text x="550" y="48" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="700" font-size="16">Industry Outcomes</text>
-        <text x="550" y="70" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Inter" font-size="12">Healthcare · Finance · Education · Insurance · Government · Energy · Manufacturing · Retail · Telco · Transport</text>
-        <rect x="40" y="110" width="1020" height="70" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
-        <rect x="40" y="110" width="6" height="70" rx="3" fill="#FF7300"/>
-        <text x="64" y="138" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Agent Manager</text>
-        <text x="64" y="158" fill="#5A6573" font-family="Inter" font-size="12">Build, secure and govern agents · tool registry · multi-agent orchestration · evaluation</text>
-        <rect x="40" y="200" width="500" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
-        <rect x="40" y="200" width="6" height="100" rx="3" fill="#FF7300"/>
-        <text x="64" y="228" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">API Gateway + AI Gateway</text>
-        <text x="64" y="248" fill="#5A6573" font-family="Inter" font-size="11">Expose APIs · MCPs to agents (ingress)</text>
-        <text x="64" y="266" fill="#5A6573" font-family="Inter" font-size="11">Govern LLMs · external APIs (egress)</text>
-        <rect x="560" y="200" width="500" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
-        <rect x="560" y="200" width="6" height="100" rx="3" fill="#FF7300"/>
-        <text x="584" y="228" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Identity & Access (IAM / CIAM)</text>
-        <text x="584" y="248" fill="#5A6573" font-family="Inter" font-size="11">Identities for humans, devices &amp; agents</text>
-        <text x="584" y="266" fill="#5A6573" font-family="Inter" font-size="11">Agent ID — fine-grained access for AI</text>
-        <rect x="40" y="320" width="1020" height="100" rx="12" fill="url(#row-st)" stroke="#E5E8EC" filter="url(#ds-st)"/>
-        <rect x="40" y="320" width="6" height="100" rx="3" fill="#FF7300"/>
-        <text x="64" y="348" fill="#20272F" font-family="Inter" font-weight="700" font-size="15">Integration Platform</text>
-        <text x="64" y="368" fill="#5A6573" font-family="Inter" font-size="11">Connectors to your existing systems · ESB · event-driven · workflow orchestration</text>
-        <rect x="40" y="440" width="1020" height="120" rx="12" fill="url(#navy-st)" filter="url(#ds-st)"/>
-        <text x="550" y="478" text-anchor="middle" fill="#FFF" font-family="Inter" font-weight="800" font-size="20">Open Choreo</text>
-        <text x="550" y="500" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-family="Inter" font-size="12">Open-source internal developer platform — CI/CD · Kubernetes · observability · multi-cloud</text>
-        <line x1="200" y1="520" x2="900" y2="520" stroke="#FF7300" stroke-width="2"/>
-        <text x="550" y="544" text-anchor="middle" fill="#FFB36B" font-family="Inter" font-weight="600" font-size="11" letter-spacing="1.5">FOUNDATION · OPEN SOURCE · YOURS TO RUN</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PLAYBOOK CARDS ===== -->
-<section>
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Ten playbooks</span>
-      <h2>Pick the play closest to your business.</h2>
-      <p>Each card is one scenario, one first agent, shipped by an FDE in weeks.</p>
-    </div>
-
-    <div class="playbook-grid reveal">
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20 M2 12h20"/></svg></div>
-          <h3>Healthcare</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">Prior authorisations consume hundreds of admin hours per clinic each month — and a single denial blocks a patient and a provider for days.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One prior-auth agent for one specialty.</strong> Drafts the request from EHR data, files via the payer API, tracks status, escalates exceptions to a human — behind the API Gateway with PHI audit on every call.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · EHR/payer</span><span class="pill accent">Agent Identity</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to revenue-cycle automation</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-          <h3>Banking & Financial Services</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">KYC document intake is a swivel-chair grind for back-office teams. Days of human classification per customer; rework on every missing field.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One KYC document agent for one channel.</strong> Classifies, extracts and validates incoming documents — every decision logged and audit-ready at the API Gateway, secured by CIAM.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway · audit</span><span class="pill accent">Integration · KYC + core</span><span class="pill accent">CIAM</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to AML, disputes, customer ops</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10L12 5 2 10l10 5 10-5z M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-          <h3>Education</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">Advisors and admin teams answer the same questions thousands of times each term — registration, financial aid, deadlines — while students wait days.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One registration & financial-aid FAQ agent.</strong> Grounded in your policy documents, wired to the SIS for live status, secured by student SSO and audited via the API Gateway.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · SIS</span><span class="pill accent">Student SSO</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 4–6 weeks</span><span class="expand">↗ Expand to tutoring, faculty, alumni</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Insurance</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">A high volume of simple claims (e.g., motor windshield) ties up adjusters who should be working complex cases. PDFs and photos get re-keyed by hand.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One claim-intake agent for one claim type.</strong> Extracts data from photos and forms, applies policy rules, drafts a payment recommendation for adjuster sign-off — humans stay in the loop on every payout.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · policy/claims</span><span class="pill accent">IAM · adjuster</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 8–10 weeks</span><span class="expand">↗ Expand to all claim types + fraud</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="21" x2="21" y2="21"/><path d="M3 10l9-7 9 7 M5 21V10 M19 21V10 M9 21v-6h6v6"/></svg></div>
-          <h3>Government & Public Agencies</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">Citizens chase status across agencies; staff spend most of their day looking things up. Each new digital service is a long IT project.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One licence/permit renewal agent for one agency.</strong> Citizen SSO, identity-verified, fully audited at the gateway, deployed on sovereign infrastructure if required.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway · sovereignty</span><span class="pill accent">Integration · agency systems</span><span class="pill accent">CIAM + MFA</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 8–10 weeks</span><span class="expand">↗ Expand to cross-agency citizen front door</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <h3>Energy & Utilities</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">Customers find out about outages from their neighbours; agents read scripts because the data lives across SCADA, GIS and CMMS.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One customer-facing outage status & ETA agent.</strong> Pulls from your existing OMS through the API Gateway — accurate, audited, identity-aware.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · OMS/GIS</span><span class="pill accent">CIAM</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to dispatch and asset health</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 20h20V8l-6 4V8l-6 4V4H2v16z"/></svg></div>
-          <h3>Manufacturing</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">Operators read paper SOPs; engineers debug downtime by walking the floor and pulling reports. Knowledge sits in PDFs and senior heads.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One maintenance Q&amp;A agent for one production line.</strong> Grounded in equipment manuals and 12 months of work-order history, callable from the operator's HMI.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · MES + CMMS</span><span class="pill accent">Operator IAM</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to supply, quality, multi-plant</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z M3 6h18 M16 10a4 4 0 01-8 0"/></svg></div>
-          <h3>Retail & E-commerce</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">A huge share of contact-centre volume is "where's my order?" and "I want to return this." Agents and customers both wait.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One order-status & returns agent.</strong> CIAM-secured, resolves end-to-end, hits your OMS through the API Gateway. Web first, then app and store.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · OMS</span><span class="pill accent">CIAM</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 4–6 weeks</span><span class="expand">↗ Expand to shopping & merchandising</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.55a11 11 0 0114 0 M1.42 9a16 16 0 0121.16 0 M8.53 16.11a6 6 0 016.95 0 M12 20h0"/></svg></div>
-          <h3>Telecommunications</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">Customers wait on hold for billing and plan questions. Each new query channel becomes a multi-month BSS integration project.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One billing & plan FAQ agent.</strong> CIAM with identity verification, wired to billing through the API Gateway, with hand-off to humans on edge cases.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway</span><span class="pill accent">Integration · BSS billing</span><span class="pill accent">CIAM + ID verify</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to plan changes, NOC triage</span></div>
-      </div>
-
-      <div class="playbook">
-        <div class="playbook-head">
-          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-          <h3>Transportation & Logistics</h3>
-        </div>
-        <div class="playbook-label">The scenario</div>
-        <p class="scenario">Customers chase ETAs; CSRs call dispatchers; dispatchers re-plan manually. Every disruption costs hours of human re-coordination.</p>
-        <div class="playbook-label">FDE plays</div>
-        <p class="solve"><strong>One proactive ETA &amp; status agent for shippers.</strong> Pulls from your TMS and telematics through the API Gateway — partner-facing identity, audited delivery.</p>
-        <div class="pill-row" style="margin:0 0 12px;">
-          <span class="pill accent">Agent Manager</span><span class="pill accent">API Gateway · partners</span><span class="pill accent">Integration · TMS/telematics</span><span class="pill accent">Partner IAM</span>
-        </div>
-        <div class="meta"><span class="ship">⏱ 6–8 weeks</span><span class="expand">↗ Expand to dispatch, pricing, fleet ops</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== UNIVERSAL EXPANSION PATH ===== -->
-<section class="section-dark">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" style="background:rgba(255,115,0,0.15);color:#FFB36B;">The universal pattern</span>
-      <h2>One agent today. The whole business problem in twelve months.</h2>
-      <p>Every playbook above runs on the same staircase. The first agent earns its keep. The same WSO2 stack and the same FDE then expand to function-wide cost cutting, and from there to enterprise-wide transformation.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card pillar reveal">
-        <span class="num">1</span>
-        <h3>Step 1 · One viable agent</h3>
-        <p><strong>4–10 weeks.</strong> One narrow scenario, one team, real production. The FDE ships, your team watches it work, the metric moves.</p>
-      </div>
-      <div class="card pillar reveal">
-        <span class="num">2</span>
-        <h3>Step 2 · Function-wide</h3>
-        <p><strong>3–6 months.</strong> Adjacent agents on the same Agent Fabric — same systems, same gateway, same identity. Cost cuts compound across the function.</p>
-      </div>
-      <div class="card pillar reveal">
-        <span class="num">3</span>
-        <h3>Step 3 · Enterprise transformation</h3>
-        <p><strong>9–12 months.</strong> Multi-agent orchestration across the business · consolidated middleware that pays for itself. The whole cost curve moves.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== COST-CUTTING MATH ===== -->
-<section>
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">The cost-cutting math</span>
-      <h2>Why narrow first wins on every dimension.</h2>
-    </div>
-
-    <div class="grid-2">
-      <div class="card reveal">
-        <span class="eyebrow" style="background:rgba(115,125,140,0.12);color:#5A6573;">Boil-the-ocean programme</span>
-        <h3 style="margin-top:14px;">12–24 month transformation</h3>
-        <ul class="check-list" style="margin-top:14px;">
-          <li>Fixed-scope SOW · features, not outcomes</li>
-          <li>Big upfront integration build before any agent ships</li>
-          <li>Value realised at the very end (if at all)</li>
-          <li>High risk if scope or models shift mid-flight</li>
-          <li>Vendor-built · rebuild tax at every renewal</li>
-        </ul>
-      </div>
-      <div class="card reveal" style="border-color:#FF7300;">
-        <span class="eyebrow">Narrow first with FDE</span>
-        <h3 style="margin-top:14px;">Compounding monthly returns</h3>
-        <ul class="check-list" style="margin-top:14px;">
-          <li>One agent live in weeks · earning value while step 2 is being scoped</li>
-          <li>Same Agent Fabric reused — every next agent is cheaper to ship</li>
-          <li>Each step funds the next from real savings</li>
-          <li>Scope re-shaped as models and priorities change</li>
-          <li>Open source on Open Choreo · yours to run forever</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="reveal mt-48">
-      <svg viewBox="0 0 1100 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:18px;background:linear-gradient(135deg,#FFFAF3,#F7F8FA);padding:24px;border:1px solid #E5E8EC;">
-        <defs><linearGradient id="og-cost" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FF8A1F"/><stop offset="100%" stop-color="#E86500"/></linearGradient></defs>
-        <text x="40" y="40" fill="#5A6573" font-family="Inter" font-weight="700" font-size="11" letter-spacing="1.5">CUMULATIVE COST SAVED — INDICATIVE</text>
-        <path d="M 80 220 L 480 220 L 520 215 L 600 200 L 720 160 L 900 110 L 1040 100" fill="none" stroke="#5A6573" stroke-width="2.5" stroke-dasharray="6 4"/>
-        <text x="1040" y="92" text-anchor="end" fill="#5A6573" font-family="Inter" font-weight="600" font-size="12">Boil-the-ocean programme</text>
-        <path d="M 80 220 L 200 200 L 240 175 L 360 165 L 400 130 L 560 120 L 600 90 L 800 80 L 840 50 L 1040 45" fill="none" stroke="url(#og-cost)" stroke-width="3"/>
-        <text x="1040" y="38" text-anchor="end" fill="#E86500" font-family="Inter" font-weight="700" font-size="12">Narrow first with FDE</text>
-        <circle cx="240" cy="175" r="6" fill="#FF7300"/>
-        <text x="240" y="195" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">step 1</text>
-        <circle cx="600" cy="90" r="6" fill="#FF7300"/>
-        <text x="600" y="80" text-anchor="middle" fill="#5A6573" font-family="Inter" font-size="10">step 2</text>
-        <circle cx="840" cy="50" r="7" fill="#FF7300"/>
-        <text x="860" y="50" fill="#E86500" font-family="Inter" font-weight="700" font-size="10">step 3</text>
-        <line x1="80" y1="220" x2="1060" y2="220" stroke="#E5E8EC" stroke-width="1.5"/>
-        <line x1="80" y1="220" x2="80" y2="40" stroke="#E5E8EC" stroke-width="1.5"/>
-        <text x="80" y="245" fill="#9BA4B0" font-family="Inter" font-size="11">today</text>
-        <text x="560" y="245" text-anchor="middle" fill="#9BA4B0" font-family="Inter" font-size="11">+6 months</text>
-        <text x="1040" y="245" text-anchor="end" fill="#9BA4B0" font-family="Inter" font-size="11">+12 months</text>
-        <text x="65" y="48" text-anchor="end" fill="#9BA4B0" font-family="Inter" font-size="11">$ saved</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section style="padding-top:0;">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div>
-        <h2>Tell us your scenario. We'll come back with the playbook.</h2>
-        <p>One viable agent on the WSO2 stack — shipped by an FDE in weeks. From there, we expand together until the cost line moves.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary">Start a conversation →</a>
-        <a href="approach.html" class="btn btn-secondary">See our methodology</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="logo" style="color:white;margin-bottom:18px;">
+      /* ── colour helpers per industry ─────────────────────────── */
+      .ico-health {
+        background: #e6f7f2;
+        color: #0d8f6a;
+      }
+      .ico-finance {
+        background: #e8f0fb;
+        color: #2563eb;
+      }
+      .ico-edu {
+        background: #f0ebf9;
+        color: #7c3aed;
+      }
+      .ico-ins {
+        background: #fff0e8;
+        color: #d95f00;
+      }
+      .ico-gov {
+        background: #e8edf2;
+        color: #1e4d78;
+      }
+      .ico-energy {
+        background: #fffbea;
+        color: #b45309;
+      }
+      .ico-mfg {
+        background: #f2f4f7;
+        color: #374151;
+      }
+      .ico-retail {
+        background: #fde8f0;
+        color: #c2185b;
+      }
+      .ico-telco {
+        background: #e8f7ff;
+        color: #0369a1;
+      }
+      .ico-transport {
+        background: #f0fff4;
+        color: #166534;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-inner">
+        <a href="index.html" class="logo">
           <div class="logo-mark">W2</div>
-          <span>WSO2 <span class="logo-sub" style="color:rgba(255,255,255,0.6);">Forward Deployed Engineering</span></span>
-        </div>
-        <p style="color:rgba(255,255,255,0.6);max-width:380px;">Senior engineers, embedded in your team, delivering your agentic enterprise outcomes.</p>
+          <span
+            >WSO2
+            <span class="logo-sub">Forward Deployed Engineering</span></span
+          >
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+            <li>
+              <a href="industry-playbooks.html" class="active"
+                >Industry Playbooks</a
+              >
+            </li>
+            <li><a href="careers.html">Careers</a></li>
+            <li>
+              <a
+                href="contact.html"
+                class="btn btn-primary"
+                style="padding: 10px 20px"
+                >Talk to Us</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div>
-        <h4>Service</h4>
-        <ul><li><a href="services.html">What We Do</a></li><li><a href="approach.html">Our Approach</a></li><li><a href="industry-playbooks.html">Industry Playbooks</a></li></ul>
-      </div>
-      <div>
-        <h4>Team</h4>
-        <ul><li><a href="careers.html">Career Path</a></li><li><a href="careers.html#roles">Open Roles</a></li></ul>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <ul><li><a href="contact.html">Talk to Us</a></li><li><a href="https://wso2.com" target="_blank" rel="noopener">wso2.com ↗</a></li></ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 WSO2 LLC. Forward Deployed Engineering.</span>
-      <span>Outcome-led · Embedded · Open source.</span>
-    </div>
-  </div>
-</footer>
+    </header>
 
-<script src="assets/script.js"></script>
-</body>
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="crumbs">
+          <a href="index.html">Home</a> · <span>Industry Playbooks</span>
+        </div>
+        <span class="eyebrow">AI outcomes, delivered in weeks</span>
+        <h1>Forty moments where waiting stops.</h1>
+        <p style="max-width: 680px">
+          Across ten industries, the same pattern plays out: a business process
+          that used to take days, weeks, or a queue now resolved in seconds by
+          an AI agent. Each one is live in weeks, not quarters.
+        </p>
+        <div class="ind-hero-stat">
+          <div class="stat">
+            <strong>10</strong><span>industry verticals</span>
+          </div>
+          <div class="stat"><strong>40</strong><span>AI use cases</span></div>
+          <div class="stat">
+            <strong>4–10 wks</strong
+            ><span>typical time to first agent in production</span>
+          </div>
+          <div class="stat">
+            <strong>0</strong><span>months of waiting for value</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INDUSTRIES ===== -->
+    <section style="padding-top: 16px">
+      <div class="container">
+        <!-- HEALTHCARE -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-health">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Healthcare</h2>
+              <p>
+                Clinical teams freed from admin. Patients answered in seconds,
+                not days. Care authorised before it's needed.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Prior-Authorization Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Patients receive care approval in
+                <strong>hours, not weeks</strong>. Clinicians spend zero time
+                chasing payers the agent files, tracks and escalates
+                automatically. Denial rates drop as submissions arrive complete
+                every time.
+              </p>
+              <div class="uc-speed">
+                → Hundreds of admin hours recovered per clinic per month
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Appointment Coordination Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Patients book, reschedule and confirm at any hour
+                <strong>no hold music, no callbacks</strong>. No-show rates fall
+                as reminders arrive at exactly the right moment. Front-desk
+                staff shift to care, not calendars.
+              </p>
+              <div class="uc-speed">
+                → Scheduling resolved 24 / 7 without adding headcount
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Medical Record Summary Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Clinicians see a
+                <strong>complete, structured patient summary in seconds</strong>
+                not 40 minutes hunting across systems before a consult. Faster
+                context means faster, safer decisions and more time per patient.
+              </p>
+              <div class="uc-speed">
+                → Every clinician starts every consult fully informed
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Patient FAQ Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Patients get accurate answers about medications, discharge, and
+                follow-ups
+                <strong>at midnight, not the next business day</strong>. Anxiety
+                falls. Readmissions driven by confusion fall. Call volume drops
+                immediately.
+              </p>
+              <div class="uc-speed">
+                → Patient questions resolved instantly, around the clock
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BANKING & FINANCE -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-finance">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Banking &amp; Financial Services</h2>
+              <p>
+                Customers onboarded in minutes. Fraud stopped in real time.
+                Compliance running continuously, not quarterly.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">KYC Verification Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Customers complete onboarding
+                <strong>in minutes, not weeks</strong>. Documents are
+                classified, extracted and validated automatically nothing lost
+                in an email chain, nothing re-keyed by hand. Drop-off rates
+                plummet.
+              </p>
+              <div class="uc-speed">
+                → Onboarding friction eliminated at the very first touchpoint
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Loan Pre-Screening Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Applicants receive eligibility decisions
+                <strong>in seconds, not days</strong>. Underwriters work on
+                exceptions, not triage. Conversion rises because customers get
+                an answer while they still want the product.
+              </p>
+              <div class="uc-speed">
+                → Pre-screening compressed from days to under a minute
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Fraud Detection Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Suspicious transactions are flagged and paused
+                <strong>before they clear</strong> not discovered in a monthly
+                review. Legitimate customers experience zero added friction.
+                Fraud losses fall from day one of operation.
+              </p>
+              <div class="uc-speed">
+                → Every transaction assessed in real time, automatically
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Compliance Monitoring Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Compliance runs
+                <strong>continuously, not in quarterly scrambles</strong>.
+                Violations surface the moment they occur. Audit preparation
+                becomes a report pull, not a weeks-long exercise. Regulatory
+                risk shrinks measurably.
+              </p>
+              <div class="uc-speed">
+                → Continuous compliance with instant breach detection
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-edu">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 10L12 5 2 10l10 5 10-5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Education</h2>
+              <p>
+                Students answered at 2 am before deadlines. At-risk learners
+                flagged weeks before they drop out. IT resolved in minutes.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Registration &amp; Aid Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Students get precise answers on registration, financial aid, and
+                deadlines <strong>at 2 am before the deadline</strong> not at
+                the next available advisor slot. Mis-registrations and missed
+                aid applications disappear.
+              </p>
+              <div class="uc-speed">
+                → Every enrolment question answered instantly, any hour
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Course Recommendation Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Students find the right academic path
+                <strong>in one conversation, not three advisor meetings</strong
+                >. Recommendations match degree requirements, career goals and
+                prerequisites simultaneously no more wrong enrolments discovered
+                at graduation.
+              </p>
+              <div class="uc-speed">
+                → Personalised pathways delivered at scale, instantly
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Student Success Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                At-risk students are identified and contacted
+                <strong>weeks before they drop out</strong>, not after it's too
+                late. Interventions are targeted, not blanket emails. Retention
+                rates improve without adding advisor headcount.
+              </p>
+              <div class="uc-speed">
+                → Dropout predicted and prevented, proactively
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Campus IT Support Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Common IT issues password resets, VPN, software access are
+                resolved <strong>in under two minutes, any time of day</strong>.
+                The helpdesk queue empties. Tier-1 agents move to higher-value
+                work. Students keep studying.
+              </p>
+              <div class="uc-speed">
+                → IT friction eliminated without scaling the support team
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INSURANCE -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-ins">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Insurance</h2>
+              <p>
+                Claims filed in minutes. Renewals handled without a call. Fraud
+                stopped before payment. Documents processed in seconds.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Claim Intake Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Customers file claims
+                <strong>in minutes from their phone</strong> and receive instant
+                confirmation not days of silence. Adjusters receive complete,
+                structured submissions rather than PDFs to re-key. Simple claims
+                close in hours.
+              </p>
+              <div class="uc-speed">
+                → Claim-to-confirmation compressed from days to minutes
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Policy Renewal Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Renewals are handled
+                <strong>without a single phone call or manual follow-up</strong
+                >. Customers receive personalised offers, answer questions
+                instantly, and renew in one session. Lapse rates fall; renewal
+                revenue is protected automatically.
+              </p>
+              <div class="uc-speed">
+                → Zero-touch renewals, no lapses, no missed revenue
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Fraud Investigation Assistant</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Fraudulent claims are flagged
+                <strong>before payment is issued</strong> not discovered in a
+                post-payment audit. Investigators receive pre-built dossiers
+                rather than starting from scratch. Fraud losses fall from the
+                first week of operation.
+              </p>
+              <div class="uc-speed">
+                → Fraud caught before it costs, not after
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Document Processing Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Policy documents, loss notices and supporting evidence are
+                classified and extracted <strong>in seconds</strong>. Manual
+                re-keying disappears. Downstream systems receive clean,
+                structured data immediately no backlog, no errors compounding.
+              </p>
+              <div class="uc-speed">
+                → Hours of document work automated per case, every case
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GOVERNMENT -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-gov">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="3" y1="21" x2="21" y2="21" />
+                <path d="M3 10l9-7 9 7M5 21V10M19 21V10M9 21v-6h6v6" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Government &amp; Public Agencies</h2>
+              <p>
+                Citizens renew permits in minutes, not days in line. Services
+                accessible 24/7. Cases reach the right desk first time.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Permit Renewal Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Citizens complete permit renewals
+                <strong>in minutes from any device</strong> no queuing, no
+                office visit, no form confusion. Processing time falls from
+                weeks to same-day. Staff focus on complex applications, not data
+                re-entry.
+              </p>
+              <div class="uc-speed">
+                → Renewals from weeks to minutes, without adding staff
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Citizen Service FAQ Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Citizens receive
+                <strong>accurate, policy-grounded answers at any hour</strong>
+                not business-hours-only call centre queues. The most common 80%
+                of enquiries are resolved instantly. Call volume drops; public
+                satisfaction rises.
+              </p>
+              <div class="uc-speed">
+                → 24 / 7 accurate answers, zero call centre wait
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Case Routing Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Cases reach the right team
+                <strong>on first submission</strong> no more ping-pong between
+                departments or citizens re-submitting after rejection. Routing
+                accuracy improves immediately. Average resolution time falls by
+                weeks.
+              </p>
+              <div class="uc-speed">
+                → Cases routed correctly, instantly, every time
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Eligibility Verification Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Citizens discover eligibility for benefits and programmes
+                <strong>in a single conversation</strong>, not after weeks of
+                form processing. Eligible citizens don't miss out. Ineligible
+                applications are stopped before staff time is wasted.
+              </p>
+              <div class="uc-speed">
+                → Eligibility known in seconds, not weeks of form processing
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ENERGY -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-energy">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Energy &amp; Utilities</h2>
+              <p>
+                Customers know exactly when power returns. Crews dispatched to
+                the right fault first. Equipment failures prevented before they
+                happen.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Outage ETA Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Customers know the
+                <strong
+                  >exact restoration time the moment an outage starts</strong
+                >
+                no guessing, no frustrated hold queues. Call volumes drop 60–70%
+                during events. Field crews get cleaner priorities because
+                customers aren't calling to report the same fault.
+              </p>
+              <div class="uc-speed">
+                → Outage calls eliminated; customers informed automatically
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Dispatch Optimization Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                The right crew and the right parts reach the right fault
+                <strong>on the first truck roll</strong>. Dispatch decisions
+                that took an experienced coordinator 20 minutes are made in
+                seconds. Hours of outage duration eliminated across the network.
+              </p>
+              <div class="uc-speed">
+                → First-time fix rates up; outage duration down, immediately
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Consumption Advisory Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Customers receive personalised, real-time guidance on reducing
+                their bill
+                <strong>specific actions, specific savings, no guesswork</strong
+                >. Demand peaks flatten. Customer satisfaction rises. Complaints
+                about unexplained high bills drop.
+              </p>
+              <div class="uc-speed">
+                → Customers save money; utility manages demand both win
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Asset Monitoring Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Equipment failures are flagged
+                <strong>weeks before they cause an outage</strong>. Maintenance
+                is scheduled at optimal times, not triggered by breakdowns.
+                Unplanned downtime is eliminated asset by asset, starting from
+                the first deployment.
+              </p>
+              <div class="uc-speed">
+                → Unplanned downtime replaced with scheduled maintenance
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MANUFACTURING -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-mfg">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="7" width="20" height="15" rx="2" />
+                <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                <line x1="12" y1="12" x2="12" y2="16" />
+                <line x1="10" y1="14" x2="14" y2="14" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Manufacturing</h2>
+              <p>
+                Lines stay running. Operators get answers in seconds. Failures
+                predicted before they stop production. Quality defects caught
+                before they ship.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Maintenance Q&amp;A Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Operators get troubleshooting answers
+                <strong>in seconds from the HMI</strong> not minutes hunting
+                through binders or waiting for a senior engineer.
+                Mean-time-to-repair falls immediately. Institutional knowledge
+                stops walking out the door with retiring staff.
+              </p>
+              <div class="uc-speed">
+                → Expert knowledge available at every machine, instantly
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Predictive Maintenance Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Equipment failures are detected
+                <strong>before they stop the line</strong>. Maintenance is
+                scheduled in planned windows, not triggered by breakdown.
+                Unplanned downtime one of manufacturing's largest cost lines
+                falls measurably within the first quarter.
+              </p>
+              <div class="uc-speed">
+                → Breakdowns predicted; production protected proactively
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Production Optimization Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Bottlenecks are identified and corrected
+                <strong>in real time</strong> not discovered in a weekly review.
+                Throughput climbs without capital investment. Scheduling
+                decisions that relied on one expert's intuition are now
+                data-driven and available 24/7.
+              </p>
+              <div class="uc-speed">
+                → Throughput gains within days of deployment
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Quality Assurance Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Defects are caught
+                <strong>before they leave the line</strong> not in a customer
+                return weeks later. Rework costs drop from the first shift.
+                Warranty claims and recall risk fall. Quality teams shift from
+                firefighting to continuous improvement.
+              </p>
+              <div class="uc-speed">
+                → Defects caught in-line; rework and returns eliminated
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RETAIL -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-retail">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Retail &amp; E-commerce</h2>
+              <p>
+                Order questions answered instantly. Every customer feels like a
+                VIP. Stockouts caught before shelves empty. Churning customers
+                saved before they leave.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Order Status &amp; Returns Agent</span>
+                <span class="uc-badge">⚡ 4–6 wks</span>
+              </div>
+              <p class="uc-value">
+                Customers get
+                <strong
+                  >instant answers to "where's my order?" and "how do I return
+                  this?"</strong
+                >
+                without holding for a human agent. Contact-centre volume drops
+                40–60% on day one. Agents shift to complex cases. CSAT rises.
+              </p>
+              <div class="uc-speed">
+                → WISMO calls eliminated; satisfaction up immediately
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Personal Shopping Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Every customer receives a
+                <strong>personalised shopping experience at scale</strong>
+                recommendations that fit their style, size, budget and past
+                behaviour. Conversion lifts immediately. Average order value
+                rises. Returns caused by poor fit fall.
+              </p>
+              <div class="uc-speed">
+                → Personal stylist experience for every customer, instantly
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Inventory Monitoring Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Stockouts are flagged and replenishment triggered
+                <strong>before shelves empty</strong>. Lost sales that
+                previously showed up only in monthly reports are now prevented
+                in real time. Overstock is also caught tying up less working
+                capital.
+              </p>
+              <div class="uc-speed">
+                → Stockouts and overstock caught before they cost revenue
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Customer Loyalty Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                At-risk customers are identified and re-engaged
+                <strong>before they churn</strong> not after their account goes
+                inactive. Retention offers reach the right customers at the
+                right moment. Loyalty programme value is communicated
+                proactively, not buried in an email.
+              </p>
+              <div class="uc-speed">
+                → Churn predicted and reversed before customers leave
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TELECOM -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-telco">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M5 12.55a11 11 0 0114 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h0"
+                />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Telecommunications</h2>
+              <p>
+                Billing calls resolved in under a minute. Network issues fixed
+                before customers notice. At-risk subscribers saved before they
+                port out.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Billing FAQ Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Billing queries the single largest driver of contact-centre
+                volume are resolved
+                <strong>in under 60 seconds, without a human</strong>. Hold
+                queues empty. Repeat calls about the same bill drop to near
+                zero. Customers feel heard, not transferred.
+              </p>
+              <div class="uc-speed">
+                → Billing calls resolved in seconds; hold queues emptied
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Network Troubleshooting Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Network issues are
+                <strong
+                  >diagnosed and resolved before most customers notice
+                  them</strong
+                >. Those who do contact support get step-by-step resolution in
+                minutes, not a scripted hold-and-wait. Truck rolls are replaced
+                with remote fixes.
+              </p>
+              <div class="uc-speed">
+                → Issues fixed proactively; truck rolls and calls replaced
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Customer Retention Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Subscribers showing churn signals receive personalised retention
+                offers
+                <strong>before they call to cancel or port their number</strong
+                >. Intervention timing is precise early enough to save the
+                customer, relevant enough to land. Churn rate falls from month
+                one.
+              </p>
+              <div class="uc-speed">
+                → Churn signals acted on before cancellation intent hardens
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Field Support Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Field technicians receive
+                <strong
+                  >the right diagnostic steps and parts list before they arrive
+                  on site</strong
+                >. First-time fix rates climb immediately. Repeat visits, which
+                cost as much as the original job, become the exception rather
+                than the rule.
+              </p>
+              <div class="uc-speed">
+                → First-time fix rates up; repeat visits eliminated
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRANSPORT -->
+        <div class="ind-section reveal">
+          <div class="ind-header">
+            <div class="ind-icon ico-transport">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="3" width="15" height="13" rx="2" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+            </div>
+            <div class="ind-header-text">
+              <h2>Transportation &amp; Logistics</h2>
+              <p>
+                Customers track shipments live, not by calling. Routes optimised
+                dynamically. Fleet failures caught before they strand a driver.
+              </p>
+            </div>
+          </div>
+          <div class="uc-grid">
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Shipment ETA Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Customers and partners track shipments
+                <strong>in real time without calling</strong>. Disruptions
+                generate automatic notifications with updated ETAs before anyone
+                has to chase. "Where is my shipment?" calls drop to near zero.
+              </p>
+              <div class="uc-speed">
+                → WMIS calls eliminated; customers informed proactively
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Route Optimization Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Every route is recalculated dynamically
+                <strong
+                  >traffic, weather, load changes, regulatory constraints, all
+                  in real time</strong
+                >. Fuel costs fall immediately. On-time delivery rates rise. A
+                planning task that took two hours now runs continuously and
+                automatically.
+              </p>
+              <div class="uc-speed">
+                → Fuel costs down and on-time delivery up from day one
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Fleet Maintenance Agent</span>
+                <span class="uc-badge">⚡ 6–8 wks</span>
+              </div>
+              <p class="uc-value">
+                Vehicle faults are predicted
+                <strong>before a driver is stranded</strong>. Maintenance is
+                scheduled in downtime windows, not triggered by breakdowns.
+                Vehicle utilisation rises. Roadside assistance calls each one a
+                service failure become rare.
+              </p>
+              <div class="uc-speed">
+                → Breakdowns predicted; fleet utilisation protected
+              </div>
+            </div>
+            <div class="uc-card">
+              <div class="uc-card-top">
+                <span class="uc-name">Warehouse Operations Agent</span>
+                <span class="uc-badge">⚡ 8–10 wks</span>
+              </div>
+              <p class="uc-value">
+                Pick errors are caught
+                <strong>before items leave the warehouse</strong>, not
+                discovered at delivery. Throughput is continuously optimised
+                against inbound orders and staffing. Labour cost per unit
+                shipped falls as intelligent orchestration replaces manual
+                coordination.
+              </p>
+              <div class="uc-speed">
+                → Pick accuracy up; throughput maximised automatically
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /container -->
+    </section>
+
+    <!-- ===== SPEED STRIP ===== -->
+    <div class="speed-strip">
+      <div class="container">
+        <h2>Why weeks, not quarters?</h2>
+        <p>
+          Every use case above starts narrow one scenario, one team, one agent
+          in production. That means value lands fast, the agent earns its keep,
+          and the same platform expands from there.
+        </p>
+        <div class="speed-pills">
+          <div class="speed-pill">
+            <strong>Step 1</strong> · One agent live in 4–10 weeks
+          </div>
+          <div class="speed-pill">
+            <strong>Step 2</strong> · Function-wide in 3–6 months
+          </div>
+          <div class="speed-pill">
+            <strong>Step 3</strong> · Enterprise transformation in 9–12 months
+          </div>
+          <div class="speed-pill">
+            Same platform reused <strong>no rebuild tax</strong>
+          </div>
+          <div class="speed-pill">
+            Each step <strong>funds the next</strong> from real savings
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <section>
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div>
+            <h2>
+              Pick your industry. Tell us the scenario. We'll have a playbook by
+              end of week.
+            </h2>
+            <p>
+              An FDE reviews your specific context and comes back with a scoped,
+              deliverable first agent not a proposal for a proposal.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary"
+              >Start a conversation →</a
+            >
+            <a href="approach.html" class="btn btn-secondary"
+              >See our methodology</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo" style="color: white; margin-bottom: 18px">
+              <div class="logo-mark">W2</div>
+              <span
+                >WSO2
+                <span class="logo-sub" style="color: rgba(255, 255, 255, 0.6)"
+                  >Forward Deployed Engineering</span
+                ></span
+              >
+            </div>
+            <p style="color: rgba(255, 255, 255, 0.6); max-width: 380px">
+              Senior engineers, embedded in your team, delivering your agentic
+              enterprise outcomes.
+            </p>
+          </div>
+          <div>
+            <h4>Service</h4>
+            <ul>
+              <li><a href="services.html">What We Do</a></li>
+              <li><a href="approach.html">Our Approach</a></li>
+              <li><a href="industry-playbooks.html">Industry Playbooks</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Team</h4>
+            <ul>
+              <li><a href="careers.html">Career Path</a></li>
+              <li><a href="careers.html#roles">Open Roles</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Get in touch</h4>
+            <ul>
+              <li><a href="contact.html">Talk to Us</a></li>
+              <li>
+                <a href="https://wso2.com" target="_blank" rel="noopener"
+                  >wso2.com ↗</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 WSO2 LLC. Forward Deployed Engineering.</span>
+          <span>Outcome-led · Embedded · Open source.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+  </body>
 </html>

@@ -6,14 +6,14 @@ Static HTML, CSS and a small amount of JS. No build step.
 
 ## Pages
 
-| Page                | Purpose                                                             |
-| ------------------- | ------------------------------------------------------------------- |
-| `index.html`        | Hero, problem statement, four pillars, Agent Fabric, customer proof |
-| `services.html`     | Service catalogue, technical scope, capability matrix               |
-| `approach.html`     | Methodology, FDE positioning, Agent Fabric architecture             |
-| `industry-playbooks.html` | Industry playbooks — one viable agent per vertical (10 industries)  |
-| `careers.html`      | FDE career path and role profiles                                   |
-| `contact.html`      | Lead capture form                                                   |
+| Page                      | Purpose                                                             |
+| ------------------------- | ------------------------------------------------------------------- |
+| `index.html`              | Hero, problem statement, four pillars, Agent Fabric, customer proof |
+| `services.html`           | Service catalogue, technical scope, capability matrix               |
+| `approach.html`           | Methodology, FDE positioning, Agent Fabric architecture             |
+| `industry-playbooks.html` | Industry playbooks one viable agent per vertical (10 industries)    |
+| `careers.html`            | FDE career path and role profiles                                   |
+| `contact.html`            | Lead capture form                                                   |
 
 ## Run locally
 
